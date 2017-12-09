@@ -5,8 +5,7 @@ Developers
 - Kyle Chen (kylehchen@gmail.com)
 - Truong Nguyen (tmnguyen12@gmail.com)
 
-# FYI
-### Initial git flow (we will def learn more mon morning)
+## Initial git flow (we will def learn more mon morning)
 Git instructions
 - Create new local repo (folder)
 - git init that folder
@@ -83,5 +82,6 @@ Git instructions
 |Node.js & MongoDB|
 |Build Node.js + MongoDB|
 |Brain storm names|
+|Full Proposal|
 
 **Sunday meet at 11am to review progress and build database**
