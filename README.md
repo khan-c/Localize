@@ -1,13 +1,9 @@
 # flex
 
 Developers
-- Angelica Velasco
-- Kyle Chen
-- Truong Nguyen
-
-avelasco920@gmail.com
-kylehchen@gmail.com
-tmnguyen12@gmail.com
+- Angelica Velasco (avelasco920@gmail.com)
+- Kyle Chen (kylehchen@gmail.com)
+- Truong Nguyen (tmnguyen12@gmail.com)
 
 # FYI
 ### Initial git flow (we will def learn more mon morning)
