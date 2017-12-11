@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+// const express = require('express');
 const app = express();
-const path = require('path');
-const bodyParser = require('body-parser');
+import path from 'path';
+import bodyParser from 'body-parser';
 const PORT = process.env.PORT || 8000;
-const dbConfig = require('./config/db');
+import dbConfig from './config/db';
 
 dbConfig();
 

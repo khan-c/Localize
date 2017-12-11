@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const database = () => {
+export default () => {
   mongoose.Promise = global.Promise;
   mongoose.connect('mongodb://localhost/localize', { useMongoClient: true });
   const db = mongoose.connection
@@ -8,5 +8,3 @@ const database = () => {
   .once('error', error => console.log(error)
 );
 };
-
-module.exports = database;
