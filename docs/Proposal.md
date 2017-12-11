@@ -24,11 +24,13 @@ New businesses are moving in and growing. Neighborhoods are changing. Managing t
    - [ ] Direct Messages between companies 
 
 # Technologies & Technical Challenges
-  ##### Backend: Node/Express.js 
-  ##### Database: MongoDB with Mongoose 
-  ##### Frontend: React/Redux - JavaScript
-  ##### APIs: Yelp, Google Maps, Google Calendar 
-  ##### Media Hosting: Amazon Web Services (S3) 
+|   |   |
+|-------|-------|
+| Backend| Node/Express.js |
+| Database| MongoDB with Mongoose |
+| Frontend| React/Redux - JavaScript|
+| APIs| Yelp, Google Maps, Google Calendar |
+| Media Hosting | Amazon Web Services (S3) |
 
 #### Media Hosting 
   + ##### Configuration with AWS 
@@ -40,9 +42,7 @@ New businesses are moving in and growing. Neighborhoods are changing. Managing t
     
 # Project Wireframes and Component Heirarchy 
 
-![build-phase](./images/build-phase.png)
-
-![ux-phase](./images/ux-phase.png)
+![Wireframes](https://github.com/khan-c/flex/blob/master/docs/Wireframes_Components.pdf)
 
 # Accomplished over the Weekend
  - Completed Wireframes, project proposal, components, and design of the website
