@@ -8,7 +8,7 @@ const CompaniesSchema = new Schema({
   image_url: {
     type: String
   },
-  URL: {
+  url: {
     type: String
   },
   contact: {
@@ -63,7 +63,7 @@ const CompaniesSchema = new Schema({
       day: Number
     }
   ],
-  leadTime: {
+  lead_time: {
     type: String
   },
   reviews: [
