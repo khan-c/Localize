@@ -53,11 +53,13 @@ companies: [
     reviews: [
       {
         user: user1,
-        review: review
+        review: review,
+        date: date
       },
       {
         user: user2,
-        review: review
+        review: review,
+        date: date
       }
     ],
     orders: [
