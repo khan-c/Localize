@@ -26,8 +26,8 @@ New businesses are moving in and growing. Neighborhoods are changing. Managing t
 # Technologies & Technical Challenges
 |   |   |
 |-------|-------|
-| Backend| Node/Express.js |
-| Database| MongoDB with Mongoose |
+| Backend| Node (v8.9.0)/Express.js(v4.16.2) |
+| Database| MongoDB (v3.6.0) with Mongoose |
 | Frontend| React/Redux - JavaScript|
 | APIs| Yelp, Google Maps, Google Calendar |
 | Media Hosting | Amazon Web Services (S3) |

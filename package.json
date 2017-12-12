@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -33,7 +36,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch",
+    "start": "webpack --watch",
     "dev": "NODE_ENV=development nodemon ./backend/index.js"
   },
   "repository": {
