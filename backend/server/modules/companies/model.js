@@ -68,14 +68,20 @@ const CompaniesSchema = new Schema({
   },
   reviews: [
     {
-      user_id: Schema.Type.ObjectId,
+      user_id: {
+        type: Schema.ObjectId,
+        ref: 'User'
+      },
       review: String,
       date: Date
     }
   ],
   orders: [
     {
-      order_id: Schema.Type.ObjectId,
+      order_id: {
+        type: Schema.ObjectId,
+        ref: 'Order'
+      },
       delivery_date: Date,
       quantity: Number,
       deliverable: String,
@@ -84,7 +90,10 @@ const CompaniesSchema = new Schema({
   ],
   associated_users: [
     {
-      user_id: Schema.Type.ObjectId,
+      user_id: {
+        type: Schema.ObjectId,
+        ref: 'User'
+      },
       username: String
     }
   ]
