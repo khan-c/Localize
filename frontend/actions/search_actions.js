@@ -1,7 +1,7 @@
 // import APIutil for the yelp api calls here
 
-export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS'; 
-export const RECEIVE_NO_RESULTS = 'RECEIVE_NO_RESULTS'; 
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
+export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
 
 const receiveSearchResults = searchResults => ({
   type: RECEIVE_SEARCH_RESULTS,
@@ -9,9 +9,8 @@ const receiveSearchResults = searchResults => ({
 });
 
 const receiveNoResults = () => ({
-  type: RECEIVE_NO_RESULTS,
+  type: RECEIVE_NO_SEARCH_RESULTS,
 });
-
 
 // api call for query here when we get the yelp api 
 
@@ -25,4 +24,3 @@ const receiveNoResults = () => ({
 export const clearSearchResults = query => dispatch => (
   dispatch(receiveNoResults())
 );
-
