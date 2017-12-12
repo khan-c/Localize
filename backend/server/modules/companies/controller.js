@@ -47,9 +47,23 @@ export const createCompany = async (req, res) => {
 
 export const getAllCompanies = async (req, res) => {
   try {
-    return res.status(200).json({ companies: await Company.find() })
+    return res.status(200).json({ companies: await Company.find() });
   } catch (e) {
     return res.status(e.status)
       .json({ error: true, message: 'Error with Company' });
   }
 };
+
+export const getCompany = async (req, res) => {
+  const companyId = req.params.companyId;
+  try {
+    const company = await Company.findById(companyId, (err, co) => {
+      if (err) throw err;
+      return co;
+    });
+    return res.status(200).json({ company });
+  } catch (e) {
+    return res.status(e.status)
+      .json({ error: true, message: 'Error with Company'});
+  }
+}

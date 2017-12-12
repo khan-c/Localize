@@ -6,6 +6,7 @@
   "babel": {
     "presets": [
       "es2015",
+      "react",
       "stage-0"
     ]
   },
@@ -37,7 +38,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch",
+    "start": "webpack --watch",
     "dev": "NODE_ENV=development nodemon ./backend/index.js"
   },
   "repository": {
