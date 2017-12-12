@@ -2,7 +2,7 @@ import React from 'react';
 
 const TitleBar = () => (
   <div className="title-bar">
-    titlebar
+    <h2>titlebar</h2>
   </div>
 );
 
