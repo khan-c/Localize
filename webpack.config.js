@@ -23,26 +23,26 @@ var webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
-  entry: './frontend/localize.jsx',
+  entry: "./frontend/localize.jsx",
   output: {
     path: path.resolve(__dirname),
-    filename: 'bundle.js',
+    filename: "./frontend/bundle.js",
   },
   // plugins: plugins,
   module: {
     loaders: [
       {
         test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };
