@@ -1,0 +1,9 @@
+.header-font {
+  font-family: "Fjalla One", sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Fjalla+One");
+}
+
+.text-font {
+  font-family: "Barlow", sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,700");
+}
