@@ -1,19 +1,27 @@
 import React from 'react';
+import SearchFieldWrapper from './search_field_wrapper';
+import Categories from './search_bar_categories';
 
 const style = {
   searchBarWrapper: {
-    backgroundColor: RED,
     height: '50px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    width: '1100px',
+    margin: 'auto',
   }
 };
 
-const SearchBarWrapper = () => (
-  <div style={style.searchBarWrapper}>
-    hi
-  </div>
-);
+class SearchBarWrapper extends React.Component {
+  render () {
+    return (
+      <div style={style.searchBarWrapper}>
+        <SearchFieldWrapper />
+        <Categories />
+      </div>
+    );
+  }
+}
 
 export default SearchBarWrapper;

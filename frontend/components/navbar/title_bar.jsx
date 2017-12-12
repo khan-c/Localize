@@ -3,7 +3,7 @@ import SessionLinksContainer from './title_session_links_container';
 
 const style = {
   titleBar: {
-    backgroundColor: LIGHT_BLUE,
+    backgroundColor: LIGHTEST_BLUE,
     height: '65px',
     position: 'relative',
     justifyContent: 'center',
@@ -18,7 +18,10 @@ const style = {
 const TitleBar = () => (
   <div className="title-bar" style={style.titleBar}>
     <h2 style={style.projectName}>Localize</h2>
-    <SessionLinksContainer />
+    {/* <Switch> */}
+      <SessionLinksContainer />
+      {/* <ProtectedRoute path="/" component={UserLinks} /> */}
+    {/* </Switch> */}
   </div>
 );
 
