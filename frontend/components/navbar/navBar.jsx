@@ -2,8 +2,15 @@ import React from 'react';
 import TitleBar from './title_bar';
 import SearchBarWrapper from './search_bar_wrapper';
 
+const style = {
+  width: '100%',
+  height: '100px',
+  border: '1px solid #000000',
+  backgroundColor: PURPLE,
+};
+
 const Navbar = () => (
-  <div className="navbar">
+  <div className="navbar" style={style}>
     <TitleBar/>
     <SearchBarWrapper/>
   </div>
