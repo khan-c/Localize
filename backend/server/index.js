@@ -52,47 +52,74 @@ app.get('/business', (req, res) => {
       Authorization: "Bearer " + token.access_token
     }
   }).then( data =>{
-    console.log(data);
-    // need to flatten ciruclarJSON file
-    let normalJson = CircularJSON.stringify(data);
-    res.status(200).send(normalJson);
+    // console.log(data);
+    // need to flatten ciruclarJSON file 
+    let normalJson = CircularJSON.stringify(data);  
+    res.status(200).send(normalJson); 
   }, error => {
     res.status(500).json({error});
   });
 });
 
-// search?term=plumbing&latitude=37.786882&longitude=-122.399972
-
-// route and controller for search
+// route and controller for search 
 app.get('/search', (req, res) => {
-  let url = "https://api.yelp.com/v3/businesses/search?";
-  const token = credentials();
-  const queryArr = Object.keys(req.query);
-  // console.log("queryArr", queryArr);
-  // console.log("req.query.keys", req.query.keys);
-  // console.log("queries", req.query);
-  // to append the correct items to the search url
+  let url = "https://api.yelp.com/v3/businesses/search?"; 
+  const token = credentials(); 
+  const queryArr = Object.keys(req.query); 
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
-      console.log(req.query[q]);
-      url = url + `${q}` + "=" + `${req.query[q]}`;
+      url = url + `${q}` + "=" + `${req.query[q]}`; 
     }
     if (!(queryArr.slice(-1)[0] === q)) {
       url = url + "&";
     }
-  });
-
-  console.log("url", url);
+  }); 
+  // console.log("url", url); 
   axios.get(`${url}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
     }
   }).then( data =>{
-    // console.log(data);
-    let normalJson = CircularJSON.stringify(data);
-    // console.log(normalJson);
-    res.status(200).send(normalJson);
+    // need to flatten ciruclarJSON file 
+    let normalJson = CircularJSON.stringify(data);  
+    res.status(200).send(normalJson); 
   }, error => {
     res.status(500).json({error});
   });
+}); 
+
+
+// route and controller for autocomplete 
+app.get('/autocomplete', (req, res) => {
+  let autoUrl = "https://api.yelp.com/v3/autocomplete?"; 
+  console.log("autoURL", autoUrl); 
+  const token = credentials(); 
+  const queryArrAuto = Object.keys(req.query); 
+  console.log("req.query", queryArrAuto); 
+  queryArrAuto.forEach( q => {
+    if (!(req.query[q] === "")) {
+      autoUrl = autoUrl + `${q}` + "=" + `${req.query[q]}`; 
+    }
+    if (!(queryArrAuto.slice(-1)[0] === q)) {
+      autoUrl = autoUrl + "&"; 
+    }
+  }); 
+  console.log("autoUrl", autoUrl); 
+  axios.get(`${autoUrl}`, {
+    headers: {
+      Authorization: "Bearer " + token.access_token
+    }  
+  }).then( data =>{
+    // need to flatten ciruclarJSON file 
+    console.log("dataaaa", data); 
+    let Json = CircularJSON.stringify(data);  
+    res.status(200).send(Json); 
+  }, error => {
+    res.status(500).json({error}); 
+  });
+}); 
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
