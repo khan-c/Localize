@@ -22,15 +22,16 @@ passportConfig(passport);
 app.use(express.static('frontend'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(cookieParser('whatwhat'));
 app.use(session({
-  secret: 'what what',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: true }
+  secret: 'whatwhat',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: false }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+// app.use(flash());
 routes(app, passport);
 
 app.use('/api', [BusinessRoutes]);
@@ -96,8 +97,4 @@ app.get('/search', (req, res) => {
   }, error => {
     res.status(500).json({error});
   });
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './frontend/index.html'));
 });

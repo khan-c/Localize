@@ -5,6 +5,5 @@ export default () => {
   mongoose.connect('mongodb://localhost/localize', { useMongoClient: true });
   const db = mongoose.connection
     .once('open', () => console.log('MongoDB open'))
-    .once('error', error => console.log(error)
-  );
+    .once('error', error => console.log(error));
 };

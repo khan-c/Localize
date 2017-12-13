@@ -1,6 +1,16 @@
 import path from 'path';
 import CircularJSON from 'circular-json';
 
+const isLoggedIn = (req, res, next) => {
+  console.log(req.isAuthenticated());
+  if (req.isAuthenticated()) {
+    console.log("auth");
+    return next();
+  }
+  console.log("no auth?");
+  res.redirect('/');
+};
+
 export default (app, passport) => {
   // app.get('/login', (req, res) => {
   //   res.sendFile(path.join(__dirname, '../../../frontend/login.html'));
@@ -9,14 +19,20 @@ export default (app, passport) => {
   // app.get('/signup', (req, res) => {
   //   res.sendFile(path.join(__dirname, '../../../frontend/signup.html'));
   // });
-  //
-  // app.get('/profile', isLoggedIn, (req, res) => {
-  //   res.sendFile(path.join(__dirname, '../../../frontend/profile.html'));
-  // });
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './frontend/index.html'));
+  });
+
+  app.get('/profile', isLoggedIn, (req, res) => {
+    // console.log(req);
+    res.sendFile(path.join(__dirname, '../../../frontend/profile.html'));
+  });
 
   app.get('/api/current_user', (req, res) => {
-    // res.status(200).json({ current_user: CircularJSON.stringify(req.user) });
-    res.status(200).json({ current_user: "placeholder" });
+    // console.log(req);
+    res.status(200).json({ current_user: req.user });
+    // res.status(200).json({ current_user: "placeholder" });
   });
 
   app.get('/logout', (req, res) => {
@@ -36,16 +52,9 @@ export default (app, passport) => {
     '/auth/google/callback',
     passport.authenticate(
       'google', {
-        successRedirect: '/',
+        successRedirect: '/profile',
         failureRedirect: '/'
       }
     )
   );
 };
-
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/');
-}
