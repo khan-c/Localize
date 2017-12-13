@@ -49,15 +49,13 @@ app.get('/search', (req, res) => {
   const queryArr = Object.keys(req.query); 
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
-      console.log(req.query[q]); 
       url = url + `${q}` + "=" + `${req.query[q]}`; 
     }
     if (!(queryArr.slice(-1)[0] === q)) {
       url = url + "&"; 
     }
   }); 
-
-  console.log("url", url); 
+  // console.log("url", url); 
   axios.get(`${url}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
@@ -70,6 +68,38 @@ app.get('/search', (req, res) => {
     res.status(500).json({error}); 
   });
 }); 
+
+
+// route and controller for autocomplete 
+app.get('/autocomplete', (req, res) => {
+  let autoUrl = "https://api.yelp.com/v3/autocomplete?"; 
+  console.log("autoURL", autoUrl); 
+  const token = credentials(); 
+  const queryArrAuto = Object.keys(req.query); 
+  console.log("req.query", queryArrAuto); 
+  queryArrAuto.forEach( q => {
+    if (!(req.query[q] === "")) {
+      autoUrl = autoUrl + `${q}` + "=" + `${req.query[q]}`; 
+    }
+    if (!(queryArrAuto.slice(-1)[0] === q)) {
+      autoUrl = autoUrl + "&"; 
+    }
+  }); 
+  console.log("autoUrl", autoUrl); 
+  axios.get(`${autoUrl}`, {
+    headers: {
+      Authorization: "Bearer " + token.access_token
+    }  
+  }).then( data =>{
+    // need to flatten ciruclarJSON file 
+    console.log("dataaaa", data); 
+    let Json = CircularJSON.stringify(data);  
+    res.status(200).send(Json); 
+  }, error => {
+    res.status(500).json({error}); 
+  });
+}); 
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));

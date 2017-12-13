@@ -30,3 +30,17 @@ export const search = query => {
   ); 
 };
 
+export const fetchAutoComplete = query => {
+  console.log("fetching autocomplete"); 
+  return (
+    axios.get('http://localhost:8000/autocomplete', {
+      params: {
+        text: query.text, 
+        latitude: query.latitude, 
+        longitude: query.longitude, 
+        category: query.category
+      }
+    })  
+  ); 
+};
+
