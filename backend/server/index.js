@@ -22,7 +22,6 @@ passportConfig(passport);
 app.use(express.static('frontend'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cookieParser('whatwhat'));
 app.use(session({
   secret: 'whatwhat',
   resave: true,
@@ -31,7 +30,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(flash());
 routes(app, passport);
 
 app.use('/api', [BusinessRoutes]);
