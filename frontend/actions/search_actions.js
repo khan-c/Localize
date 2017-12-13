@@ -1,6 +1,7 @@
 import { search } from '../util/yelp_api'; 
 
 export const SEARCH_ALL = 'SEARCH_ALL'; 
+export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
 
 export const searchAll = results => {
   console.log("results-actions", results); 
@@ -19,5 +20,10 @@ export const getSearch = query => dispatch => {
   ); 
 };
  
+const receiveNoResults = () => ({
+  type: RECEIVE_NO_SEARCH_RESULTS,
+});
 
-  
+export const clearSearchResults = query => dispatch => (
+  dispatch(receiveNoResults())
+);

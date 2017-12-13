@@ -1,14 +1,8 @@
 import { combineReducers } from 'redux';
-import searchReducer from './search_reducer'; 
+import search from './search_reducer';
 
-// const entitiesReducer = combineReducers({
-// });
-
-const entitiesReducer = (state = {}, action ) => {
-  switch(action.type) {
-    default:
-      return state;
-  }
-};
+const entitiesReducer = combineReducers({
+    search
+});
 
 export default entitiesReducer;
