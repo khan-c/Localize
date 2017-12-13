@@ -5,14 +5,14 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 const PORT = process.env.PORT || 8000;
 import dbConfig from './config/db';
-import { CompanyRoutes } from './modules';
+import { BusinessRoutes } from './modules';
 import passport from 'passport';
 import session from 'express-session';
 import routes from './config/routes';
 import passportConfig from './config/passport';
 import flash from 'connect-flash';
-import axios from 'axios'; 
-import { credentials, clientStuff } from '../../config/key';
+import axios from 'axios';
+import { credentials, clientStuff } from './api/key';
 import CircularJSON from 'circular-json';
 
 dbConfig();
@@ -33,7 +33,7 @@ app.use(passport.session());
 app.use(flash());
 routes(app, passport);
 
-app.use('/api', [CompanyRoutes]);
+app.use('/api', [BusinessRoutes]);
 
 app.listen(PORT, err => {
   if (err) {
@@ -44,8 +44,6 @@ app.listen(PORT, err => {
   }
 });
 
-<<<<<<< HEAD
-=======
 // route and controller to get business by ID
 app.get('/business', (req, res) => {
   // import credentials from our config file
@@ -100,7 +98,6 @@ app.get('/search', (req, res) => {
   });
 });
 
->>>>>>> origin/master
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));
 });

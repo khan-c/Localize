@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const CompaniesSchema = new Schema({
+const BusinessesSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -99,4 +99,4 @@ const CompaniesSchema = new Schema({
   ]
 });
 
-export default mongoose.model('Company', CompaniesSchema);
+export default mongoose.model('Business', BusinessesSchema);
