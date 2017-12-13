@@ -3,15 +3,13 @@ import React from 'react';
 const style = {
   wrapper: {
     display: 'flex',
-    width: '500px',
     height: '40px',
     alignItems: 'center',
-    padding: '10px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    marginRight: '30px'
   },
   input: {
     borderBottom: '1px solid',
-    // left: '40px',
   },
   magIcon: {
     height: '15px',
@@ -21,7 +19,7 @@ const style = {
   pinIcon: {
     height: '18px',
     width: '18px',
-    margin: '0 10px'
+    margin: '0 10px',
   }
 };
 

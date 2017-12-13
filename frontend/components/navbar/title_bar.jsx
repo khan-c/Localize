@@ -3,7 +3,6 @@ import SessionLinksContainer from './title_session_links_container';
 
 const style = {
   titleBar: {
-    backgroundColor: LIGHTEST_BLUE,
     height: '65px',
     position: 'relative',
     justifyContent: 'center',

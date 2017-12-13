@@ -8,8 +8,10 @@ const style = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '1100px',
+    width: '1000px',
     margin: 'auto',
+    padding: '10px',
+    boxSizing: 'border-box'
   }
 };
 

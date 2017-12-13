@@ -4,7 +4,7 @@ import SearchBarWrapper from './search_bar_wrapper';
 
 const style = {
   width: '100%',
-  backgroundColor: LIGHTEST_BLUE,
+  backgroundColor: LIGHT_BLUE,
 };
 
 const Navbar = () => (
