@@ -1,21 +1,20 @@
-import merge from 'lodash/merge';
+import merge from 'lodash/merge'; 
 
-import {
-  RECEIVE_SEARCH_RESULTS,
+import { 
+  SEARCH_ALL,
   RECEIVE_NO_SEARCH_RESULTS
-} from '../actions/search_actions';
+} from '../actions/search_actions'; 
 
-const searchReducer = ( state = {}, action ) => {
+const searchReducer = (state = {}, action ) => {
   Object.freeze(state);
-
   switch (action.type) {
-    case RECEIVE_SEARCH_RESULTS:
-      return merge({}, action.searchResults);
+    case SEARCH_ALL:
+      return merge ({}, action.results);  
     case RECEIVE_NO_SEARCH_RESULTS:
       return {};
     default:
-      return state;
+      return state; 
   }
 };
 
-export default searchReducer;
+export default searchReducer; 
