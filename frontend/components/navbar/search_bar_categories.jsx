@@ -6,6 +6,14 @@ import Slider from 'react-slick';
 class Categories extends React.Component {
   constructor(props) {
     super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
   }
 
   render() {
@@ -14,14 +22,15 @@ class Categories extends React.Component {
       infinite: true,
       speed: 500,
       slidesToShow: 5,
-      slidesToScroll: 1,
+      slidesToScroll: 3,
       centerMode: true,
       adaptiveHeight: true,
+      arrows: false,
     };
     return (
       <div className='search-categories-wrapper'>
-        <Icon className='search-arrow h-flip'/>
-        <Slider {...settings} className='search-categories-ul'>
+        <Icon className='search-arrow h-flip' onClick={this.previous}/>
+        <Slider {...settings} ref={c => this.slider = c} className='search-categories-ul'>
           <div key={1}><a>category</a></div>
           <div key={2}><a>category</a></div>
           <div key={3}><a>category</a></div>
@@ -35,7 +44,7 @@ class Categories extends React.Component {
           <div key={12}><a>category</a></div>
           <div key={13}><a>category</a></div>
         </Slider>
-        <Icon className='search-arrow'/>
+        <Icon className='search-arrow' onClick={this.next}/>
       </div>
     );
   }
