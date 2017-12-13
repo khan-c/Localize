@@ -1,6 +1,6 @@
 import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { googleConfig } from './auth.js';
+import { googleConfig } from '../api/auth.js';
 import User from '../modules/users/model';
 
 

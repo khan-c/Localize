@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'what what',
-  resave: true,
+  resave: false,
   saveUninitialized: false,
   cookie: { secure: true }
 }));
