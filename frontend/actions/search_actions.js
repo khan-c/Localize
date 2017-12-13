@@ -4,11 +4,11 @@ export const SEARCH_ALL = 'SEARCH_ALL';
 export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
 
 export const searchAll = results => {
-  console.log("results-actions", results); 
   return(
     {
       type: SEARCH_ALL, 
-      results
+      businesses: results.data.data.businesses, // an array of objects
+      region: results.data.data.region 
     }
   ); 
 }; 
@@ -16,7 +16,10 @@ export const searchAll = results => {
 export const getSearch = query => dispatch => {
   console.log("query actions", query); 
   return (
-    search(query).then( results => dispatch(searchAll(results)))
+    search(query).then( results => {
+      console.log("resultszzzzz", results); 
+      dispatch(searchAll(results)); 
+    }) 
   ); 
 };
  
@@ -27,3 +30,4 @@ const receiveNoResults = () => ({
 export const clearSearchResults = query => dispatch => (
   dispatch(receiveNoResults())
 );
+

@@ -9,7 +9,7 @@ const searchReducer = (state = {}, action ) => {
   Object.freeze(state);
   switch (action.type) {
     case SEARCH_ALL:
-      return merge ({}, action.results);  
+      return merge ({}, action.businesses);  
     case RECEIVE_NO_SEARCH_RESULTS:
       return {};
     default:

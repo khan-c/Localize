@@ -33,7 +33,7 @@ app.get('/business', (req, res) => {
       Authorization: "Bearer " + token.access_token
     }  
   }).then( data =>{
-    console.log(data);
+    // console.log(data);
     // need to flatten ciruclarJSON file 
     let normalJson = CircularJSON.stringify(data);  
     res.status(200).send(normalJson); 
@@ -42,17 +42,11 @@ app.get('/business', (req, res) => {
   });
 }); 
 
-// search?term=plumbing&latitude=37.786882&longitude=-122.399972
-
 // route and controller for search 
 app.get('/search', (req, res) => {
   let url = "https://api.yelp.com/v3/businesses/search?"; 
   const token = credentials(); 
   const queryArr = Object.keys(req.query); 
-  // console.log("queryArr", queryArr); 
-  // console.log("req.query.keys", req.query.keys); 
-  // console.log("queries", req.query);
-  // to append the correct items to the search url 
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
       console.log(req.query[q]); 
@@ -69,9 +63,8 @@ app.get('/search', (req, res) => {
       Authorization: "Bearer " + token.access_token
     }  
   }).then( data =>{
-    // console.log(data);
+    // need to flatten ciruclarJSON file 
     let normalJson = CircularJSON.stringify(data);  
-    // console.log(normalJson); 
     res.status(200).send(normalJson); 
   }, error => {
     res.status(500).json({error}); 
@@ -81,5 +74,4 @@ app.get('/search', (req, res) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
-
 
