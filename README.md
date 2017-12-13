@@ -69,44 +69,44 @@ We plan to touch base at least twice a day (in the morning and at after class) t
     - Complete Backend setup (Node/Express)
     - Begin Auth 
   - Truong 
-    - Complete writing API calls for Yelp 
-    - Complete Navbar  
+    - Begin writing API calls for Yelp 
   - Angel 
     - Complete Wireframes for the signup pages
-    - Complete writing API calls for Yelp  
+    - Setup CSS Files and inline stylesheets
 
 ### Day 2
  - Kyle 
     - Complete Auth
     - Begin Main page and signup forms
   - Truong 
-    - Begin working on Search page results   
+    - Complete Yelp API front + backend build  
   - Angel 
-    - Begin company page
+    - Complete navbar 
 
 ### Day 3
 - Kyle 
   - Begin AWS setup 
   - Continue Main page + Signup Forms 
 - Truong 
-  - Continue working on Search page
-  - Complete writing Google Maps API calls
+  - Begin working on Search page
+  - Begin writing Google Maps API calls
 - Angel 
-  - Continue company page 
-  - Complete writing Google Calendar API calls 
+  - Begin company page 
 
 ### Day 4
 - Kyle
   - Complete AWS Setup
   - Complete Photo upload and display 
 - Truong
-  - Complete Photo Carousel 
+  - Begin Photo Carousel 
 - Angel 
+  - Begin writing Google Calendar API calls 
   - Complete Message forms for emails 
 
 ### Day 5
 - Cleanup final touches 
 - Everyone helps other teammates complete MVPs
+
 
 ### Day 6
  - Copy for mission statement, testimonials, about us, pictures, art 
