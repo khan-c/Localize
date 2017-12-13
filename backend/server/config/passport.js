@@ -6,9 +6,7 @@ import User from '../modules/users/model';
 
 export default (passport) => {
   passport.serializeUser((user, done) => done(null, user.id));
-  passport.deserializeUser((id, done) => {
-    findUserById(id, done)
-  });
+  passport.deserializeUser((id, done) => findUserById(id, done));
 
   passport.use(new GoogleStrategy({
     clientID: googleConfig.clientID,
@@ -25,11 +23,16 @@ export default (passport) => {
 
     const user = await new User({
       'google.id' : profile.id,
+      'google.token' : token,
       'google.name' : profile.displayName,
       'google.email' : profile.emails[0].value
-    }).save();
-
-    done(null, user);
+    }).save((err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        return done(null, user);
+      }
+    });
   }));
 };
 

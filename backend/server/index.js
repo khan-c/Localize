@@ -17,15 +17,18 @@ dbConfig();
 passportConfig(passport);
 
 app.use(express.static('frontend'));
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: 'what what' }));
+app.use(session({
+  secret: 'what what',
+  resave: true,
+  saveUninitialized: false,
+  cookie: { secure: true }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 routes(app, passport);
-
 
 app.use('/api', [CompanyRoutes]);
 

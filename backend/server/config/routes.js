@@ -10,11 +10,11 @@ export default (app, passport) => {
   });
 
   app.get('/profile', isLoggedIn, (req, res) => {
-    res.render('profile.html');
+    res.sendFile(path.join(__dirname, '../../../frontend/profile.html'));
   });
 
   app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
+    res.status(200).json({ current_user: req.user });
   });
 
   app.get('/logout', (req, res) => {
@@ -39,9 +39,6 @@ export default (app, passport) => {
       }
     )
   );
-
-
-
 };
 
 function isLoggedIn(req, res, next) {
