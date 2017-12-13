@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const CompaniesSchema = new Schema({
+const BusinessesSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -68,14 +68,20 @@ const CompaniesSchema = new Schema({
   },
   reviews: [
     {
-      user_id: Schema.Type.ObjectId,
+      user_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      },
       review: String,
       date: Date
     }
   ],
   orders: [
     {
-      order_id: Schema.Type.ObjectId,
+      order_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Order'
+      },
       delivery_date: Date,
       quantity: Number,
       deliverable: String,
@@ -84,10 +90,13 @@ const CompaniesSchema = new Schema({
   ],
   associated_users: [
     {
-      user_id: Schema.Type.ObjectId,
+      user_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      },
       username: String
     }
   ]
 });
 
-export default mongoose.model('Company', CompaniesSchema);
+export default mongoose.model('Business', BusinessesSchema);
