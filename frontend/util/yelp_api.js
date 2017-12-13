@@ -44,3 +44,9 @@ export const fetchAutoComplete = query => {
   ); 
 };
 
+// const defaultQuery = {
+//   text: "plumbing", 
+//   latitude: "37.786882",  
+//   longitude: "-122.399972", 
+//   category: "" 
+// }; 

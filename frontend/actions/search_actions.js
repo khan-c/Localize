@@ -5,17 +5,19 @@ export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
 export const AUTOCOMPLETE = 'AUTOCOMPLETE'; 
 
 export const searchAll = results => {
+  // console.log("Search Results", results.config); 
   return(
     {
       type: SEARCH_ALL, 
       businesses: results.data.data.businesses, // an array of objects
-      region: results.data.data.region 
+      region: results.data.data.region,
+      query: results.config.params
     }
   ); 
 }; 
 
 export const autoComplete = results => {
-  console.log("auto RESUTL", results.data.data); 
+  // console.log("auto RESUTL", results.data.data); 
   return(
     {
       type: AUTOCOMPLETE, 
@@ -24,6 +26,13 @@ export const autoComplete = results => {
   ); 
 }; 
 
+//sample query format for search 
+// const defaultQuery = {
+//   term: "plumbing", 
+//   latitude: "37.786882",  
+//   longitude: "-122.399972", 
+//   category: "" 
+// }; 
 export const getSearch = query => dispatch => {
   return (
     search(query).then( results => {
@@ -32,6 +41,14 @@ export const getSearch = query => dispatch => {
   ); 
 };
  
+// format of query for autocomplete (notice text and not term)
+// const defaultQuery = {
+//   text: "plumbing", 
+//   latitude: "37.786882",  
+//   longitude: "-122.399972", 
+//   category: "" 
+// }; 
+
 export const getAutoComplete = query => dispatch => {
   console.log("autocomplet eaction", query); 
   return (
