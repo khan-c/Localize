@@ -1,62 +1,34 @@
 import React from 'react';
-
-const style = {
-  categoryWrapper: {
-    overflow: 'scroll',
-    backgroundColor: RED,
-    width: '100%',
-    display: 'flex',
-  },
-  categoriesUl: {
-    display: 'flex',
-  },
-  category: {
-    marginLeft: '10px',
-    cursor: 'pointer'
-  },
-  arrowLeft: {
-    height: '20px',
-    width: '20px'
-  },
-  arrowRight: {
-    height: '20px',
-    width: '20px',
-    transform: 'scaleX(-1)',
-    hover: {
-
-    }
-  }
-};
+import ReactSVG from 'react-svg';
 
 class Categories extends React.Component {
   render() {
     return (
-      <div style={style.categoryWrapper}>
-        <img
-          src="../../assets/images/arrow.svg"
-          style={style.arrowLeft}
+      <div className='search-categories-wrapper'>
+        <ReactSVG
+          path='../../assets/images/arrow.svg'
+          className='search-arrow h-flip'
+          wrapperClassName='testing'
         />
-      <ul style={style.categoriesUl}>
-          <li>
-            <a style={style.category} className="text-font">category</a>
-          </li>
-          <li>
-            <a style={style.category} className="text-font">category</a>
-          </li>
-          <li>
-            <a style={style.category} className="text-font">category</a>
-          </li>
-          <li>
-            <a style={style.category} className="text-font">category</a>
-          </li>
+        <ul className='search-categories-ul'>
+          <a className='search-category'>category</a>
+          <a className='search-category'>category</a>
+          <a className='search-category'>category</a>
+          <a className='search-category'>category</a>
         </ul>
-        <img
-          src="../../assets/images/arrow.svg"
-          style={style.arrowRight}
+        <ReactSVG
+          path='../../assets/images/arrow.svg'
+          className='search-arrow'
+          wrapperClassName='testing'
         />
       </div>
     );
   }
 }
+
+{/* <Icon name='arrow'
+  width='256'
+  height='256'
+  color='#4cd695'/> */}
 
 export default Categories;

@@ -1,28 +1,5 @@
 import React from 'react';
 
-const style = {
-  wrapper: {
-    display: 'flex',
-    height: '40px',
-    alignItems: 'center',
-    boxSizing: 'border-box',
-    marginRight: '30px'
-  },
-  input: {
-    borderBottom: '1px solid',
-  },
-  magIcon: {
-    height: '15px',
-    width: '15px',
-    marginRight: '10px',
-  },
-  pinIcon: {
-    height: '18px',
-    width: '18px',
-    margin: '0 10px',
-  }
-};
-
 class SearchBarInput extends React.Component {
   constructor (props) {
     super(props);
@@ -32,7 +9,6 @@ class SearchBarInput extends React.Component {
     };
   }
 
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -41,24 +17,24 @@ class SearchBarInput extends React.Component {
 
   render () {
     return (
-      <div style={style.wrapper}>
+      <div className='search-input-wrapper'>
         <img
-          src="../../assets/images/magnifier.svg"
-          style={style.magIcon}
+          src='../../assets/images/magnifier.svg'
+          className='mag-icon'
         />
-        <input type="text"
-          placeholder="search"
-          style={style.input}
+        <input type='text'
+          placeholder='search'
+          className='search-bar-input'
           value={this.state.query}
           onChange={this.update('query')}
         />
         <img
-          src="../../assets/images/pin.svg"
-          style={style.pinIcon}
+          src='../../assets/images/pin.svg'
+          className='pin-icon'
         />
-        <input type="text"
-          placeholder="location"
-          style={style.input}
+        <input type='text'
+          placeholder='location'
+          className='search-bar-input'
           value={this.state.location}
           onChange={this.update('location')}
         />

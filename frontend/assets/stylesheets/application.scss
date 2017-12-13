@@ -14,19 +14,12 @@
  */
 
 // CSS Reset
-@import "reset.scss";
+@import "base/reset.scss";
 
 // Core
-@import "colors.scss";
-// @import "fonts.scss";
-@import "layout.scss";
-
-body {
-  background-color: blue;
-}
-
-// Grid
-// @import "grid.scss";
+@import "base/colors.scss";
+@import "base/fonts.scss";
+@import "base/layout.scss";
 
 // Components
-// @import "components/*";
+@import "components/navbar.scss";

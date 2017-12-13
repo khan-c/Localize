@@ -6,7 +6,7 @@ const extractSass = new ExtractTextPlugin({
     filename: "./frontend/style.css",
     disable: process.env.NODE_ENV === "development"
 });
-//
+
 // var plugins = []; // if using any plugins for both dev and production
 // var devPlugins = []; // if using any plugins for development
 //
