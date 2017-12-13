@@ -1,25 +1,28 @@
-// import APIutil for the yelp api calls here
+import { search } from '../util/yelp_api'; 
 
-export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
+export const SEARCH_ALL = 'SEARCH_ALL'; 
 export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
 
-const receiveSearchResults = searchResults => ({
-  type: RECEIVE_SEARCH_RESULTS,
-  searchResults
-});
+export const searchAll = results => {
+  console.log("results-actions", results); 
+  return(
+    {
+      type: SEARCH_ALL, 
+      results
+    }
+  ); 
+}; 
 
+export const getSearch = query => dispatch => {
+  console.log("query actions", query); 
+  return (
+    search(query).then( results => dispatch(searchAll(results)))
+  ); 
+};
+ 
 const receiveNoResults = () => ({
   type: RECEIVE_NO_SEARCH_RESULTS,
 });
-
-// api call for query here when we get the yelp api 
-
-
-// export const searchCompanyDatabase = query => (dispatch) => (
-//   APIUtil.searchCompanyDatabase(query).then(
-//     (results) => dispatch(receiveSearchResults(results))
-//   )
-// );
 
 export const clearSearchResults = query => dispatch => (
   dispatch(receiveNoResults())

@@ -11,6 +11,9 @@ import session from 'express-session';
 import routes from './config/routes';
 import passportConfig from './config/passport';
 import flash from 'connect-flash';
+import axios from 'axios'; 
+import { credentials, clientStuff } from '../../config/key';
+import CircularJSON from 'circular-json';
 
 dbConfig();
 
@@ -41,6 +44,63 @@ app.listen(PORT, err => {
   }
 });
 
+<<<<<<< HEAD
+=======
+// route and controller to get business by ID
+app.get('/business', (req, res) => {
+  // import credentials from our config file
+  const token = credentials();
+  axios.get(`https://api.yelp.com/v3/businesses/${req.query.Id}`, {
+    headers: {
+      Authorization: "Bearer " + token.access_token
+    }
+  }).then( data =>{
+    console.log(data);
+    // need to flatten ciruclarJSON file
+    let normalJson = CircularJSON.stringify(data);
+    res.status(200).send(normalJson);
+  }, error => {
+    res.status(500).json({error});
+  });
+});
+
+// search?term=plumbing&latitude=37.786882&longitude=-122.399972
+
+// route and controller for search
+app.get('/search', (req, res) => {
+  let url = "https://api.yelp.com/v3/businesses/search?";
+  const token = credentials();
+  const queryArr = Object.keys(req.query);
+  // console.log("queryArr", queryArr);
+  // console.log("req.query.keys", req.query.keys);
+  // console.log("queries", req.query);
+  // to append the correct items to the search url
+  queryArr.forEach( q => {
+    if (!(req.query[q] === "")) {
+      console.log(req.query[q]);
+      url = url + `${q}` + "=" + `${req.query[q]}`;
+    }
+    if (!(queryArr.slice(-1)[0] === q)) {
+      url = url + "&";
+    }
+  });
+
+  console.log("url", url);
+  axios.get(`${url}`, {
+    headers: {
+      Authorization: "Bearer " + token.access_token
+    }
+  }).then( data =>{
+    // console.log(data);
+    let normalJson = CircularJSON.stringify(data);
+    // console.log(normalJson);
+    res.status(200).send(normalJson);
+  }, error => {
+    res.status(500).json({error});
+  });
+});
+
+>>>>>>> origin/master
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
