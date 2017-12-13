@@ -1,6 +1,12 @@
 var path = require("path");
 var webpack = require("webpack");
-//
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "./frontend/style.css",
+    disable: process.env.NODE_ENV === "development"
+});
+
 // var plugins = []; // if using any plugins for both dev and production
 // var devPlugins = []; // if using any plugins for development
 //
@@ -38,11 +44,25 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
+      }, {
+      test: /\.scss$/,
+        use: extractSass.extract({
+            use: [{
+                loader: "css-loader"
+            }, {
+                loader: "sass-loader"
+            }],
+            // use style-loader in development
+            fallback: "style-loader"
+        })
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
-  }
+  },
+  plugins: [
+    extractSass,
+  ],
 };

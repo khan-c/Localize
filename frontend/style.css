@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);@import url(https://fonts.googleapis.com/css?family=Barlow:300,400,500,700);/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+/* PHASE 0: Reset */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i, em,
+section, img, div, h2, p, form, h3, h4,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent; }
+
+ul {
+  list-style: none; }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+button,
+input[type="submit"] {
+  cursor: pointer; }
+
+/* Clearfix */
+.group:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: 'Fjalla One', sans-serif;
+  text-align: left;
+  font-size: 24px;
+  text-transform: uppercase; }
+
+h4 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase; }
+
+span {
+  font-family: 'Barlow', sans-serif; }
+
+input[type="text"] {
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 2px; }
+
+.navbar {
+  width: 100%;
+  background-color: #E9FBFC; }
+
+.arrow {
+  fill: white; }
+
+.titlebar {
+  height: 65px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex; }
+
+.search-input-wrapper {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  box-sizing: border-box;
+  margin-right: 30px; }
+
+.search-bar-input {
+  border-bottom: 1px solid; }
+
+.mag-icon {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px; }
+
+.pin-icon {
+  height: 18px;
+  width: 18px;
+  margin: 0 10px; }
+
+.search-categories-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse; }
+
+.search-categories-ul {
+  display: flex; }
+
+.search-arrow {
+  height: 15px;
+  width: 15px; }
+
+.h-flip {
+  transform: scaleX(-1); }
+
+.search-category {
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: "Barlow", sans-serif; }
+
+/*# sourceMappingURL=style.css.map*/
