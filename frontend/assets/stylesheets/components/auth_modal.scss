@@ -1,23 +1,23 @@
-// .auth-dropdown div::before {
-//   position: absolute;
-//   content: ' ';
-//   top: -20px;
-//   border-top: 10px solid transparent;
-//   border-bottom: 10px solid $light-blue;
-//   border-right: 10px solid transparent;
-//   border-left: 10px solid transparent;
-// }
+.auth-dropdown div::before {
+  position: absolute;
+  content: ' ';
+  top: -20px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid white;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
 
 .auth-dropdown {
   position: absolute;
-  top: 20px;
-  // top: 40px;
+  top: 40px;
   left: -60px;
   height: 100px;
   width: 200px;
-  background: $light-blue;
+  background: white;
   z-index: 2000;
   border-radius: 1px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
 .auth-wrapper {
@@ -31,7 +31,7 @@
 
 #google-auth {
   margin: 0;
-  font-size: 26px;
+  font-size: 20px;
   color: white;
   background: $purple;
   display: flex;
@@ -48,25 +48,21 @@
 #google-auth:hover {
   background: $red;
   border-bottom: 3px solid transparent;
+  transform: scale(1.05);
+}
+
+#google-auth:active {
+  transform: scale(1);
 }
 
 .auth-dropdown, {
    opacity: 1; /* This keeps the opacity at 1 after the animation has run (e.g. could be considered as the final or default stage of the element) */
-   animation: dropdown 250ms ease-in-out normal;
-   -moz-animation: dropdown 250ms ease-in-out normal;
-   -ms-animation: dropdown 250ms ease-in-out normal;
-   -o-animation: dropdown 250ms ease-in-out normal;
-   -webkit-animation: dropdown 250ms ease-in-out normal;
+   animation: dropdown 200ms ease-in-out normal;
+   -moz-animation: dropdown 200ms ease-in-out normal;
+   -ms-animation: dropdown 200ms ease-in-out normal;
+   -o-animation: dropdown 200ms ease-in-out normal;
+   -webkit-animation: dropdown 200ms ease-in-out normal;
 }
-
-// #google-auth, {
-//    opacity: 1; /* This keeps the opacity at 1 after the animation has run (e.g. could be considered as the final or default stage of the element) */
-//    animation: dropdown 700ms ease-in-out normal;
-//    -moz-animation: dropdown 700ms ease-in-out normal;
-//    -ms-animation: dropdown 700ms ease-in-out normal;
-//    -o-animation: dropdown 700ms ease-in-out normal;
-//    -webkit-animation: dropdown 700ms ease-in-out normal;
-// }
 
 @keyframes dropdown {
     0% { height: 0px; opacity: 0;}
@@ -74,20 +70,24 @@
     100% { height: 100px; opacity: 1;}
 }
 @-moz-keyframes dropdown {
-    from { height: 0px; opacity: 0;}
-    to { height: 100px; opacity: 1;}
+    0% { height: 0px; opacity: 0;}
+    50% { opacity: .2;}
+    100% { height: 100px; opacity: 1;}
 }
 @-ms-keyframes dropdown {
-    from {height: 0px; opacity: 0;}
-    to { height: 100px; opacity: 1;}
+    0% {height: 0px; opacity: 0;}
+    50% { opacity: .2;}
+    100% { height: 100px; opacity: 1;}
 }
 @-o-keyframes dropdown {
-    from {height: 0px; opacity: 0;}
-    to { height: 100px; opacity: 1;}
+    0% {height: 0px; opacity: 0;}
+    50% { opacity: .2;}
+    100% { height: 100px; opacity: 1;}
 }
 @-webkit-keyframes dropdown {
-    from { height: 0px; opacity: 0;}
-    to { height: 100px; opacity: 1;}
+    0% { height: 0px; opacity: 0;}
+    50% { opacity: .2;}
+    100% { height: 100px; opacity: 1;}
 }
 
 .hidden {

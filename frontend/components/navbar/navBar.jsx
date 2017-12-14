@@ -1,11 +1,11 @@
 import React from 'react';
-import TitleBar from './title_bar';
+import TitleBarContainer from './title_bar_container';
 import SearchBarWrapper from './search_bar_wrapper';
 
 
 const Navbar = () => (
   <div className="navbar">
-    <TitleBar/>
+    <TitleBarContainer/>
     <SearchBarWrapper/>
   </div>
 );
