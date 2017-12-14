@@ -1,0 +1,37 @@
+.testimonial-section {
+}
+
+.testimonial-slider {
+  margin: 50px auto;
+}
+
+.testimonial {
+  position: relative;
+  height: 300px;
+  margin: 0 10px;
+  background-size: cover;
+}
+
+.testimonial-text-wrapper {
+  position: absolute;
+  top: 70px;
+  margin: 15%;
+  padding: 40px;
+  background-color: white;
+}
+
+.testimonial-bname {
+  padding-bottom: 10px;
+  border-bottom: 6px solid;
+}
+
+.blank-div {
+  height: 200px;
+}
+
+.testimonials-header {
+  padding-bottom: 20px;
+  margin-left: 100px;
+  border-bottom: 10px solid;
+  width: 800px;
+}
