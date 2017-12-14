@@ -1,4 +1,6 @@
 import { connect } from 'react-redux'; 
+import { withRouter } from 'react-router-dom';
+
 import ResultsIndex from './results_index'; 
 import { 
   getSearch, 
@@ -22,8 +24,8 @@ const mapDispatchToProps = dispatch => ({
   clearSearchResults: () => dispatch(clearSearchResults())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ResultsIndex); 
+)(ResultsIndex)); 
 
