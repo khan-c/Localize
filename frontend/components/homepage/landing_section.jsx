@@ -2,7 +2,7 @@ import React from 'react';
 import ReactSVG from 'react-svg';
 import LandingIcons from './landing_icons';
 
-class LandingPage extends React.Component {
+class LandingSection extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -75,4 +75,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+export default LandingSection;

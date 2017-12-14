@@ -82,16 +82,23 @@
 }
 
 .search-arrow {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
+  transition: all .2s ease;
 }
 
 .search-arrow:hover {
   cursor: pointer;
+  fill: $red;
+  transform: scale(1.3);
 }
 
 .h-flip {
   transform: scaleX(-1);
+}
+
+.h-flip:hover {
+  transform: scaleX(-1) scale(1.3);
 }
 
 .search-categories-ul a {
