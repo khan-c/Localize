@@ -11,7 +11,7 @@ import { showBusiness } from './actions/business_actions';
 
 
 const defaultQuery = {
-  term: "laundry", 
+  text: "laundry", 
   latitude: "37.786882",  
   longitude: "-122.399972", 
   category: "" 
