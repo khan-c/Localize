@@ -438,9 +438,9 @@ input[type="submit"] {
   position: relative; }
 
 .mission-right-img {
-  background: url("https://i.pinimg.com/564x/de/d3/ea/ded3ea7c6eb38e623632b9886f211968.jpg");
+  background: url("https://i.pinimg.com/564x/36/2f/2a/362f2adcbe33a96f18a64130feae481b.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   width: 55vw;
   height: 100%;
   position: relative;
