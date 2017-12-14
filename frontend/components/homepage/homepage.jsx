@@ -1,13 +1,15 @@
 import React from 'react';
-import LandingPage from './landing_page';
-import MissionPage from './mission_page';
+import LandingSection from './landing_section';
+import MissionSection from './mission_section';
+import TestimonialSection from './testimonial_section';
 
 class HomePage extends React.Component {
   render () {
     return (
       <div className='homepage'>
-        <LandingPage />
-        <MissionPage />
+        <LandingSection />
+        <MissionSection />
+        <TestimonialSection />
       </div>
     );
   }
