@@ -251,6 +251,11 @@ input[type="submit"] {
     position: relative;
     right: 30px; }
 
+.map {
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
 .homepage {
   height: 3000px; }
 

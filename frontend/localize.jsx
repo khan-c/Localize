@@ -8,7 +8,7 @@ import { fetchCurrentUser } from './actions/session_actions';
 import { getBusiness, search, fetchAutoComplete } from './util/yelp_api'; 
 import { getSearch, getAutoComplete } from './actions/search_actions'; 
 import { showBusiness } from './actions/business_actions'; 
-
+import { geoLocate } from './util/geolocation_util'; 
 
 const defaultQuery = {
   text: "laundry", 
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.showBusiness = showBusiness("blackline-construction-san-francisco"); 
   window.dispatch = store.dispatch; 
   window.fetchAutoComplete = fetchAutoComplete; 
+  window.geoLocate = geoLocate; 
 
   ReactDOM.render(<Root store={store}/>, root);
 });
