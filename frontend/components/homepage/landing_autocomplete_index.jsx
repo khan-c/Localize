@@ -7,7 +7,6 @@ class LandingAutocompleteIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { results } = this.props;
     if (!results.terms) {
       return (<div></div>);

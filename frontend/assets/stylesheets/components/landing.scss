@@ -43,19 +43,33 @@
   font-size: 10px;
 }
 
-.search-term {
+#search-term {
   width: 300px;
 }
 
 .landing-search-button {
   background-color: $purple;
   color: white;
-  z-index: 2000
+  z-index: 2000;
+  transition: transform .2s ease;
 }
 
 .landing-search-button:hover {
   background-color: $red;
   color: white;
+  transform: scale(1.05);
+}
+
+.landing-search-button:focus {
+  background-color: $red;
+  color: white;
+  transform: scale(1.05);
+}
+
+.landing-search-button:active {
+  background-color: $red;
+  color: white;
+  transform: scale(1);
 }
 
 .landing-search-input-wrapper {
@@ -211,10 +225,24 @@
 .landing-autocomplete-index-item {
   background-color: white;
   padding: 12px 20px;
-
+  // transition: transform .2s ease;
 }
 
 .landing-autocomplete-index-item:hover {
   background-color: $red;
   color: white;
+}
+
+.landing-autocomplete-index-item:active {
+  background-color: $red;
+  color: white;
+  // transform: scale(.98);
+}
+
+.landing-autocomplete-index-item h4 {
+  transition: transform .2s ease;
+}
+
+.landing-autocomplete-index-item:active h4 {
+  transform: scale(.98);
 }
