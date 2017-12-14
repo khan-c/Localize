@@ -55,3 +55,88 @@
   align-items: center;
   width: 60px;
 }
+
+.mission-statement {
+  width: 100%;
+  height: 75vh;
+  position: relative;
+}
+
+.mission-left-img {
+  background: url("https://i.pinimg.com/564x/6e/6d/93/6e6d93836a0fe3c306197b82a6cb5294.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 55vw;
+  height: 100%;
+  position: relative;
+}
+
+.mission-right-img {
+  background: url("https://i.pinimg.com/564x/de/d3/ea/ded3ea7c6eb38e623632b9886f211968.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 55vw;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+
+.mission-left-text-wrapper {
+  width: 30%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  background-color: white;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.mission-right-text-wrapper {
+  width: 30%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background-color: white;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.mission-left-title {
+  z-index: 200;
+  top: 140px;
+  width: 500px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 10px solid;
+}
+
+.mission-right-title {
+  z-index: 200;
+  top: 140px;
+  width: 500px;
+  margin-left: -340px;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 10px solid;
+}
+
+.mission-left-text {
+  position: absolute;
+  z-index: 200;
+  width: 500px;
+  margin-left: 40px;
+}
+
+.mission-right-text {
+  position: absolute;
+  z-index: 200;
+  width: 440px;
+  margin-left: -260px;
+}
+
+.statement-right {
+  margin: 200px 0;
+}
