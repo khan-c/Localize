@@ -16,7 +16,8 @@ export const createBusiness = async (req, res) => {
     lead_time,
     reviews,
     orders,
-    associated_users
+    associated_users,
+    testimonials
   } = req.body;
 
   const newBusiness = new Business({
@@ -34,7 +35,8 @@ export const createBusiness = async (req, res) => {
     lead_time,
     reviews,
     orders,
-    associated_users
+    associated_users,
+    testimonials
   });
 
   try {
@@ -83,3 +85,7 @@ export const updateBusiness = async (req, res) => {
     })
   })
 }
+
+// export const getTestimonials = async (req, res) => {
+//   const
+// }

@@ -96,6 +96,15 @@ const BusinessesSchema = new Schema({
       },
       username: String
     }
+  ],
+  testimonials: [
+    {
+      testimonial_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Testimonial'
+      },
+      testimonial: String
+    }
   ]
 });
 
