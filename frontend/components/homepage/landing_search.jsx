@@ -22,12 +22,14 @@ class LandingSearch extends React.Component {
     }, () => {
       if ( !this.state.text) {
         this.props.clearAutocomplete();
+        this.props.clearAutocompleteFields();
       } else if (this.state.text.length >= 3) {
         const query = {
           text: this.state.text,
           location: this.state.location
         };
         this.props.getAutoComplete(query);
+        this.props.autocompleteFields(query);
       }
     });
   }
@@ -51,7 +53,6 @@ class LandingSearch extends React.Component {
   }
 
   changeFocusFrom(e, field) {
-    console.log(e.keyCode);
     if (e.keyCode === 9 && field === 'text') {
       e.preventDefault();
       document.getElementById('search-location').focus();
@@ -59,7 +60,6 @@ class LandingSearch extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <div className='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
