@@ -35,3 +35,34 @@
   border-bottom: 10px solid;
   width: 800px;
 }
+
+.testimonial-slider-wrapper {
+  position: relative;
+}
+
+.testimonial-arrow {
+  position: absolute;
+  top: 150px;
+  z-index: 200;
+  height: 40px;
+  width: 40px;
+  transition: all .2s ease;
+}
+
+.testimonial-arrow:hover {
+  fill: $red;
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.h-flip:hover {
+  transform: scaleX(-1) scale(1.3);
+}
+
+.previous {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}

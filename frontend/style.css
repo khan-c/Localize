@@ -174,14 +174,20 @@ input[type="submit"] {
   width: 500px; }
 
 .search-arrow {
-  height: 20px;
-  width: 20px; }
+  height: 30px;
+  width: 30px;
+  transition: all .2s ease; }
 
 .search-arrow:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  fill: #FF4958;
+  transform: scale(1.3); }
 
 .h-flip {
   transform: scaleX(-1); }
+
+.h-flip:hover {
+  transform: scaleX(-1) scale(1.3); }
 
 .search-categories-ul a {
   cursor: pointer;
@@ -398,7 +404,8 @@ input[type="submit"] {
 .category-icon {
   margin-bottom: 15px;
   width: 40px;
-  height: 40px; }
+  height: 40px;
+  transition: transform .3s ease; }
 
 .icon-link {
   text-transform: uppercase;
@@ -408,7 +415,8 @@ input[type="submit"] {
   border-bottom: 3px solid transparent; }
 
 .icon-links-wrapper:hover .category-icon {
-  fill: #FF4958; }
+  fill: #FF4958;
+  transform: scale(1.3); }
 
 .icon-links-wrapper:hover .icon-link {
   color: #FF4958;
@@ -526,5 +534,30 @@ input[type="submit"] {
   margin-left: 100px;
   border-bottom: 10px solid;
   width: 800px; }
+
+.testimonial-slider-wrapper {
+  position: relative; }
+
+.testimonial-arrow {
+  position: absolute;
+  top: 150px;
+  z-index: 200;
+  height: 40px;
+  width: 40px;
+  transition: all .2s ease; }
+
+.testimonial-arrow:hover {
+  fill: #FF4958;
+  cursor: pointer;
+  transform: scale(1.3); }
+
+.h-flip:hover {
+  transform: scaleX(-1) scale(1.3); }
+
+.previous {
+  left: 20px; }
+
+.next {
+  right: 20px; }
 
 /*# sourceMappingURL=style.css.map*/

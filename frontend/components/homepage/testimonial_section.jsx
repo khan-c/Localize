@@ -1,8 +1,23 @@
 import React from 'react';
 import Testimonial from './testimonial';
 import Slider from 'react-slick';
+import Icon from 'react-icons/lib/fa/chevron-right';
 
 class TestimonialSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+
+  next() {
+    this.slider.slickNext();
+  }
+
+  previous() {
+    this.slider.slickPrev();
+  }
+
   render () {
     const settings = {
       dots: false,
@@ -13,6 +28,7 @@ class TestimonialSection extends React.Component {
       centerMode: true,
       adaptiveHeight: true,
       arrows: true,
+      className: 'slides',
     };
     const business = {
       name: 'Flower Shop',
@@ -25,23 +41,27 @@ class TestimonialSection extends React.Component {
         <h2 className='testimonials-header'>
           Testimonials
         </h2>
-        <Slider {...settings} className='testimonial-slider'>
-          <div className='testimonial-wrapper'>
-            <Testimonial business={business}/>
-          </div>
-          <div className='testimonial-wrapper'>
-            <Testimonial business={business}/>
-          </div>
-          <div className='testimonial-wrapper'>
-            <Testimonial business={business}/>
-          </div>
-          <div className='testimonial-wrapper'>
-            <Testimonial business={business}/>
-          </div>
-          <div className='testimonial-wrapper'>
-            <Testimonial business={business}/>
-          </div>
-        </Slider>
+        <div className='testimonial-slider-wrapper'>
+          <Icon className='testimonial-arrow previous h-flip' onClick={this.previous}/>
+          <Slider {...settings} ref={c => this.slider = c} className='testimonial-slider'>
+            <div className='testimonial-wrapper'>
+              <Testimonial business={business}/>
+            </div>
+            <div className='testimonial-wrapper'>
+              <Testimonial business={business}/>
+            </div>
+            <div className='testimonial-wrapper'>
+              <Testimonial business={business}/>
+            </div>
+            <div className='testimonial-wrapper'>
+              <Testimonial business={business}/>
+            </div>
+            <div className='testimonial-wrapper'>
+              <Testimonial business={business}/>
+            </div>
+          </Slider>
+          <Icon className='testimonial-arrow next' onClick={this.next}/>
+        </div>
       </div>
 
     );
