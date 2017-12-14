@@ -23,7 +23,7 @@ class LandingPage extends React.Component {
         <div className='landing-page-content'>
           <LandingIcons />
           <h1>Connect With a Small Business Near You</h1>
-          <span>
+          <span className='display-text'>
             Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Proin in elit erat. Vestibulum
             et enim bibendum, molestie ex non, ullamcorper sapien.
@@ -66,9 +66,6 @@ class LandingPage extends React.Component {
                 className='landing-search-button'
                 value='search'
               />
-
-
-
             </div>
           </div>
 
