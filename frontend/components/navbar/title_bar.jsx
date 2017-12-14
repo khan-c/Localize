@@ -4,7 +4,7 @@ import SessionLinksContainer from './title_session_links_container';
 
 const TitleBar = () => (
   <div className="titlebar">
-    <h2>Localize</h2>
+    <h3>Localize</h3>
     {/* <Switch> */}
       <SessionLinksContainer />
       {/* <ProtectedRoute path="/" component={UserLinks} /> */}

@@ -3,17 +3,14 @@ import ReactSVG from 'react-svg';
 
 const LandingIcons = () => (
   <div className='landing-icons'>
-    {/* <div className='icon-div'> */}
-      <ReactSVG
-        path='../../assets/images/shake-filled.svg'
-        className='landing-shake-fill-1'
-      />
-      <ReactSVG
-        path='../../assets/images/shake.svg'
-        className='landing-shake-line-1'
-      />
-    {/* </div> */}
-
+    <ReactSVG
+      path='../../assets/images/shake-filled.svg'
+      className='landing-shake-fill-1'
+    />
+    <ReactSVG
+      path='../../assets/images/shake.svg'
+      className='landing-shake-line-1'
+    />
     <ReactSVG
       path='../../assets/images/shake-filled.svg'
       className='landing-shake-fill-2'
