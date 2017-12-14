@@ -4,7 +4,6 @@ import { clearAutocomplete, getAutoComplete } from '../../actions/search_actions
 
 const mapStateToProps = state => {
   return {
-    results: state.entities.autocomplete
   };
 };
 

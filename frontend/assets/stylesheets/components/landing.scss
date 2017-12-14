@@ -31,6 +31,7 @@
   display: flex;
   margin-top: 40px;
   flex-direction: row-reverse;
+  position: relative;
 }
 
 .landing-search-wrapper-div {
@@ -193,4 +194,27 @@
     transform: rotate(.94turn) scale(.8);
     right: -140px;
   }
+}
+
+.relative {
+  position: relative;
+}
+
+.landing-autocomplete-index {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.landing-autocomplete-index-item {
+  background-color: white;
+  padding: 12px 20px;
+
+}
+
+.landing-autocomplete-index-item:hover {
+  background-color: $red;
+  color: white;
 }

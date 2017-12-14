@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
+import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class LandingSearch extends React.Component {
       text: '',
       location: ''
     };
+    this.clearResults = this.clearResults.bind(this);
   }
 
   update(field) {
@@ -21,18 +23,23 @@ class LandingSearch extends React.Component {
           text: this.state.text,
           location: this.state.location
         };
-        console.log(query);
         this.props.getAutoComplete(query);
       }
     });
   }
 
+  clearResults() {
+    setTimeout( () => {
+      this.props.clearAutocomplete();
+      this.setState({query: ''});
+    }, 100);
+  }
+
   render() {
-    console.log(this.props);
     return(
       <div className='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
-          <div className='landing-search-input-wrapper'>
+          <div className='landing-search-input-wrapper relative'>
             <ReactSVG
               path='../../assets/images/magnifier.svg'
               className='landing-mag-icon'
@@ -43,7 +50,9 @@ class LandingSearch extends React.Component {
               placeholder='search'
               value={this.state.text}
               onChange={this.update('text')}
+              onBlur={this.clearResults}
             />
+            <LandingAutocompleteIndexContainer />
         </div>
           <div className='landing-search-input-wrapper'>
             <ReactSVG
@@ -64,6 +73,7 @@ class LandingSearch extends React.Component {
             value='search'
           />
         </div>
+
       </div>
     );
   }
