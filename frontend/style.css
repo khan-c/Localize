@@ -237,7 +237,20 @@ input[type="submit"] {
 .results-index-thumbnail {
   width: 240px;
   height: 202px;
-  display: auto; }
+  display: auto;
+  object-fit: cover; }
+
+.category-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+.category-contact div {
+  position: relative;
+  left: 30px; }
+.category-contact .contact-button {
+  background: #7A769B;
+  position: relative;
+  right: 30px;}
 
 .homepage {
   height: 3000px; }
