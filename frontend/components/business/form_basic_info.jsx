@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import FormServices from './form_services';
 
 class BusinessFormBasic extends React.Component {
   constructor(props) {
@@ -138,10 +139,7 @@ class BusinessFormBasic extends React.Component {
             />
         </form>
         <h3 className="business-form-title">Add Services</h3>
-        <Select
-          name="select-service"
-          noResultsText="service type not found"
-          placeholder="service type" />
+        <FormServices />
       </div>
     );
   }
