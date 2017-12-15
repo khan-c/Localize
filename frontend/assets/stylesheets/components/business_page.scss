@@ -1,0 +1,116 @@
+.business-show {
+  width: 90%;
+  height: 1000px;
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.business-about-section {
+  height: 400px;
+  width: 65%;
+}
+
+.contact-section {
+  width: 30%;
+  height: 400px;
+  background-color: blue;
+}
+
+.business-section-wrapper {
+  width: 100%;
+}
+
+.business-name {
+  margin-bottom: 4%;
+  padding-bottom: 4%;
+  border-bottom: 10px solid;
+}
+
+@media only screen and (max-width:925px)  {
+  .business-show {
+    width: 800px;
+  }
+}
+
+@media only screen and (min-width:1400px)  {
+  .business-show {
+    width: 70%;
+  }
+}
+
+.business-photos-slider-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.business-photos-arrow {
+  position: absolute;
+  top: 50%;
+  fill: $green;
+  z-index: 100;
+  width: 25px;
+  height: 25px;
+  transition: transform .2s ease;
+}
+
+.business-photos-arrow:hover {
+  fill: $red;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.business-photos-arrow:active {
+  fill: $light-red;
+  transform: scale(1);
+}
+
+.previous:hover {
+  transform: scaleX(-1) scale(1.2);
+}
+
+.business-photos-slider {
+  display: flex;
+  height: fit-content;
+}
+
+.business-photos-wrapper {
+  margin-right: 10px;
+  height: fit-content;
+}
+
+.business-categories {
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+}
+
+.business-category {
+  padding: 15px;
+  background-color: white;
+  width: fit-content;
+  margin: 0 5px;
+  border: 2px solid $light-blue;
+  transition: transform .2s ease;
+}
+
+.business-category:hover {
+  border: 2px solid transparent;
+  color: white;
+  background-color: $blue;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.business-category:active {
+  border: 2px solid transparent;
+  color: white;
+  background-color: $green;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.business-category:first-child {
+  margin-left: 0;
+}
