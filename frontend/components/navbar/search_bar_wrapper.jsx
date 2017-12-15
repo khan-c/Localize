@@ -11,7 +11,6 @@ class SearchBarWrapper extends React.Component {
         searchWrapper.classList.add('sticky');
       } else {
         searchWrapper.classList.remove('sticky');
-        console.log(this.props.location.pathname);
         if (this.props.location.pathname === '/') {
           searchWrapper.setAttribute('style', 'backgroundColor: #E9FBFC');
         }
