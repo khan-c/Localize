@@ -6,14 +6,15 @@ require('./assets/stylesheets/application.scss');
 
 import { fetchCurrentUser } from './actions/session_actions';        
 import { getBusiness, search, fetchAutoComplete } from './util/yelp_api'; 
-import { getSearch, getAutoComplete } from './actions/search_actions'; 
+import { getSearch, getAutoComplete, clearAutocomplete } from './actions/search_actions'; 
 import { showBusiness } from './actions/business_actions'; 
 import { geoLocate } from './util/geolocation_util'; 
 
 const defaultQuery = {
-  text: "laundry", 
-  latitude: "37.786882",  
-  longitude: "-122.399972", 
+  term: "ffffff", 
+  // latitude: "37.786882",  
+  // longitude: "-122.399972", 
+  location: "San Francisco",
   category: "" 
 };
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.geoLocate = geoLocate; 
   window.getBusiness = getBusiness;
   window.search = search;
-  window.getSearch = getSearch;
+  window.getSearch = getSearch(defaultQuery);
   window.clearAutocomplete = clearAutocomplete;
   window.getAutoComplete = getAutoComplete;
   window.showBusiness = showBusiness("blackline-construction-san-francisco");

@@ -6,6 +6,7 @@ export const AUTOCOMPLETE = 'AUTOCOMPLETE';
 export const RECEIVE_NO_AUTOCOMPLETE = 'RECEIVE_NO_AUTOCOMPLETE';
 
 export const searchAll = results => {
+  console.log("search", results); 
   return(
     {
       type: SEARCH_ALL,
@@ -33,10 +34,11 @@ export const autoComplete = results => {
 //   category: ""
 // };
 export const getSearch = query => dispatch => {
+  debugger
   return (
-    search(query).then( results => {
-      dispatch(searchAll(results));
-    })
+    search(query).then( results => (
+      dispatch(searchAll(results))
+    ))
   );
 };
 

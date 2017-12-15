@@ -2,6 +2,8 @@ import React from 'react';
 import ReactSVG from 'react-svg';
 import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
 import { stateToUrl } from '../../util/parsing_functions';
+import { withRouter } from 'react-router-dom';
+import merge from 'lodash/merge'; 
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -45,10 +47,17 @@ class LandingSearch extends React.Component {
     });
   }
 
+  
   handleSubmit(event) {
     const url = `/search?${stateToUrl(this.state)}`;
     event.preventDefault();
-    this.props.history.push(url);
+    console.log("state",this.state); 
+    debugger
+    this.props.history.push({
+      pathname: `/search`,
+      search: `${stateToUrl(this.state)}`, 
+      state: {detail: this.state}
+    });
   }
 
   makeInactive(field) {
@@ -126,4 +135,4 @@ class LandingSearch extends React.Component {
   }
 }
 
-export default LandingSearch;
+export default withRouter(LandingSearch);

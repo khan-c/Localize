@@ -1,6 +1,8 @@
 import React from 'react'; 
 import ResultsWrapper from './results_wrapper'; 
 import MapContainer from './map_container'; 
+import merge from 'lodash/merge'; 
+// import ResultsWrapperContainer from './results_wrapper_container'; 
 
 const defaultQuery = {
   term: "Chinese", 
@@ -10,16 +12,23 @@ const defaultQuery = {
 }; 
 
 class SearchPage extends React.Component {
+  componentDidMount(){
+    const { detail } = this.props.location.state; 
+    let query = merge({}, detail, {term: detail.text} ); 
+    this.props.getSearch(query); 
+  }
   
-
   render() {
-    let rrr = this.props.getSearch(defaultQuery); //test query 
-    
+    debugger 
+    // let rrr = this.props.getSearch(defaultQuery); //test query 
+    const { detail } = this.props.location.state; 
+    let query = merge({}, detail, {term: detail.text} ); 
     return(
       <div className="search-page-wrapper">
-        <ResultsWrapper />
+        <ResultsWrapper query={query}/>
         <div className="map-wrapper">
-          <MapContainer />
+          {/* <MapContainer /> */}
+          <p>HELLO Search Page </p>
         </div>
       </div>
     ); 

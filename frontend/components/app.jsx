@@ -3,12 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
-import ResultsIndexContainer from '../components/search/results_index_container';
 import HomePage from './homepage/homepage';
 //testing 
 import ResultsIndexContainer from '../components/search/results_index_container'; 
 import Map from '../components/search/map'; 
 import SearchPage from './search/search_page'; 
+import SearchPageContainer from './search/search_page_container'; 
 
 class App extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          {/* <Route path="/search" component={ResultsIndexContainer}/> */}
+          <Route path="/search" component={SearchPageContainer}/>
         </Switch>
       </div>
     );
