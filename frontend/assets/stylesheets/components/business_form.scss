@@ -4,7 +4,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  // background: rgba(70, 177, 171, 0.52);
+  background: rgba(#211B59, 0.35);
   z-index: 3000;
   display: flex;
   justify-content: center;
@@ -13,29 +13,62 @@
 
 .business-page {
   height: 80%;
-  width: 80%;
+  width: 50%;
   background: white;
   border-radius: 4px;
   box-shadow: 0 0 11px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
-  padding-left: 50px;
+  padding: 20px 70px;
+  box-sizing: border-box;
+}
+
+.business-form-links {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 6px solid $gray;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.business-form-links a {
+  position: relative;
+  bottom: -6px;
+  padding: 10px;
+}
+
+.selected {
+  border-bottom: 6px solid $red;
+}
+
+.business-form-body {
+  display: flex;
+}
+
+.business-form-forms {
+  flex: 3;
+}
+
+.business-form-faq {
+  flex: 1;
+}
+
+.business-form-title {
+  margin: 20px 0px;
 }
 
 .business-form, {
-  background: white;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
 }
 
 .business-form input {
-  padding: 5px;
-  padding-bottom: 8px;
-  margin: 5px;
+  padding: 5px 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   margin-left: 0;
   border-bottom: 1px solid;
 }
@@ -45,13 +78,19 @@
   font-size: 12px;
 }
 
-// .Select {
-//   display: flex;
-//   align-items: center;
-//   margin-right: 5px;
-//   font-family: $text;
-//   font-size: 12px;
-// }
+.Select {
+  align-items: center;
+  font-family: $text;
+  font-size: 12px;
+  width: 80%;
+  margin-right: 10px;
+}
+
+.Select-input input {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
 
 .form-address {
   display: flex;

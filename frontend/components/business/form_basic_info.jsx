@@ -84,57 +84,65 @@ class BusinessFormBasic extends React.Component {
         <option key={ state } value={ state }>{ state }</option>
       ));
     return (
-      <form className="business-form">
-        <input
-          onChange={ this.handleChange('name') }
-          type="text"
-          placeholder="Company Name"
-          value={ this.state.name }
-        />
-        <input
-          onChange={ this.handleChange('address1') }
-          type="text"
-          placeholder="Street Address 1"
-          value={ this.state.address1 }
-        />
-        <input
-          onChange={ this.handleChange('address2') }
-          type="text"
-          placeholder="Street Address 2 (optional)"
-          value={ this.state.address2 }
-        />
-        <div className="form-address">
+      <div>
+        <h3 className="business-form-title">Your Business</h3>
+        <form className="business-form">
           <input
-            onChange={ this.handleChange('city') }
+            onChange={ this.handleChange('name') }
             type="text"
-            placeholder="City"
-            value={ this.state.city }
+            placeholder="Company Name"
+            value={ this.state.name }
             />
-          <Select
-            name="select-state"
-            noResultsText="no state found"
-            placeholder="STATE"
-            value={ this.state.state }
-            autosize={ false }
-            clearable={ false }
-            onChange={ this.handleChange("state") }
-            searchable
-            options={ states }
-          />
           <input
-            onChange={ this.handleChange('zip') }
+            onChange={ this.handleChange('address1') }
             type="text"
-            placeholder="Zip"
-            value={ this.state.zip }
+            placeholder="Street Address 1"
+            value={ this.state.address1 }
             />
-        </div>
-        <input
-          onChange={ this.handleChange('phone') }
-          type="text"
-          placeholder="Phone"
-          value={ this.state.phone }
-        />
-      </form>
+          <input
+            onChange={ this.handleChange('address2') }
+            type="text"
+            placeholder="Street Address 2 (optional)"
+            value={ this.state.address2 }
+            />
+          <div className="form-address">
+            <input
+              onChange={ this.handleChange('city') }
+              type="text"
+              placeholder="City"
+              value={ this.state.city }
+              />
+            <Select
+              name="select-state"
+              noResultsText="no state found"
+              placeholder="STATE"
+              value={ this.state.state }
+              autosize={ false }
+              clearable={ false }
+              onChange={ this.handleChange("state") }
+              searchable
+              options={ states }
+              />
+            <input
+              onChange={ this.handleChange('zip') }
+              type="text"
+              placeholder="Zip"
+              value={ this.state.zip }
+              />
+          </div>
+          <input
+            onChange={ this.handleChange('phone') }
+            type="text"
+            placeholder="Phone"
+            value={ this.state.phone }
+            />
+        </form>
+        <h3 className="business-form-title">Add Services</h3>
+        <Select
+          name="select-service"
+          noResultsText="service type not found"
+          placeholder="service type" />
+      </div>
     );
   }
 }
