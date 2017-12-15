@@ -108,6 +108,7 @@ class BusinessFormBasic extends React.Component {
             />
           <div className="form-address">
             <input
+              className="city"
               onChange={ this.handleChange('city') }
               type="text"
               placeholder="City"
@@ -125,6 +126,7 @@ class BusinessFormBasic extends React.Component {
               options={ states }
               />
             <input
+              className="zip"
               onChange={ this.handleChange('zip') }
               type="text"
               placeholder="Zip"
@@ -138,7 +140,7 @@ class BusinessFormBasic extends React.Component {
             value={ this.state.phone }
             />
         </form>
-        <h3 className="business-form-title">Add Services</h3>
+        <h3 className="business-form-title">Services / Products</h3>
         <FormServices />
       </div>
     );

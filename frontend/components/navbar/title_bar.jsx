@@ -16,7 +16,7 @@ class TitleBar extends React.Component {
 
     return (
       <div className="titlebar">
-        <h2>Localize</h2>
+        <h3>Localize</h3>
         {/* <Switch> */}
         <Component />
         {/* <ProtectedRoute path="/" component={UserLinks} /> */}

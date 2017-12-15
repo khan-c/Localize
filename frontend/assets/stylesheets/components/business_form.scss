@@ -44,14 +44,33 @@
 
 .business-form-body {
   display: flex;
+  height: 100%;
 }
 
 .business-form-forms {
-  flex: 3;
+  flex: 2;
+  padding-right: 20px;
 }
 
 .business-form-faq {
   flex: 1;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq span {
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .business-form-title {
@@ -67,7 +86,7 @@
 
 .business-form input {
   padding: 5px 3px;
-  margin-right: 10px;
+  margin-right: 15px;
   margin-bottom: 10px;
   margin-left: 0;
   border-bottom: 1px solid;
@@ -97,6 +116,37 @@
   width: 100%;
 }
 
-.form-address input {
+.city {
+  width: 150%;
+}
+
+.zip {
+  width: 90%;
+}
+
+.services-selector {
+  margin-right: 15px;
+}
+
+.services-selector .Select {
   width: 100%;
+}
+
+.biz-form-button {
+  background: $light-blue;
+  border-radius: 1px;
+  padding: 13px 30px;
+  // color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: transform .2s ease;
+}
+
+.biz-form-button:hover {
+  background: $blue;
+  transform: scale(1.05);
+}
+
+.biz-form-button:active {
+  transform: scale(1);
 }

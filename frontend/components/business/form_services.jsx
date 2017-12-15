@@ -39,16 +39,17 @@ class FormServices extends React.Component {
   }
 
   render() {
-    console.log(this.state.value);
     const Services = Select.Async;
     return(
-      <div>
+      <div className="services-selector">
         <Services
           multi
           value={ this.state.value }
           onChange={ this.onChange }
           loadOptions={ this.getServices }
           backspaceRemoves
+          noResultsText="Service not found"
+          placeholder="Select services..."
         />
       </div>
     );

@@ -1,34 +1,18 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Link } from 'react-router-dom';
 import Select from 'react-select';
 import BusinessFormBasic from './form_basic_info';
 
 class BusinessForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      phone: '',
-      address1: '',
-      address2: '',
-      city: '',
-      state: '',
-      zip: ''
-    };
-  }
-
-  handleChange(type) {
-    if (type === 'state') {
-      return (input) => {
-        this.setState({ [type]: input });
-      };
-    }
-    return (e) => {
-      this.setState({ [type]: e.target.value });
-    };
   }
 
   render() {
+    let bizLink = '/';
+    if (this.props.location.pathname === '/associatebusiness/basic_info') {
+      bizLink='/associatebusiness/add_details';
+    }
     return (
       <div className="business-modal">
         <div className="business-page">
@@ -55,8 +39,17 @@ class BusinessForm extends React.Component {
                 component={BusinessFormBasic} />
             </div>
             <div className="business-form-faq">
-              CONTINUE BUTTON
-              FAQ DROPDOWN?
+              <div className="faq">
+                <h4>FAQ</h4>
+                <span>Please provide contact information so big companies can find you!</span>
+              </div>
+              <div className="faq">
+                <h4>FAQ</h4>
+                <span>Type your provided services or products to let users know what you can do!</span>
+              </div>
+              <Link className="biz-form-button" to={ bizLink }>
+                Continue
+              </Link>
             </div>
           </div>
         </div>
