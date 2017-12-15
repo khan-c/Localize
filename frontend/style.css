@@ -496,6 +496,10 @@ input[type="submit"] {
   fill: #FF4958;
   transform: scale(1.3); }
 
+.icon-links-wrapper:active .category-icon {
+  fill: #FF4958;
+  transform: scale(0.95); }
+
 .icon-links-wrapper:hover .icon-link {
   color: #FF4958;
   border-bottom: 3px solid black; }
