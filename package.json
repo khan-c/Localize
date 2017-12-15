@@ -61,7 +61,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "dev": "NODE_ENV=development nodemon ./backend/index.js"
+    "dev": "NODE_ENV=development nodemon ./backend/index.js",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
