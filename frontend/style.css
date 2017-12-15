@@ -508,9 +508,9 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1000px;
   margin: auto;
-  margin: 100px auto; }
+  margin: 100px auto;
+  padding: 0 40px; }
 
 .category-icon-text {
   text-align: center;
@@ -518,10 +518,10 @@ input[type="submit"] {
 
 .icons {
   display: flex;
-  width: 1000px;
   justify-content: space-between;
   margin-top: 20px;
-  align-items: baseline; }
+  align-items: baseline;
+  width: 80%; }
 
 .category-icon {
   margin-bottom: 15px;
@@ -635,6 +635,18 @@ input[type="submit"] {
 
 .statement-right {
   margin: 200px 0; }
+
+@media only screen and (min-width: 1080px) {
+  .icons {
+    width: 80%; }
+  .category-icon-index {
+    width: 1000px; } }
+
+@media only screen and (max-width: 845px) {
+  .category-icon-index {
+    width: 645px; }
+  .icons {
+    width: 100%; } }
 
 .testimonial-slider {
   margin: 50px auto; }
