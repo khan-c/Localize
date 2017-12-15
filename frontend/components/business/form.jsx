@@ -1,7 +1,8 @@
 import React from 'react';
-import { NavLink, Route, Link } from 'react-router-dom';
+import { NavLink, Route, Link, Switch, Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import BusinessFormBasic from './form_basic_info';
+import BusinessDetails from './form_details';
 import MdClose from 'react-icons/lib/md/close';
 
 class BusinessForm extends React.Component {
@@ -10,6 +11,11 @@ class BusinessForm extends React.Component {
 
     this.bizModalClose = this.bizModalClose.bind(this);
   }
+
+  // componentDidMount() {
+  //   const app = document.querySelector('.homepage');
+  //   app.className += ' scroll-lock';
+  // }
 
   bizModalClose(e) {
     if (e.target.className === 'business-modal') {
@@ -20,14 +26,22 @@ class BusinessForm extends React.Component {
   render() {
     let bizLink = '/';
     let header = 'Your Business';
+    let faq1 = '';
+    let faq2 = '';
     const path = this.props.location.pathname;
     if (path === '/associatebusiness/basic_info') {
       bizLink = '/associatebusiness/add_details';
+      faq1 = 'Please provide contact information so big companies can find you!';
+      faq2 = 'Type your provided services or products to let users know what you can do!';
     } else if (path === '/associatebusiness/add_details') {
       header = 'Details';
       bizLink = '/associatebusiness/photos';
+      faq1 = 'Tell us more about your business!';
+      faq2 = 'Let users know your hours of operation or whether you deliver.';
     } else if (path === '/associatebusiness/photos') {
       header = 'Add Photos';
+      faq1 = 'Upload photos of your business!';
+      faq2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
     }
     return (
       <div onClick={ this.bizModalClose } className="business-modal">
@@ -55,17 +69,21 @@ class BusinessForm extends React.Component {
           </div>
           <div className="business-form-body">
             <div className="business-form-forms">
-              <Route path="/associatebusiness/basic_info"
-                component={BusinessFormBasic} />
+              <Switch>
+                <Route path="/associatebusiness/basic_info"
+                  component={BusinessFormBasic} />
+                <Route path="/associatebusiness/add_details"
+                  component={BusinessDetails} />
+              </Switch>
             </div>
             <div className="business-form-faq">
               <div className="faq">
                 <h4>FAQ</h4>
-                <span>Please provide contact information so big companies can find you!</span>
+                <span>{ faq1 }</span>
               </div>
               <div className="faq">
                 <h4>FAQ</h4>
-                <span>Type your provided services or products to let users know what you can do!</span>
+                <span>{ faq2 }</span>
               </div>
             </div>
           </div>

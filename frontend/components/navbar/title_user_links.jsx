@@ -21,7 +21,7 @@ class UserLinks extends React.Component {
 
     return (
       <div className='session-links'>
-        <a href="#">
+        <a href="/#/associatebusiness/basic_info">
           associate with business?
         </a>
         <a href="/logout">log out</a>

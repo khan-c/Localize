@@ -53,6 +53,9 @@ const BusinessesSchema = new Schema({
   is_claimed: {
     type: Boolean,
   },
+  about: {
+    type: String
+  },
   photos: [String],
   categories: [String],
   services: [String],

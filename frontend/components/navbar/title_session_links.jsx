@@ -24,7 +24,7 @@ class SessionLinks extends React.Component {
     return (
       <div className='session-links'>
         <a href="#" onClick={ this.toggleDropdown }>
-          sign in
+          get started
         </a>
         <AuthDropdown
           toggleDropdown={ this.toggleDropdown }
