@@ -86,7 +86,6 @@ class BusinessFormBasic extends React.Component {
       ));
     return (
       <div>
-        <h3 className="business-form-title">Your Business</h3>
         <form className="business-form">
           <input
             onChange={ this.handleChange('name') }
