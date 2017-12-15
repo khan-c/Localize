@@ -271,17 +271,14 @@ input[type="submit"] {
 
 .landing-page {
   background-color: #E9FBFC;
-  padding: 100px;
+  padding: 160px 100px;
   box-sizing: border-box;
-  height: 770px;
-  position: relative;
   z-index: 400;
   width: 100%; }
 
 .landing-page-content {
   background-color: white;
   border: 20px solid;
-  width: 1000px;
   margin: auto;
   padding: 60px;
   box-sizing: border-box;
@@ -326,6 +323,9 @@ input[type="submit"] {
   background-color: #FF4958;
   color: white;
   transform: scale(1); }
+
+.landing-inputs-wrapper {
+  display: flex; }
 
 .landing-search-input-wrapper {
   display: flex;
@@ -413,10 +413,40 @@ input[type="submit"] {
   fill: #96FE91;
   transform: rotate(0.04turn); }
 
+@media only screen and (max-width: 845px) {
+  .landing-b2B {
+    transform: scale(0.4) rotate(0.03turn);
+    right: -180px; }
+  .landing-page-content {
+    width: 645px; } }
+
+@media only screen and (max-width: 1000px) {
+  .landing-search-wrapper-div {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end; }
+  .landing-inputs-wrapper {
+    width: 100%;
+    margin-bottom: 20px; }
+  .landing-input {
+    width: auto; }
+  #search-input {
+    flex: 1; }
+  #search-button {
+    width: fit-content; }
+  #search-term {
+    width: 260px; }
+  #search-location {
+    width: 100; } }
+
 @media only screen and (max-width: 1500px) {
   .landing-b2B {
     transform: scale(0.4) rotate(0.03turn);
     right: -180px; } }
+
+@media only screen and (min-width: 1200px) {
+  .landing-page-content {
+    width: 1000px; } }
 
 .landing-open-line-2 {
   position: absolute;
