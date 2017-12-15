@@ -7,7 +7,7 @@ import {
 } from '../actions/search_actions'; 
 
 const searchReducer = (state = {}, action ) => {
-  console.log("action", action); 
+  // console.log('action.results',action.results); 
   Object.freeze(state);
   switch (action.type) {
     case SEARCH_ALL:

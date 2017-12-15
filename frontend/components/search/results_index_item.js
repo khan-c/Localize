@@ -18,9 +18,10 @@ class ResultsIndexItem extends React.Component {
             {business.location.display_address[0] + business.location.display_address[1]}
           </h4>
           <h4>{business.display_phone}</h4>
-          <div>
+          <div className="category-contact">
             <div>{business.categories[0]["title"]}</div>
-            <button className="contact-button"></button>
+            <div> </div>
+            <input type="submit" className="contact-button" value="Contact"/>
           </div>
         </div>
       </li>

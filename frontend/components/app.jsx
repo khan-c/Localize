@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="app">
         <Navbar />
         <ResultsIndexContainer />
-        <HomePage />
+        {/* <HomePage /> */}
       </div>
     );
   }

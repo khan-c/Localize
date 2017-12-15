@@ -17,7 +17,7 @@ export const searchAll = results => {
 }; 
 
 export const autoComplete = results => {
-  // console.log("auto RESUTL", results.data.data); 
+  console.log("from dispatch autocomplete", results.data.data); 
   return(
     {
       type: AUTOCOMPLETE, 
@@ -50,7 +50,7 @@ export const getSearch = query => dispatch => {
 // }; 
 
 export const getAutoComplete = query => dispatch => {
-  console.log("autocomplet eaction", query); 
+  console.log("autocomplete action", query); 
   return (
     fetchAutoComplete(query).then( results => {
       console.log("auto result", results); 
