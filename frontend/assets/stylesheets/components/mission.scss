@@ -1,0 +1,148 @@
+
+.category-icon-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  margin: auto;
+  margin: 100px auto;
+}
+
+.category-icon-text {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.icons {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: baseline;
+}
+
+.category-icon {
+  margin-bottom: 15px;
+  width: 40px;
+  height: 40px;
+  transition: transform .3s ease;
+}
+
+.icon-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 7px;
+  border-bottom: 3px solid transparent;
+}
+
+.icon-links-wrapper:hover .category-icon {
+  fill: $red;
+  transform: scale(1.3);
+}
+
+.icon-links-wrapper:active .category-icon {
+  fill: $red;
+  transform: scale(.95);
+}
+
+.icon-links-wrapper:hover .icon-link {
+  color: $red;
+  border-bottom: 3px solid black;
+}
+
+.icon-links-wrapper:hover {
+  cursor: pointer;
+}
+
+.icon-links-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.mission-statement {
+  width: 100%;
+  height: 75vh;
+  position: relative;
+}
+
+.mission-left-img {
+  background: url("https://i.pinimg.com/564x/6e/6d/93/6e6d93836a0fe3c306197b82a6cb5294.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  height: 100%;
+  position: relative;
+}
+
+.mission-right-img {
+  background: url("https://i.pinimg.com/564x/36/2f/2a/362f2adcbe33a96f18a64130feae481b.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 40vw;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+
+.mission-left-text-wrapper {
+  width: 30%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  background-color: white;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.mission-right-text-wrapper {
+  width: 30%;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background-color: white;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.mission-left-title {
+  z-index: 200;
+  top: 140px;
+  width: 800px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 10px solid;
+}
+
+.mission-right-title {
+  z-index: 200;
+  top: 140px;
+  width: 800px;
+  margin-left: -640px;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 10px solid;
+}
+
+.mission-left-text {
+  position: absolute;
+  z-index: 200;
+  width: 750px;
+  margin-left: 40px;
+}
+
+.mission-right-text {
+  position: absolute;
+  z-index: 200;
+  width: 640px;
+  margin-left: -580px;
+}
+
+.statement-right {
+  margin: 200px 0;
+}

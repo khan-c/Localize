@@ -1,0 +1,46 @@
+.results-index {
+  display: flex; 
+  flex-direction: column;
+  width: 60%;
+  max-width: 1000px; 
+  min-width: 500px; 
+  align-items: center; 
+}
+
+.results-index-item { 
+  display: flex; 
+  width: 90%; 
+  margin: 20px 20px 0 20px; 
+  border: 1px solid $gray; 
+  box-sizing: border-box; 
+  // box-shadow: 0 2px 1px rgba(25,25,25,0.2);   
+}
+
+.results-index-item-text {
+  width: 100%; 
+}
+
+.results-index-thumbnail {
+  width: 240px; 
+  height: 202px; 
+  // height: 121.469px; 
+  // width: 215.969px; 
+  display: auto; 
+  object-fit: cover; 
+}
+
+.category-contact {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  div{
+    position: relative; 
+    left: 30px; 
+  }
+  .contact-button {
+    background: $light-purple; 
+    position: relative; 
+    right: 30px; 
+  }
+}
+

@@ -52,7 +52,6 @@ app.get('/business', (req, res) => {
       Authorization: "Bearer " + token.access_token
     }
   }).then( data =>{
-    // console.log(data);
     // need to flatten ciruclarJSON file
     let normalJson = CircularJSON.stringify(data);
     res.status(200).send(normalJson);
@@ -74,7 +73,7 @@ app.get('/search', (req, res) => {
       url = url + "&";
     }
   });
-  // console.log("url", url);
+  
   axios.get(`${url}`, {
     headers: {
       Authorization: "Bearer " + token.access_token

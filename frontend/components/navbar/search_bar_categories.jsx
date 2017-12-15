@@ -9,9 +9,11 @@ class Categories extends React.Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
   }
+
   next() {
     this.slider.slickNext();
   }
+  
   previous() {
     this.slider.slickPrev();
   }

@@ -6,7 +6,7 @@ h1 {
 
 h2 {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 30px;
+  font-size: 56px;
   text-transform: uppercase;
 }
 
@@ -14,18 +14,25 @@ h2 {
 h3 {
   font-family: 'Fjalla One', sans-serif;
   text-align: left;
-  font-size: 24px;
+  font-size: 32px;
   text-transform: uppercase;
 }
 
 h4 {
-  font-family: 'Barlow', sans-serif;
-  font-size: 10px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 16px;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 span {
   font-family: 'Barlow', sans-serif;
+}
+
+.display-text {
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
 a {

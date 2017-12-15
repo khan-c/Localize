@@ -1,0 +1,248 @@
+.homepage {
+  height: 3000px;
+  // width: 100%;
+}
+
+.landing-page {
+  background-color: $lightest-blue;
+  padding: 100px;
+  box-sizing: border-box;
+  height: 770px;
+  position: relative;
+  z-index: 400;
+  width: 100%;
+}
+
+.landing-page-content {
+  background-color: white;
+  border: 12px solid;
+  width: 1000px;
+  margin: auto;
+  padding: 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.landing-page-content h1 {
+  margin-bottom: 20px;
+}
+
+.landing-search-wrapper {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.landing-search-wrapper-div {
+  display: flex;
+}
+
+.landing-input::placeholder {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+#search-term {
+  width: 300px;
+}
+
+.landing-search-button {
+  background-color: $purple;
+  color: white;
+  z-index: 2000;
+  transition: transform .2s ease;
+}
+
+.landing-search-button:hover {
+  background-color: $red;
+  color: white;
+  transform: scale(1.05);
+}
+
+.landing-search-button:focus {
+  background-color: $red;
+  color: white;
+  transform: scale(1.05);
+}
+
+.landing-search-button:active {
+  background-color: $red;
+  color: white;
+  transform: scale(1);
+}
+
+.landing-search-input-wrapper {
+  display: flex;
+  border-bottom: 1px solid;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.landing-mag-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+}
+
+.landing-pin-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+}
+
+.landing-icons {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+}
+
+.landing-shake-fill-1 {
+  position: absolute;
+  top: -50px;
+  right: 40px;
+  height: 100px;
+  width: 100px;
+  fill: $blue;
+  transform: rotate(.05turn)
+}
+
+.landing-shake-line-1 {
+  position: absolute;
+  top: -60px;
+  right: 34px;
+  height: 100px;
+  width: 100px;
+  fill: white;
+  transform: rotate(.05turn)
+}
+
+.landing-shake-fill-2 {
+  position: absolute;
+  bottom: -80px;
+  left: -100px;
+  height: 100px;
+  width: 100px;
+  fill: $purple;
+  transform: rotate(.03turn);
+}
+
+.landing-shake-line-2 {
+  position: absolute;
+  bottom: -73px;
+  left: -94px;
+  height: 100px;
+  width: 100px;
+  fill: white;
+  transform: rotate(.03turn);
+}
+
+.landing-open-fill-1 {
+  position: absolute;
+  right: -180px;
+  top: 100px;
+  height: 100px;
+  width: 100px;
+  fill: $light-red;
+  transform: rotate(.94turn);
+}
+
+.landing-open-line-1 {
+  position: absolute;
+  right: -185px;
+  top: 90px;
+  height: 100px;
+  width: 100px;
+  fill: white;
+  transform: rotate(.94turn);
+}
+
+.landing-open-fill-2 {
+  position: absolute;
+  top: -20px;
+  left: -140px;
+  height: 100px;
+  width: 100px;
+  fill: $green;
+  transform: rotate(.04turn);
+}
+
+@media only screen and (max-width: 1500px)  {
+  .landing-b2B {
+    transform: scale(.4) rotate(.03turn);
+    right: -180px;
+  }
+}
+
+.landing-open-line-2 {
+  position: absolute;
+  top: -24px;
+  left: -130px;
+  height: 100px;
+  width: 100px;
+  fill: white;
+  transform: rotate(.04turn);
+}
+
+.landing-b2B {
+  position: absolute;
+  transform: rotate(.03turn);
+  height: auto;
+  width: auto;
+  right: -250px;
+  bottom: -120px;
+}
+
+@media only screen and (max-width: 1500px)  {
+  .landing-b2B {
+    transform: scale(.4) rotate(.03turn);
+    right: -180px;
+  }
+  .landing-open-line-1 {
+    transform: rotate(.94turn) scale(.8);
+    right: -140px;
+  }
+  .landing-open-fill-1 {
+    transform: rotate(.94turn) scale(.8);
+    right: -140px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.landing-autocomplete-index {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.landing-autocomplete-index-item {
+  background-color: white;
+  padding: 12px 20px;
+  // transition: transform .2s ease;
+}
+
+.landing-autocomplete-index-item:hover {
+  background-color: $red;
+  color: white;
+}
+
+.landing-autocomplete-index-item:active {
+  background-color: $red;
+  color: white;
+  // transform: scale(.98);
+}
+
+.landing-autocomplete-index-item h4 {
+  transition: transform .2s ease;
+}
+
+.landing-autocomplete-index-item:active h4 {
+  transform: scale(.98);
+}

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
+import ResultsIndexContainer from '../components/search/results_index_container';
 import HomePage from './homepage/homepage';
 
 class App extends React.Component {
@@ -10,7 +11,10 @@ class App extends React.Component {
     return (
       <div className="app">
         <Navbar />
-        <HomePage />
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/search" component={ResultsIndexContainer}/>
+        </Switch>
       </div>
     );
   }
