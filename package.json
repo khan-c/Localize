@@ -60,6 +60,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./backend/index.js",
     "webpack": "webpack --watch",
     "dev": "NODE_ENV=development nodemon ./backend/index.js",
     "postinstall": "webpack"
