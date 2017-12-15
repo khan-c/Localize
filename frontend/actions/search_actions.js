@@ -1,4 +1,5 @@
 import { search, fetchAutoComplete } from '../util/yelp_api';
+import { fetchLatLng } from '../util/location_util'; 
 
 export const SEARCH_ALL = 'SEARCH_ALL';
 export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
@@ -36,11 +37,25 @@ export const autoComplete = results => {
 export const getSearch = query => dispatch => {
   debugger
   return (
-    search(query).then( results => (
-      dispatch(searchAll(results))
-    ))
+    search(query).then( results => {
+      dispatch(searchAll(results)); 
+    })
   );
 };
+
+// export const superSearch = query => query => {
+//   debugger
+//   console.log("supersearch", query); 
+//   return(
+//     fetchLatLng(query.location).then( latresults => {
+//       console.log("latresults", latresults); 
+//       query["latitude"] = latresults.results.geometry.location.lat; 
+//       query["longitude"] = latresults.results.geometry.location.lat; 
+//       delete query["location"]; 
+//       getSearch(query); 
+//     })
+//   ); 
+// };
 
 // format of query for autocomplete (notice text and not term)
 // const defaultQuery = {

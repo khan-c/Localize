@@ -6,7 +6,8 @@ import Searchpage from './search_page';
 import { 
   getSearch, 
   getAutoComplete, 
-  clearSearchResults 
+  clearSearchResults,
+  superSearch
 } from '../../actions/search_actions'; 
 //testing
 import SearchPage from './search_page'; 
@@ -23,6 +24,7 @@ const mapStateToProps = ( {entities} ) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  superSearch: query => superSearch(query),
   getSearch: query => dispatch(getSearch(query)), 
   getAutoComplete: query => dispatch(getAutoComplete(query)), 
   clearSearchResults: () => dispatch(clearSearchResults())

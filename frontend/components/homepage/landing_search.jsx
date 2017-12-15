@@ -52,13 +52,16 @@ class LandingSearch extends React.Component {
     const url = `/search?${stateToUrl(this.state)}`;
     event.preventDefault();
     console.log("state",this.state); 
+    console.log("url", url); 
     debugger
-    this.props.history.push({
-      pathname: `/search`,
-      search: `${stateToUrl(this.state)}`, 
-      state: {detail: this.state}
-    });
+    this.props.history.push(url); 
   }
+
+  // this.props.history.push({
+  //   pathname: `/search`,
+  //   search: `${stateToUrl(this.state)}`, 
+  //   state: {detail: this.state}
+  // });
 
   makeInactive(field) {
     this.setState({

@@ -9,12 +9,13 @@ import { getBusiness, search, fetchAutoComplete } from './util/yelp_api';
 import { getSearch, getAutoComplete, clearAutocomplete } from './actions/search_actions'; 
 import { showBusiness } from './actions/business_actions'; 
 import { geoLocate } from './util/geolocation_util'; 
+import { fetchLatLng } from './util/location_util'; 
 
 const defaultQuery = {
-  term: "ffffff", 
-  // latitude: "37.786882",  
-  // longitude: "-122.399972", 
-  location: "San Francisco",
+  term: "Indian", 
+  latitude: "37.786882",  
+  longitude: "-122.399972", 
+  // location: "San Francisco",
   category: "" 
 };
 
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.showBusiness = showBusiness("blackline-construction-san-francisco");
   window.dispatch = store.dispatch;
   window.fetchAutoComplete = fetchAutoComplete;
+  window.fetchLatLng = fetchLatLng; 
 
   ReactDOM.render(<Root store={store}/>, root);
 });
