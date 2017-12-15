@@ -20,7 +20,7 @@ class Categories extends React.Component {
       location: 'San Francisco'
     };
     const url = `/search?${stateToUrl(query)}`;
-    () => this.props.history.push(url);
+    this.props.history.push(url);
   }
 
   next() {
