@@ -131,3 +131,21 @@
 .session-links a:hover {
   border-bottom: 2px solid black;
 }
+
+#page-title {
+  transition: all .1s ease;
+}
+
+#page-title:hover {
+  color: $red;
+  transform: scale(1.05);
+}
+
+#page-title:active {
+  color: white;
+  transform: scale(1);
+}
+
+.category-carousel {
+  margin-right: 20px;
+}

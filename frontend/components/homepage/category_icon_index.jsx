@@ -6,17 +6,17 @@ import { withRouter } from 'react-router-dom';
 class CategoryIconIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleSubmit(event, term) {
+  handleClick(event, term) {
     event.preventDefault();
     const query = {
       text: term,
       location: 'San Francisco'
     };
     const url = `/search?${stateToUrl(query)}`;
-    this.props.history.push(url);
+    setTimeout(() => this.props.history.push(url), 800);
   }
 
   render() {
@@ -40,7 +40,7 @@ class CategoryIconIndex extends React.Component {
         <div className='icons'>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Art')}>
+            onClick={(e) => this.handleClick(e, 'Art')}>
             <ReactSVG
               path='../../assets/images/art.svg'
               className='category-icon art-icon'
@@ -49,7 +49,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Fitness')}>
+            onClick={(e) => this.handleClick(e, 'Fitness')}>
             <ReactSVG
               path='../../assets/images/fitness.svg'
               className='category-icon fitness-icon'
@@ -58,7 +58,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Catering')}>
+            onClick={(e) => this.handleClick(e, 'Catering')}>
             <ReactSVG
               path='../../assets/images/catering.svg'
               className='category-icon catering-icon'
@@ -67,7 +67,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Furniture')}>
+            onClick={(e) => this.handleClick(e, 'Furniture')}>
             <ReactSVG
               path='../../assets/images/furniture.svg'
               className='category-icon furniture-icon'
@@ -76,7 +76,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Florist')}>
+            onClick={(e) => this.handleClick(e, 'Florist')}>
             <ReactSVG
               path='../../assets/images/flower.svg'
               className='category-icon flower-icon'
@@ -85,7 +85,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Landscaping')}>
+            onClick={(e) => this.handleClick(e, 'Landscaping')}>
             <ReactSVG
               path='../../assets/images/landscape.svg'
               className='category-icon landscape-icon'
@@ -94,7 +94,7 @@ class CategoryIconIndex extends React.Component {
           </div>
           <div
             className='icon-links-wrapper'
-            onClick={(e) => this.handleSubmit(e, 'Repair')}>
+            onClick={(e) => this.handleClick(e, 'Repair')}>
             <ReactSVG
               path='../../assets/images/repair.svg'
               className='category-icon repair-icon'
