@@ -26,27 +26,26 @@ export const search = query => {
         longitude: query.longitude,
         category: query.category
       }
-    })  
-  ); 
+    })
+  );
 };
 
 export const fetchAutoComplete = query => {
-  console.log("fetching autocomplete"); 
   return (
     axios.get('http://localhost:8000/autocomplete', {
       params: {
-        text: query.text, 
-        latitude: query.latitude, 
-        longitude: query.longitude, 
+        text: query.text,
+        latitude: query.latitude,
+        longitude: query.longitude,
         category: query.category
       }
-    })  
-  ); 
+    })
+  );
 };
 
 // const defaultQuery = {
-//   text: "plumbing", 
-//   latitude: "37.786882",  
-//   longitude: "-122.399972", 
-//   category: "" 
-// }; 
+//   text: "plumbing",
+//   latitude: "37.786882",
+//   longitude: "-122.399972",
+//   category: ""
+// };
