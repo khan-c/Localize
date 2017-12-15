@@ -39,7 +39,7 @@ export default (app, passport) => {
     '/auth/google/callback',
     passport.authenticate(
       'google', {
-        successRedirect: '/',
+        successRedirect: '/#/associatebusiness',
         failureRedirect: '/'
       }
     )

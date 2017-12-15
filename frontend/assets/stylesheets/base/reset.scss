@@ -4,7 +4,7 @@ html, body, header, nav, h1, a,
 ul, li, strong, main, button, i, em,
 section, img, div, h2, p, form, h3, h4,
 fieldset, label, input, textarea,
-span, article, footer, time, small {
+span, article, footer, time, small, select {
   margin: 0;
   padding: 0;
   border: 0;
@@ -33,7 +33,8 @@ input[type="email"],
 input[type="text"],
 input[type="submit"],
 textarea,
-button {
+button,
+select {
   /*
   Get rid of native styling. Read more here:
   http://css-tricks.com/almanac/properties/a/appearance/

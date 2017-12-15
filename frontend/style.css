@@ -17,7 +17,7 @@ html, body, header, nav, h1, a,
 ul, li, strong, main, button, i, em,
 section, img, div, h2, p, form, h3, h4,
 fieldset, label, input, textarea,
-span, article, footer, time, small {
+span, article, footer, time, small, select {
   margin: 0;
   padding: 0;
   border: 0;
@@ -43,7 +43,8 @@ input[type="email"],
 input[type="text"],
 input[type="submit"],
 textarea,
-button {
+button,
+select {
   /*
   Get rid of native styling. Read more here:
   http://css-tricks.com/almanac/properties/a/appearance/
@@ -396,12 +397,18 @@ input[type="submit"] {
   justify-content: space-around;
   align-items: center;
   padding: 5px 10px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  transition: transform .2s ease; }
 
 #google-auth p {
   margin-left: 5px; }
 
 #google-auth:hover {
+  background: #FF4958;
+  border-bottom: 3px solid transparent;
+  transform: scale(1.05); }
+
+#google-auth:focus {
   background: #FF4958;
   border-bottom: 3px solid transparent;
   transform: scale(1.05); }
@@ -470,5 +477,53 @@ input[type="submit"] {
 
 .hidden {
   display: none; }
+
+.business-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.business-page {
+  height: 80%;
+  width: 80%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  padding-left: 50px; }
+
+.business-form {
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+
+.business-form input {
+  padding: 5px;
+  padding-bottom: 8px;
+  margin: 5px;
+  margin-left: 0;
+  border-bottom: 1px solid; }
+
+.business-form input::placeholder {
+  text-transform: uppercase;
+  font-size: 12px; }
+
+.form-address {
+  display: flex;
+  width: 100%; }
+
+.form-address input {
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map*/

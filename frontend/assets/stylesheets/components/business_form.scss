@@ -1,0 +1,63 @@
+.business-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  // background: rgba(70, 177, 171, 0.52);
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-page {
+  height: 80%;
+  width: 80%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 11px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  padding-left: 50px;
+}
+
+.business-form, {
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.business-form input {
+  padding: 5px;
+  padding-bottom: 8px;
+  margin: 5px;
+  margin-left: 0;
+  border-bottom: 1px solid;
+}
+
+.business-form input::placeholder {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+// .Select {
+//   display: flex;
+//   align-items: center;
+//   margin-right: 5px;
+//   font-family: $text;
+//   font-size: 12px;
+// }
+
+.form-address {
+  display: flex;
+  width: 100%;
+}
+
+.form-address input {
+  width: 100%;
+}

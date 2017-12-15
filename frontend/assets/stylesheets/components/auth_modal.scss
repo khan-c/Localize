@@ -39,6 +39,7 @@
   align-items: center;
   padding: 5px 10px;
   border-radius: 4px;
+  transition: transform .2s ease;
 }
 
 #google-auth p {
@@ -46,6 +47,12 @@
 }
 
 #google-auth:hover {
+  background: $red;
+  border-bottom: 3px solid transparent;
+  transform: scale(1.05);
+}
+
+#google-auth:focus {
   background: $red;
   border-bottom: 3px solid transparent;
   transform: scale(1.05);
