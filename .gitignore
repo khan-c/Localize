@@ -2,3 +2,5 @@ node_modules/
 bundle.js
 bundle.js.map
 api/
+frontend/style.css 
+
