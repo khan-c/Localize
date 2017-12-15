@@ -83,6 +83,7 @@ class BusinessDetails extends React.Component {
     return (
       <div className="business-form-details">
         <textarea
+          autoFocus
           className="details-textarea"
           placeholder="Tell us more about your business!"></textarea>
         <h3 className="business-form-title">Business Hours</h3>

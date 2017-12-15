@@ -11,10 +11,6 @@
   align-items: center;
 }
 
-.scroll-lock {
-  overflow: hidden;
-}
-
 .business-page {
   position: relative;
   height: 80%;
@@ -73,7 +69,6 @@
 .business-form-forms {
   flex: 2;
   padding-right: 20px;
-  overflow: scroll;
 }
 
 .business-form-faq {
@@ -161,11 +156,16 @@
 
 .biz-form-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
-  padding-right: 0;
+  padding: 10px 0px;
+}
+
+.right-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .biz-form-cancel {
@@ -183,22 +183,36 @@
 .biz-form-button {
   background: $light-blue;
   border-radius: 1px;
-  padding: 13px 30px;
-  // color: white;
+  padding: 10px 25px;
   text-transform: uppercase;
   font-size: 12px;
   transition: transform .2s ease;
   margin-left: 15px;
 }
 
+.submit {
+  background: $purple;
+  color: white;
+}
+
 .biz-form-button:focus,
 .biz-form-button:hover {
+  cursor: pointer;
   background: $blue;
   transform: scale(1.05);
 }
 
+.submit:hover,
+.submit:focus {
+  background: $red;
+}
+
 .biz-form-button:active {
   transform: scale(1);
+}
+
+.back {
+  margin: 0;
 }
 
 .business-form-details {
@@ -232,10 +246,11 @@
 
 .avail-range {
   display: flex;
+  // padding-left: 8px;
 }
 
 .closed {
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .closed:hover {

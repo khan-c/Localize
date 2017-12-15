@@ -92,6 +92,7 @@ class BusinessFormBasic extends React.Component {
             type="text"
             placeholder="Company Name"
             value={ this.state.name }
+            autoFocus
             />
           <input
             onChange={ this.handleChange('address1') }

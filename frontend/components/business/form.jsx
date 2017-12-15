@@ -3,6 +3,7 @@ import { NavLink, Route, Link, Switch, Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import BusinessFormBasic from './form_basic_info';
 import BusinessDetails from './form_details';
+import BusinessFormButtons from './form_buttons';
 import MdClose from 'react-icons/lib/md/close';
 
 class BusinessForm extends React.Component {
@@ -24,18 +25,15 @@ class BusinessForm extends React.Component {
   }
 
   render() {
-    let bizLink = '/';
     let header = 'Your Business';
     let faq1 = '';
     let faq2 = '';
     const path = this.props.location.pathname;
     if (path === '/associatebusiness/basic_info') {
-      bizLink = '/associatebusiness/add_details';
       faq1 = 'Please provide contact information so big companies can find you!';
       faq2 = 'Type your provided services or products to let users know what you can do!';
     } else if (path === '/associatebusiness/add_details') {
       header = 'Details';
-      bizLink = '/associatebusiness/photos';
       faq1 = 'Tell us more about your business!';
       faq2 = 'Let users know your hours of operation or whether you deliver.';
     } else if (path === '/associatebusiness/photos') {
@@ -87,17 +85,7 @@ class BusinessForm extends React.Component {
               </div>
             </div>
           </div>
-          <div className="biz-form-buttons">
-            <Link className="biz-form-cancel" to="/">
-              cancel
-            </Link>
-            <Link className="biz-form-button" to="/test">
-              Save and exit
-            </Link>
-            <Link className="biz-form-button" to={ bizLink }>
-              Continue
-            </Link>
-          </div>
+          <BusinessFormButtons />
         </div>
       </div>
     );
