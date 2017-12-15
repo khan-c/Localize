@@ -3,9 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
-import ResultsIndexContainer from '../components/search/results_index_container'; 
 import HomePage from './homepage/homepage';
+//testing 
+import ResultsIndexContainer from '../components/search/results_index_container'; 
 import Map from '../components/search/map'; 
+import SearchPage from './search/search_page'; 
 
 class App extends React.Component {
   render() {
@@ -14,7 +16,6 @@ class App extends React.Component {
         <Navbar />
         <ResultsIndexContainer />
         {/* <HomePage /> */}
-        <Map google={window.google}/>
       </div>
     );
   }

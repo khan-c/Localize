@@ -3,16 +3,16 @@ import Modal from 'react-modal';
 import ResultsIndexItem from './results_index_item'; 
 
 const defaultQuery = {
-  term: "indian", 
+  term: "Chinese", 
   latitude: "37.786882",  
   longitude: "-122.399972", 
   category: "" 
 }; 
 
 class ResultsIndex extends React.Component {
+  // let rrr = this.props.getSearch(defaultQuery); //test query 
   
   render() {
-    // let rrr = this.props.getSearch(defaultQuery); //test query 
     let results = this.props.businesses; 
 
     if (!results) {

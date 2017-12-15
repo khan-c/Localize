@@ -7,6 +7,9 @@ import {
   getAutoComplete, 
   clearSearchResults 
 } from '../../actions/search_actions'; 
+//testing
+import SearchPage from './search_page'; 
+
 
 const mapStateToProps = ( {entities} ) => { 
   return (
@@ -27,5 +30,8 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ResultsIndex)); 
+)(SearchPage)); 
+
+// forwarding this to SearchPage to test passing down props 
+// should be turned back to ResultsIndex when done 
 
