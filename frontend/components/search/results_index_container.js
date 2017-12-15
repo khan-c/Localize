@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'; 
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import ResultsIndex from './results_index'; 
 import { 

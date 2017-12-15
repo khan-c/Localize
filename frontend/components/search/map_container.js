@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'; 
 import Map from './map'; 
+import {withRouter } from 'react-router'; 
 
 const mapStateToProps = ( {entities} ) => { 
   return (

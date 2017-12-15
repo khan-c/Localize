@@ -1,6 +1,6 @@
 import React from 'react'; 
 import ResultsWrapper from './results_wrapper'; 
-import Map from './map_container'; 
+import MapContainer from './map_container'; 
 
 const defaultQuery = {
   term: "Chinese", 
@@ -11,7 +11,6 @@ const defaultQuery = {
 
 class SearchPage extends React.Component {
   
-
 
   render() {
     let rrr = this.props.getSearch(defaultQuery); //test query 
