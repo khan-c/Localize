@@ -26,5 +26,21 @@
   // height: 121.469px; 
   // width: 215.969px; 
   display: auto; 
+  object-fit: cover; 
+}
+
+.category-contact {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  div{
+    position: relative; 
+    left: 30px; 
+  }
+  .contact-button {
+    background: $light-purple; 
+    position: relative; 
+    right: 30px; 
+  }
 }
 
