@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
 import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
-import { stringifyToUrl } from '../../util/parsing_functions';
+import { stateToUrl } from '../../util/parsing_functions';
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -46,8 +46,7 @@ class LandingSearch extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('handling submit!');
-    const url = `/search?${stringifyToUrl(this.state)}`;
+    const url = `/search?${stateToUrl(this.state)}`;
     event.preventDefault();
     this.props.history.push(url);
   }
@@ -97,7 +96,7 @@ class LandingSearch extends React.Component {
               onBlur={this.clearResults}
             />
             <LandingAutocompleteIndexContainer />
-        </div>
+          </div>
           <div className='landing-search-input-wrapper'>
             <ReactSVG
               path='../../assets/images/pin.svg'

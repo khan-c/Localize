@@ -39,7 +39,11 @@
 .icon-links-wrapper:hover .category-icon {
   fill: $red;
   transform: scale(1.3);
+}
 
+.icon-links-wrapper:active .category-icon {
+  fill: $red;
+  transform: scale(.95);
 }
 
 .icon-links-wrapper:hover .icon-link {

@@ -244,13 +244,13 @@ input[type="submit"] {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-.category-contact div {
-  position: relative;
-  left: 30px; }
-.category-contact .contact-button {
-  background: #7A769B;
-  position: relative;
-  right: 30px;}
+  .category-contact div {
+    position: relative;
+    left: 30px; }
+  .category-contact .contact-button {
+    background: #7A769B;
+    position: relative;
+    right: 30px; }
 
 .homepage {
   height: 3000px; }
@@ -495,6 +495,10 @@ input[type="submit"] {
 .icon-links-wrapper:hover .category-icon {
   fill: #FF4958;
   transform: scale(1.3); }
+
+.icon-links-wrapper:active .category-icon {
+  fill: #FF4958;
+  transform: scale(0.95); }
 
 .icon-links-wrapper:hover .icon-link {
   color: #FF4958;
