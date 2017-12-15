@@ -16,7 +16,7 @@ class CategoryIconIndex extends React.Component {
       location: 'San Francisco'
     };
     const url = `/search?${stateToUrl(query)}`;
-    setTimeout(() => this.props.history.push(url), 800);
+    setTimeout(() => this.props.history.push(url), 600);
   }
 
   render() {

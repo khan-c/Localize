@@ -137,7 +137,7 @@ input[type="submit"] {
 #search-bar-wrapper {
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease-in;
+  transition: box-shadow 0.3s ease-in;
   overflow: visible; }
 
 .search-input-wrapper {
@@ -224,7 +224,7 @@ input[type="submit"] {
   transform: scale(1.05); }
 
 #page-title:active {
-  color: white;
+  color: #BEF2F7;
   transform: scale(1); }
 
 .category-carousel {
@@ -538,7 +538,7 @@ input[type="submit"] {
 
 .icon-links-wrapper:hover .category-icon {
   fill: #FF4958;
-  transform: scale(1.3); }
+  transform: scale(1.2); }
 
 .icon-links-wrapper:active .category-icon {
   fill: #F0EFEF;
