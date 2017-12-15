@@ -1,13 +1,14 @@
 import React from 'react';
 import SessionLinksContainer from './title_session_links_container';
+import { withRouter, Link } from 'react-router-dom';
 
 
 const TitleBar = () => (
   <div className="titlebar">
-    <h3>Localize</h3>
+    <Link to='/'><h3 id='page-title'>Localize</h3></Link>
     {/* <Switch> */}
-      <SessionLinksContainer />
-      {/* <ProtectedRoute path="/" component={UserLinks} /> */}
+    <SessionLinksContainer />
+    {/* <ProtectedRoute path="/" component={UserLinks} /> */}
     {/* </Switch> */}
   </div>
 );
