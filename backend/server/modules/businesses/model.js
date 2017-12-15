@@ -33,11 +33,11 @@ const BusinessesSchema = new Schema({
       type: String,
       required: true
     },
-    zip: {
+    state: {
       type: String,
       required: true
     },
-    state: {
+    zip: {
       type: String,
       required: true
     }
