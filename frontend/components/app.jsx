@@ -12,8 +12,8 @@ class App extends React.Component {
       <div className="app">
         <Navbar />
         <Switch>
-          <Route exact path="/" component={HomePage}/>
           <Route path="/search" component={ResultsIndexContainer}/>
+          <Route path="/" component={HomePage}/>
         </Switch>
       </div>
     );

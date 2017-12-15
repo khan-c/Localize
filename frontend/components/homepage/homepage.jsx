@@ -10,10 +10,10 @@ class HomePage extends React.Component {
   render () {
     return (
       <div className='homepage'>
-        <Route path="/associatebusiness" component={BusinessFormContainer} />
         <LandingSection />
         <MissionSection />
         <TestimonialSection />
+        <Route path="/associatebusiness" component={BusinessFormContainer} />
       </div>
     );
   }
