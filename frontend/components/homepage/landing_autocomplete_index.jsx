@@ -4,6 +4,14 @@ import LandingAutocompleteIndexItem from './landing_autocomplete_index_item';
 class LandingAutocompleteIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(term) {
+    const query = {
+      text: term,
+    };
+    this.props.autocompleteFields(query);
   }
 
   render() {
@@ -15,7 +23,11 @@ class LandingAutocompleteIndex extends React.Component {
         <div className='landing-autocomplete-index'>
           {
             results.terms.map(term => (
-              <LandingAutocompleteIndexItem key={term} term={term}/>
+              <LandingAutocompleteIndexItem
+                key={term}
+                term={term}
+                handleClick={this.handleClick}
+              />
             ))
           }
         </div>

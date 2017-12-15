@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
 import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
+import { stringifyToUrl } from '../../util/parsing_functions';
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -13,6 +14,18 @@ class LandingSearch extends React.Component {
     };
     this.clearResults = this.clearResults.bind(this);
     this.changeFocusFrom = this.changeFocusFrom.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.autocompleteValues.term &&
+      this.props.autocompleteValues.term !== nextProps.autocompleteValues.term
+    ) {
+      this.setState({
+        text: nextProps.autocompleteValues.term,
+      });
+    }
   }
 
   update(field) {
@@ -22,16 +35,21 @@ class LandingSearch extends React.Component {
     }, () => {
       if ( !this.state.text) {
         this.props.clearAutocomplete();
-        this.props.clearAutocompleteFields();
-      } else if (this.state.text.length >= 3) {
+      } else if (this.state.text.length >= 3 && field === 'text') {
         const query = {
           text: this.state.text,
-          location: this.state.location
+          location: this.state.location,
         };
         this.props.getAutoComplete(query);
-        this.props.autocompleteFields(query);
       }
     });
+  }
+
+  handleSubmit(event) {
+    console.log('handling submit!');
+    const url = `/search?${stringifyToUrl(this.state)}`;
+    event.preventDefault();
+    this.props.history.push(url);
   }
 
   makeInactive(field) {
@@ -76,7 +94,7 @@ class LandingSearch extends React.Component {
               value={this.state.text}
               onChange={this.update('text')}
               onKeyDown={e => this.changeFocusFrom(e, 'text')}
-              onBlur={() => this.makeInactive('text')}
+              onBlur={this.clearResults}
             />
             <LandingAutocompleteIndexContainer />
         </div>
@@ -101,9 +119,9 @@ class LandingSearch extends React.Component {
             className='landing-search-button'
             value='search'
             id='search-button'
+            onClick={this.handleSubmit}
           />
         </div>
-
       </div>
     );
   }
