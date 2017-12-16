@@ -19,3 +19,7 @@ export const showBusiness = query => dispatch => {
     })
   );
 };
+
+export const createBusiness = business => dispatch => {
+
+};

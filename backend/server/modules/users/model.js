@@ -23,7 +23,15 @@ const UsersSchema = new Schema({
     email: {
       type: String
     }
-  }
+  },
+  associated_business: [
+    {
+      business_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Business'
+      }
+    }
+  ]
 });
 
 UsersSchema.methods.generateHash = (password) => {

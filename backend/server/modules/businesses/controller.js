@@ -40,7 +40,7 @@ export const createBusiness = async (req, res) => {
   });
 
   try {
-    return res.status(201).json({ busines: await newBusiness.save() });
+    return res.status(201).json({ business: await newBusiness.save() });
   } catch(e) {
     return res.status(e.status)
       .json({ error: true, message: 'Error with Business' });
