@@ -9,3 +9,11 @@ export const receiveBusinessDetails = details => ({
 export const clearBusinessDetails = () => ({
   type: CLEAR_BUSINESS_DETAILS
 });
+
+export const saveBusinessDetails = details => dispatch => (
+  dispatch(receiveBusinessDetails(details))
+);
+
+export const clearBusinessForm = () => dispatch => (
+  dispatch(clearBusinessDetails())
+);

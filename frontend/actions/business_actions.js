@@ -1,6 +1,14 @@
 import { getBusiness } from '../util/yelp_api';
+import * as BusinessAPIUtil from '../util/business_api';
 
 export const GET_BUSINESS = 'GET_BUSINESS';
+export const RECEIVE_BUSINESS = 'RECEIVE_BUSINESS';
+
+// Is this redundant...??? LOL
+export const receiveBusiness = business => ({
+  type: RECEIVE_BUSINESS,
+  business
+});
 
 export const fetchBusiness = results => {
   return(
@@ -20,6 +28,8 @@ export const showBusiness = query => dispatch => {
   );
 };
 
-export const createBusiness = business => dispatch => {
-
-};
+export const createBusiness = formBusiness => dispatch => (
+  BusinessAPIUtil.createBusiness(formBusiness).then(
+    business => dispatch(receiveBusiness(business))
+  )
+);
