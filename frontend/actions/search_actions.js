@@ -26,7 +26,7 @@ export const autoComplete = results => {
   );
 };
 
-//sample query format for searwch
+//sample query format for search
 // const defaultQuery = {
 //   term: "plumbing",
 //   latitude: "37.786882",
