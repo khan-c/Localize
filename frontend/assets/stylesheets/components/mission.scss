@@ -25,7 +25,7 @@
   margin-bottom: 15px;
   width: 40px;
   height: 40px;
-  transition: transform .3s ease;
+  transition: all .3s ease;
 }
 
 .icon-link {
@@ -42,13 +42,18 @@
 }
 
 .icon-links-wrapper:active .category-icon {
-  fill: $red;
+  fill: $gray;
   transform: scale(.95);
 }
 
 .icon-links-wrapper:hover .icon-link {
   color: $red;
   border-bottom: 3px solid black;
+}
+
+.icon-links-wrapper:active .icon-link {
+  color: $red;
+  border-bottom: 3px solid transparent;
 }
 
 .icon-links-wrapper:hover {
