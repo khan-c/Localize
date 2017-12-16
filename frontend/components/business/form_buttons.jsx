@@ -16,7 +16,6 @@ class BusinessFormButtons extends React.Component {
       </p>;
     let next =
       <span
-        type="submit"
         className="biz-form-button submit"
         onClick={ this.handleSubmit }>
         submit
@@ -26,13 +25,13 @@ class BusinessFormButtons extends React.Component {
       bizLink = '/associatebusiness/add_details';
       backButton = '';
       next =
-        <Link className="biz-form-button" to={ bizLink }>
+        <Link className="biz-form-button continue" to={ bizLink }>
           Continue
         </Link>;
     } else if (path === '/associatebusiness/add_details') {
       bizLink = '/associatebusiness/photos';
       next =
-        <Link className="biz-form-button" to={ bizLink }>
+        <Link className="biz-form-button continue" to={ bizLink }>
           Continue
         </Link>;
     }
@@ -45,9 +44,6 @@ class BusinessFormButtons extends React.Component {
           { backButton }
         </div>
         <div className="right-buttons">
-          <Link className="biz-form-cancel" to="/">
-            cancel
-          </Link>
           <Link className="biz-form-button" to="/test">
             Save and exit
           </Link>

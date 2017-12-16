@@ -4,6 +4,7 @@ import Select from 'react-select';
 import BusinessFormBasic from './form_basic_info';
 import BusinessDetails from './form_details';
 import BusinessFormButtons from './form_buttons';
+import BusinessFormPhotos from './form_photos';
 import MdClose from 'react-icons/lib/md/close';
 
 class BusinessForm extends React.Component {
@@ -38,8 +39,8 @@ class BusinessForm extends React.Component {
       faq2 = 'Let users know your hours of operation or whether you deliver.';
     } else if (path === '/associatebusiness/photos') {
       header = 'Add Photos';
-      faq1 = 'Upload photos of your business!';
-      faq2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+      faq1 = 'You can click to upload photos or drag and drop directly.';
+      faq2 = 'You can remove photos before submitting your business.';
     }
     return (
       <div onClick={ this.bizModalClose } className="business-modal">
@@ -72,6 +73,8 @@ class BusinessForm extends React.Component {
                   component={BusinessFormBasic} />
                 <Route path="/associatebusiness/add_details"
                   component={BusinessDetails} />
+                <Route path="/associatebusiness/photos"
+                  component={BusinessFormPhotos} />
               </Switch>
             </div>
             <div className="business-form-faq">

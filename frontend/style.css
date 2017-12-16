@@ -561,12 +561,17 @@ input[type="submit"] {
   box-sizing: border-box; }
 
 .faq {
-  margin-bottom: 20px;
+  padding: 10px 0px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #7a7a7a;
-  text-align: center; }
+  text-align: center;
+  border-top: 1px solid #7a7a7a; }
+
+.faq:last-of-type {
+  border-bottom: 1px solid #7a7a7a; }
 
 .faq span {
   margin-top: 5px;
@@ -644,16 +649,24 @@ input[type="submit"] {
 
 .biz-form-button {
   background: #BEF2F7;
+  color: #7a7a7a;
   border-radius: 1px;
-  padding: 10px 25px;
+  padding: 13px 40px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10px;
   transition: transform .2s ease;
   margin-left: 15px; }
 
-.submit {
+.submit,
+.upload {
   background: #211B59;
   color: white; }
+
+.continue,
+.submit {
+  width: 120px;
+  text-align: center;
+  padding: 13px 0px; }
 
 .biz-form-button:focus,
 .biz-form-button:hover {
@@ -662,11 +675,19 @@ input[type="submit"] {
   transform: scale(1.05); }
 
 .submit:hover,
-.submit:focus {
+.submit:focus,
+.upload:hover,
+.upload:focus {
   background: #FF4958; }
 
 .biz-form-button:active {
-  transform: scale(1); }
+  transform: scale(1);
+  background: #E9FBFC; }
+
+.submit:active,
+.upload:active {
+  transform: scale(1);
+  background: #FF929B; }
 
 .back {
   margin: 0; }
@@ -704,6 +725,49 @@ input[type="submit"] {
 
 .closed:hover {
   cursor: pointer; }
+
+.business-form-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; }
+
+.business-form-photos-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+
+.photo-uploader {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.photo-uploader + label {
+  font-size: 12px;
+  font-family: "Barlow", sans-serif;
+  color: #7A769B;
+  background: #EAFFE9;
+  display: inline-block;
+  border: 1px solid #F0EFEF;
+  border-radius: 2px;
+  padding: 50px 0px;
+  width: 100%;
+  text-align: center; }
+
+.photo-uploader:focus + label,
+.photo-uploader + label:hover {
+  background: #C0FEBD;
+  cursor: pointer; }
+
+.photo-uploader:active + label {
+  background: #EAFFE9; }
+
+.upload {
+  margin: 10px 0px; }
 
 .results-index {
   display: flex;

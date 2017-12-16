@@ -82,12 +82,18 @@
 }
 
 .faq {
-  margin-bottom: 20px;
+  padding: 10px 0px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: $dark-gray;
   text-align: center;
+  border-top: 1px solid $dark-gray;
+}
+
+.faq:last-of-type {
+  border-bottom: 1px solid $dark-gray;
 }
 
 .faq span {
@@ -182,17 +188,26 @@
 
 .biz-form-button {
   background: $light-blue;
+  color: $dark-gray;
   border-radius: 1px;
-  padding: 10px 25px;
+  padding: 13px 40px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10px;
   transition: transform .2s ease;
   margin-left: 15px;
 }
 
-.submit {
+.submit,
+.upload {
   background: $purple;
   color: white;
+}
+
+.continue,
+.submit {
+  width: 120px;
+  text-align: center;
+  padding: 13px 0px;
 }
 
 .biz-form-button:focus,
@@ -203,12 +218,21 @@
 }
 
 .submit:hover,
-.submit:focus {
+.submit:focus,
+.upload:hover,
+.upload:focus {
   background: $red;
 }
 
 .biz-form-button:active {
   transform: scale(1);
+  background: $lightest-blue;
+}
+
+.submit:active,
+.upload:active {
+  transform: scale(1);
+  background: $light-red;
 }
 
 .back {
@@ -255,4 +279,54 @@
 
 .closed:hover {
   cursor: pointer;
+}
+
+.business-form-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.business-form-photos-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.photo-uploader {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.photo-uploader + label {
+  font-size: 12px;
+  font-family: $text;
+  color: $light-purple;
+  background: $lightest-green;
+  display: inline-block;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  padding: 50px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.photo-uploader:focus + label,
+.photo-uploader + label:hover {
+  background: $light-green;
+  cursor: pointer;
+}
+
+.photo-uploader:active + label {
+  background: $lightest-green;
+}
+
+.upload {
+  margin: 10px 0px;
 }
