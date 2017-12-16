@@ -57,12 +57,6 @@ class LandingSearch extends React.Component {
     this.props.history.push(url); 
   }
 
-  // this.props.history.push({
-  //   pathname: `/search`,
-  //   search: `${stateToUrl(this.state)}`, 
-  //   state: {detail: this.state}
-  // });
-
   makeInactive(field) {
     this.setState({
       [`${field}QueryIsActive`]: false,

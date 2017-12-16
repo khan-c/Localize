@@ -7,7 +7,6 @@ export const AUTOCOMPLETE = 'AUTOCOMPLETE';
 export const RECEIVE_NO_AUTOCOMPLETE = 'RECEIVE_NO_AUTOCOMPLETE';
 
 export const searchAll = results => {
-  console.log("search", results); 
   return(
     {
       type: SEARCH_ALL,
@@ -27,7 +26,7 @@ export const autoComplete = results => {
   );
 };
 
-//sample query format for search
+//sample query format for searwch
 // const defaultQuery = {
 //   term: "plumbing",
 //   latitude: "37.786882",
@@ -35,27 +34,12 @@ export const autoComplete = results => {
 //   category: ""
 // };
 export const getSearch = query => dispatch => {
-  debugger
   return (
     search(query).then( results => {
       dispatch(searchAll(results)); 
     })
   );
 };
-
-// export const superSearch = query => query => {
-//   debugger
-//   console.log("supersearch", query); 
-//   return(
-//     fetchLatLng(query.location).then( latresults => {
-//       console.log("latresults", latresults); 
-//       query["latitude"] = latresults.results.geometry.location.lat; 
-//       query["longitude"] = latresults.results.geometry.location.lat; 
-//       delete query["location"]; 
-//       getSearch(query); 
-//     })
-//   ); 
-// };
 
 // format of query for autocomplete (notice text and not term)
 // const defaultQuery = {

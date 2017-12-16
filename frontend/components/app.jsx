@@ -15,7 +15,6 @@ class App extends React.Component {
     return (
       <div className="app">
         <Navbar />
-        {/* <ResultsIndexContainer /> */}
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route path="/search" component={SearchPageContainer}/>

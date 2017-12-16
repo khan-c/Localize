@@ -13,9 +13,7 @@ const defaultQuery = {
 class ResultsIndex extends React.Component {
   
   render() {
-    // let results = this.props.getSearch(defaultQuery); //test query 
     let results = this.props.businesses; 
-    debugger 
 
     if (!results) {
       return null; 

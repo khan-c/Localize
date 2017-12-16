@@ -6,13 +6,10 @@ import Map from './map';
 
 class ResultsWrapper extends React.Component {
 
-
   render(){
-    debugger 
     return(
       <div className="results-wrapper">
         <ResultsIndexContainer /> 
-        <p>Results wrapper baby</p>
       </div>
     ); 
   }
