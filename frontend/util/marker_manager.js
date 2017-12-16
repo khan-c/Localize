@@ -1,4 +1,4 @@
-// From BenchBnb class exercise 
+// From BenchBnB class exercise 
 class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
@@ -6,34 +6,34 @@ class MarkerManager {
     this.markers = {};
   }
 
-  updateMarkers(benches){
-    const benchesObj = {};
-    benches.forEach(bench => benchesObj[bench.id] = bench);
+  updateMarkers(businesses){
+    const businessObj = {};
+    businesses.forEach(business => businessesObj[business.id] = business);
 
-    benches
-      .filter(bench => !this.markers[bench.id])
-      .forEach(newBench => this.createMarkerFromBench(newBench, this.handleClick))
+    businesses
+      .filter(business => !this.markers[business.id])
+      .forEach(newbusiness => this.createMarkerFrombusiness(newbusiness, this.handleClick))
 
     Object.keys(this.markers)
-      .filter(benchId => !benchesObj[benchId])
-      .forEach((benchId) => this.removeMarker(this.markers[benchId]))
+      .filter(businessId => !businessesObj[businessId])
+      .forEach((businessId) => this.removeMarker(this.markers[businessId]))
   }
 
-  createMarkerFromBench(bench) {
-    const position = new google.maps.LatLng(bench.lat, bench.lng);
+  createMarkerFrombusiness(business) {
+    const position = new google.maps.LatLng(business.lat, business.lng);
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      benchId: bench.id
+      businessId: business.id
     });
 
-    marker.addListener('click', () => this.handleClick(bench));
-    this.markers[marker.benchId] = marker;
+    marker.addListener('click', () => this.handleClick(business));
+    this.markers[marker.businessId] = marker;
   }
 
   removeMarker(marker) {
-    this.markers[marker.benchId].setMap(null);
-    delete this.markers[marker.benchId];
+    this.markers[marker.businessId].setMap(null);
+    delete this.markers[marker.businessId];
   }
 }
 
