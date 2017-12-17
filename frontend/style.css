@@ -216,6 +216,12 @@ input[type="submit"] {
 .session-links a:hover {
   border-bottom: 2px solid black; }
 
+.search-page-wrapper {
+  display: flex; }
+
+.results-wrapper {
+  width: 60%; }
+
 #page-title {
   transition: all .1s ease; }
 
@@ -233,7 +239,6 @@ input[type="submit"] {
 .results-index {
   display: flex;
   flex-direction: column;
-  width: 60%;
   max-width: 1000px;
   min-width: 500px;
   align-items: center; }
@@ -265,6 +270,15 @@ input[type="submit"] {
     background: #7A769B;
     position: relative;
     right: 30px; }
+
+.map {
+  height: 100%;
+  width: 40%;
+  position: absolute; }
+
+.map-wrapper {
+  height: 500px;
+  width: 400px; }
 
 .homepage {
   height: 3000px; }

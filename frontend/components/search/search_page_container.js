@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'; 
 import { withRouter } from 'react-router';
+// import ResultsWrapper from './results_wrapper'; 
+import Searchpage from './search_page'; 
 
-
-import ResultsIndex from './results_index'; 
 import { 
   getSearch, 
   getAutoComplete, 
-  clearSearchResults 
+  clearSearchResults,
+  superSearch
 } from '../../actions/search_actions'; 
 //testing
 import SearchPage from './search_page'; 
@@ -23,6 +24,7 @@ const mapStateToProps = ( {entities} ) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  superSearch: query => superSearch(query),
   getSearch: query => dispatch(getSearch(query)), 
   getAutoComplete: query => dispatch(getAutoComplete(query)), 
   clearSearchResults: () => dispatch(clearSearchResults())
@@ -31,7 +33,7 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ResultsIndex)); 
+)(SearchPage)); 
 
 // forwarding this to SearchPage to test passing down props 
 // should be turned back to ResultsIndex when done 
