@@ -5,7 +5,7 @@ const ContactInfoSection = props => {
   const { business } = props;
   return (
     <div className='contact-info-section business-section'>
-      <h3 className='contact-header'>Contact</h3>
+      <h3 className='business-section-header'>Contact</h3>
       <div className='contact-info-wrapper'>
         <ReactSVG
           path='../../assets/images/telephone.svg'

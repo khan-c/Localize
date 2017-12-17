@@ -1,6 +1,7 @@
 import React from 'react';
 import GeneralInfo from './general_info';
 import ContactInfoSection from './contact_info_section';
+import ReviewsSection from './reviews_section';
 
 const BusinessAboutSection = props => {
   if (props.singleBusinessLoading) {
@@ -11,6 +12,7 @@ const BusinessAboutSection = props => {
       <div className='business-about-section'>
         <GeneralInfo business={props.business}/>
         <ContactInfoSection business={props.business}/>
+        <ReviewsSection business={props.business} />
       </div>
     );
   }

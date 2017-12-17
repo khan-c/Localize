@@ -816,17 +816,17 @@ input[type="submit"] {
   object-fit: contain; }
 
 .business-section {
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid;
+  padding: 40px 0; }
 
 .contact-info-section {
-  width: 100%;
-  padding: 40px 0; }
+  width: 100%; }
 
 .contact-info-wrapper {
   display: flex;
   position: relative; }
 
-.contact-header {
+.business-section-header {
   margin-bottom: 15px; }
 
 .contact-section-icon {
