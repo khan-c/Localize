@@ -8,7 +8,6 @@ class MarkerManager {
 
   updateMarkers(businesses){
     const businessObj = {};
-    debugger 
     businesses.forEach(business => businessObj[business.id] = business);
 
     businesses
@@ -21,7 +20,6 @@ class MarkerManager {
   }
 
   createMarkerFrombusiness(business, label) {
-    debugger 
     var image = {url:'frontend/assets/images/map-pin.svg'}
     const position = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
     const marker = new google.maps.Marker({
