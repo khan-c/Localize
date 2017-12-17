@@ -9,7 +9,10 @@ class Map extends React.Component {
         lat: 37.773972,
         lng: -122.431291
       }, // San Francisco coords
-      zoom: 14
+      zoom: 14,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_LEFT
+      }
     };
     debugger 
     if (this.props.region){
@@ -20,20 +23,30 @@ class Map extends React.Component {
   debugger 
     const map = this.refs.map; 
     //creates new map 
-    var gmap = new google.maps.Map(map, mapOptions);    
-    let infoWindow = new google.maps.InfoWindow;
-    gmap["markers"] = []; 
+    this.map = new google.maps.Map(map, mapOptions);    
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     if (this.props.businesses) {
-      this.props.businesses.forEach( (business,idx) => {
-        debugger 
-        var latLng = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
-        var marker = new google.maps.Marker({
-          position: latLng,
-          map: gmap
-        });
-      gmap["markers"].push(marker);   
-      }); 
+      debugger
+      this.MarkerManager.updateMarkers(this.props.businesses);
     }
+
+
+    // let infoWindow = new google.maps.InfoWindow;
+    // gmap["markers"] = []; 
+    // if (this.props.businesses) {
+    //   this.props.businesses.forEach( (business,idx) => {
+    //     debugger 
+    //     var latLng = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
+    //     var marker = new google.maps.Marker({
+    //       position: latLng,
+    //       map: gmap
+    //     });
+    //   gmap["markers"].push(marker);   
+    //   }); 
+    // }
+
+
+
     // this.MarkerManager = new MarkerManager(this.gmap, this.handleMarkerClick.bind(this));
     // this.MarkerManager.updateMarkers(this.props.businesses);k
     
@@ -100,22 +113,36 @@ class Map extends React.Component {
     }
 
     const map = this.refs.map; 
-    //creates new map 
-    var gmap = new google.maps.Map(map, mapOptions); 
     debugger 
-    gmap["markers"] = []; 
-    
+    this.map = new google.maps.Map(map, mapOptions);    
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     if (newProps.businesses) {
-      newProps.businesses.forEach( (business,idx) => {
-        debugger 
-        var latLng = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
-        var marker = new google.maps.Marker({
-          position: latLng,
-          map: gmap
-        });
-      gmap["markers"].push(marker);   
-      }); 
+      debugger
+      this.MarkerManager.updateMarkers(newProps.businesses);
     }
+
+
+    // const map = this.refs.map; 
+    // //creates new map 
+    // var gmap = new google.maps.Map(map, mapOptions); 
+    // debugger 
+    // gmap["markers"] = []; 
+    
+    // if (newProps.businesses) {
+    //   newProps.businesses.forEach( (business,idx) => {
+    //     debugger 
+    //     var latLng = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
+    //     var marker = new google.maps.Marker({
+    //       position: latLng,
+    //       map: gmap
+    //     });
+    //   gmap["markers"].push(marker);   
+    //   }); 
+    // }
+  }
+
+  handleMarkerClick(business) {
+    this.props.history.push(`businesses/${business.id}`);
   }
 
   render() {
