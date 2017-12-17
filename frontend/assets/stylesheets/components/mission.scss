@@ -1,11 +1,10 @@
-
 .category-icon-index {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1000px;
   margin: auto;
   margin: 100px auto;
+  padding: 0 40px;
 }
 
 .category-icon-text {
@@ -15,10 +14,10 @@
 
 .icons {
   display: flex;
-  width: 1000px;
   justify-content: space-between;
   margin-top: 20px;
   align-items: baseline;
+  width: 80%;
 }
 
 .category-icon {
@@ -38,7 +37,7 @@
 
 .icon-links-wrapper:hover .category-icon {
   fill: $red;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 .icon-links-wrapper:active .category-icon {
@@ -150,4 +149,22 @@
 
 .statement-right {
   margin: 200px 0;
+}
+
+@media only screen and (min-width:1080px)  {
+  .icons {
+    width: 80%;
+  }
+  .category-icon-index {
+    width: 1000px;
+  }
+}
+
+@media only screen and (max-width:845px)  {
+  .category-icon-index {
+    width: 645px;
+  }
+  .icons {
+    width: 100%;
+  }
 }

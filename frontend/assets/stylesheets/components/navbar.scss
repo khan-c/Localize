@@ -36,7 +36,7 @@
 #search-bar-wrapper {
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease-in;
+  transition: box-shadow 0.3s ease-in;
   overflow: visible;
 }
 
@@ -142,7 +142,7 @@
 }
 
 #page-title:active {
-  color: white;
+  color: $light-blue;
   transform: scale(1);
 }
 

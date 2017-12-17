@@ -49,6 +49,9 @@ class LandingSearch extends React.Component {
 
   
   handleSubmit(event) {
+    if (!(this.state.location)){ 
+      this.state.location = "San Francisco";
+    } 
     const url = `/search?${stateToUrl(this.state)}`;
     if (event) {event.preventDefault();}
     if (this.state.text.length > 3) {
@@ -89,7 +92,7 @@ class LandingSearch extends React.Component {
       <div className='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
           <div className='landing-inputs-wrapper'>
-            <div className='landing-search-input-wrapper relative'>
+            <div className='landing-search-input-wrapper relative' id='search-input'>
               <ReactSVG
                 path='../../assets/images/magnifier.svg'
                 className='landing-mag-icon'

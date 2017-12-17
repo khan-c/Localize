@@ -1,12 +1,12 @@
  import { combineReducers } from 'redux';
 import search from './search_reducer';
-import businesses from './businesses_reducer';
+import business from './business_reducer';
 import autocomplete from './autocomplete_reducer';
 
 const entitiesReducer = combineReducers({
     search,
     autocomplete,
-    businesses
+    business
 });
 
 export default entitiesReducer;
