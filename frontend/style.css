@@ -104,6 +104,12 @@ input[type="submit"] {
   text-transform: uppercase;
   font-size: 10px; }
 
+input[type="button"] {
+  font-family: "Fjalla One", sans-serif;
+  padding: 11px 13px;
+  text-transform: uppercase;
+  font-size: 10px; }
+
 .navbar {
   width: 100%;
   background-color: #E9FBFC; }
@@ -231,7 +237,8 @@ input[type="submit"] {
   margin-right: 20px; }
 
 .search-page-wrapper {
-  display: flex; }
+  display: flex;
+  min-width: 1000px; }
 
 .results-wrapper {
   width: 60%;
@@ -261,10 +268,9 @@ input[type="submit"] {
 .results-index-thumbnail {
   width: 240px;
   height: 202px;
-  display: auto;
   object-fit: cover; }
 
-.contact-info-wrapper {
+.first-info-wrapper {
   padding-top: 10px; }
 
 .result-index-item-text-wrapper {
@@ -317,9 +323,24 @@ input[type="submit"] {
   cursor: pointer; }
 
 .results-index-item-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px; }
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  padding-top: 2px; }
+
+.results-index-item-category {
+  background-color: #D3D1DE;
+  color: #211B59;
+  transition: transform .2s ease; }
+
+.results-index-item-category:hover {
+  background-color: #96FE91;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer; }
+
+.results-index-item-category:active {
+  transform: scale(1); }
 
 .homepage {
   height: 3000px; }

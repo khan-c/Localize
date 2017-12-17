@@ -1,6 +1,6 @@
 .search-page-wrapper {
   display: flex;
-
+  min-width: 1000px;
 }
 
 .results-wrapper {
@@ -36,13 +36,10 @@
 .results-index-thumbnail {
   width: 240px;
   height: 202px;
-  // height: 121.469px;
-  // width: 215.969px;
-  display: auto;
   object-fit: cover;
 }
 
-.contact-info-wrapper {
+.first-info-wrapper {
   padding-top: 10px;
 }
 
@@ -107,7 +104,25 @@
 }
 
 .results-index-item-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-right: 10px;
+  padding-top: 2px;
+}
+
+.results-index-item-category {
+  background-color: $lightest-purple;
+  color: $purple;
+  transition: transform .2s ease;
+}
+
+.results-index-item-category:hover {
+  background-color: $green;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.results-index-item-category:active {
+  transform: scale(1);
 }

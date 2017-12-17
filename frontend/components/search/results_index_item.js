@@ -2,16 +2,28 @@ import React from 'react';
 import ReactSVG from 'react-svg';
 import { withRouter } from 'react-router-dom';
 import { link } from 'react-router-dom';
+import { stateToUrl, locationFromPath } from '../../util/parsing_functions';
 
 class ResultsIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.sendToBusinessPage = this.sendToBusinessPage.bind(this);
   }
 
-  handleClick(event, businessId) {
+  sendToBusinessPage(event, businessId) {
     event.preventDefault();
     const url = `/business/${businessId}`;
+    this.props.history.push(url);
+  }
+
+  sendToCategorySearchPage(event, term) {
+    const path = this.props.location.search;
+    event.preventDefault();
+    const query = {
+      text: term,
+      location: locationFromPath(path)
+    };
+    const url = `/search?${stateToUrl(query)}`;
     this.props.history.push(url);
   }
 
@@ -26,12 +38,12 @@ class ResultsIndexItem extends React.Component {
         <div className='results-index-item-text'>
           <div className='result-index-item-text-wrapper'>
             <a
-              onClick={(e) => this.handleClick(e, business.id)}
+              onClick={(e) => this.sendToBusinessPage(e, business.id)}
               className='result-idx-item-business-name'
             >
               {business.name}
             </a>
-            <div className='contact-info-wrapper'>
+            <div className='contact-info-wrapper first-info-wrapper'>
               <ReactSVG
                 path='../../assets/images/pin.svg'
                 className='results-index-item-icon'
@@ -40,12 +52,23 @@ class ResultsIndexItem extends React.Component {
                 {`${business.location.display_address[0]}, ${business.location.display_address[1]}`}
               </span>
             </div>
-            <span className='display'>{business.display_phone}</span>
+            <div className='contact-info-wrapper'>
+              <ReactSVG
+                path='../../assets/images/telephone.svg'
+                className='results-index-item-icon'
+              />
+              <span className='display'>{business.display_phone}</span>
+            </div>
           </div>
           <div className='category-contact-wrapper'>
 
             <div className='category-contact'>
-              <div>{business.categories[0]['title']}</div>
+              <input
+                type='button'
+                className='results-index-item-category'
+                value={business.categories[0]['title']}
+                onClick={(e) => this.sendToCategorySearchPage(e, business.categories[0]['title'])}
+              />
               <input type='submit' className='contact-button' value='Contact'/>
             </div>
           </div>
