@@ -5,7 +5,6 @@ class ResultsIndexItem extends React.Component {
 
   render(){
     const { business } = this.props; 
-
     if (!business){
       return null; 
     }
