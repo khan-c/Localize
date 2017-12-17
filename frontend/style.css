@@ -137,7 +137,7 @@ input[type="submit"] {
 #search-bar-wrapper {
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease-in;
+  transition: box-shadow 0.3s ease-in;
   overflow: visible; }
 
 .search-input-wrapper {
@@ -230,7 +230,7 @@ input[type="submit"] {
   transform: scale(1.05); }
 
 #page-title:active {
-  color: white;
+  color: #BEF2F7;
   transform: scale(1); }
 
 .category-carousel {
@@ -522,9 +522,9 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1000px;
   margin: auto;
-  margin: 100px auto; }
+  margin: 100px auto;
+  padding: 0 40px; }
 
 .category-icon-text {
   text-align: center;
@@ -532,10 +532,10 @@ input[type="submit"] {
 
 .icons {
   display: flex;
-  width: 1000px;
   justify-content: space-between;
   margin-top: 20px;
-  align-items: baseline; }
+  align-items: baseline;
+  width: 80%; }
 
 .category-icon {
   margin-bottom: 15px;
@@ -552,7 +552,7 @@ input[type="submit"] {
 
 .icon-links-wrapper:hover .category-icon {
   fill: #FF4958;
-  transform: scale(1.3); }
+  transform: scale(1.2); }
 
 .icon-links-wrapper:active .category-icon {
   fill: #F0EFEF;
@@ -650,6 +650,18 @@ input[type="submit"] {
 .statement-right {
   margin: 200px 0; }
 
+@media only screen and (min-width: 1080px) {
+  .icons {
+    width: 80%; }
+  .category-icon-index {
+    width: 1000px; } }
+
+@media only screen and (max-width: 845px) {
+  .category-icon-index {
+    width: 645px; }
+  .icons {
+    width: 100%; } }
+
 .testimonial-slider {
   margin: 50px auto; }
 
@@ -684,6 +696,7 @@ input[type="submit"] {
 
 .testimonial-arrow {
   position: absolute;
+  fill: #96FE91;
   top: 150px;
   z-index: 200;
   height: 40px;
@@ -691,9 +704,13 @@ input[type="submit"] {
   transition: all .2s ease; }
 
 .testimonial-arrow:hover {
-  fill: #FF4958;
+  fill: #96FE91;
   cursor: pointer;
   transform: scale(1.3); }
+
+.testimonial-arrow:active {
+  fill: #EAFFE9;
+  transform: scale(1); }
 
 .h-flip:hover {
   transform: scaleX(-1) scale(1.3); }
@@ -703,5 +720,142 @@ input[type="submit"] {
 
 .next {
   right: 20px; }
+
+.address-wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.contact-info-wrapper {
+  margin-bottom: 5px; }
+
+.business-show {
+  width: 90%;
+  height: 1000px;
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-between; }
+
+.business-about-section {
+  height: 400px;
+  width: 65%; }
+
+.contact-section {
+  width: 30%;
+  height: 400px;
+  background-color: blue; }
+
+.business-section-wrapper {
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid; }
+
+.business-name {
+  margin-bottom: 4%;
+  padding-bottom: 4%;
+  border-bottom: 10px solid; }
+
+@media only screen and (max-width: 925px) {
+  .business-show {
+    width: 800px; } }
+
+@media only screen and (min-width: 1400px) {
+  .business-show {
+    width: 70%; } }
+
+.business-photos-slider-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0; }
+
+.business-photos-arrow {
+  position: absolute;
+  top: 50%;
+  fill: #96FE91;
+  z-index: 100;
+  width: 25px;
+  height: 25px;
+  transition: transform .2s ease; }
+
+.business-photos-arrow:hover {
+  fill: #FF4958;
+  transform: scale(1.2);
+  cursor: pointer; }
+
+.business-photos-arrow:active {
+  fill: #FF929B;
+  transform: scale(1); }
+
+.previous:hover {
+  transform: scaleX(-1) scale(1.2); }
+
+.business-photos-slider {
+  display: flex;
+  height: fit-content; }
+
+.business-photos-wrapper {
+  margin-right: 10px;
+  object-fit: contain; }
+
+.business-categories {
+  width: 100%;
+  display: flex;
+  margin: 30px 0; }
+
+.business-category {
+  padding: 15px;
+  background-color: white;
+  width: fit-content;
+  margin: 0 5px;
+  border: 2px solid #BEF2F7;
+  transition: transform .2s ease; }
+
+.business-category:hover {
+  border: 2px solid transparent;
+  color: white;
+  background-color: #AFECF4;
+  cursor: pointer;
+  transform: scale(1.05); }
+
+.business-category:active {
+  border: 2px solid transparent;
+  color: white;
+  background-color: #96FE91;
+  cursor: pointer;
+  transform: scale(1); }
+
+.business-category:first-child {
+  margin-left: 0; }
+
+.business-photo {
+  object-fit: contain; }
+
+.business-section {
+  border-bottom: 1px solid;
+  padding: 40px 0; }
+
+.contact-info-section {
+  width: 100%; }
+
+.contact-info-wrapper {
+  display: flex;
+  position: relative; }
+
+.business-section-header {
+  margin-bottom: 15px; }
+
+.contact-section-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; }
+
+.yelp-icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -3px; }
+
+.website-url {
+  position: absolute;
+  left: 30px; }
 
 /*# sourceMappingURL=style.css.map*/

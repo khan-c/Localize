@@ -89,7 +89,7 @@ class LandingSearch extends React.Component {
       <div className='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
           <div className='landing-inputs-wrapper'>
-            <div className='landing-search-input-wrapper relative'>
+            <div className='landing-search-input-wrapper relative' id='search-input'>
               <ReactSVG
                 path='../../assets/images/magnifier.svg'
                 className='landing-mag-icon'
