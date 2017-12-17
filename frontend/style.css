@@ -216,12 +216,6 @@ input[type="submit"] {
 .session-links a:hover {
   border-bottom: 2px solid black; }
 
-.search-page-wrapper {
-  display: flex; }
-
-.results-wrapper {
-  width: 60%; }
-
 #page-title {
   transition: all .1s ease; }
 
@@ -235,6 +229,12 @@ input[type="submit"] {
 
 .category-carousel {
   margin-right: 20px; }
+
+.search-page-wrapper {
+  display: flex; }
+
+.results-wrapper {
+  width: 60%; }
 
 .results-index {
   display: flex;
