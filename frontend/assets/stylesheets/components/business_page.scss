@@ -97,7 +97,7 @@
 }
 
 .business-category:hover {
-  border: 2px solid transparent;
+  border: 2px solid $green;
   color: white;
   background-color: $green;
   cursor: pointer;
@@ -153,4 +153,8 @@
 .website-url {
   position: absolute;
   left: 30px;
+}
+
+.website-url:hover {
+  color: $red;
 }

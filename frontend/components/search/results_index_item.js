@@ -34,7 +34,11 @@ class ResultsIndexItem extends React.Component {
     }
     return(
       <li className='results-index-item'>
-        <img className='results-index-thumbnail' src={business.image_url}/>
+        <img
+          className='results-index-thumbnail'
+          src={business.image_url}
+          onClick={(e) => this.sendToBusinessPage(e, business.id)}
+        />
         <div className='results-index-item-text'>
           <div className='result-index-item-text-wrapper'>
             <a
