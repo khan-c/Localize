@@ -1,32 +1,32 @@
 h1 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $header;
   font-size: 72px;
   text-transform: uppercase;
 }
 
 h2 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $header;
   font-size: 56px;
   text-transform: uppercase;
 }
 
 
 h3 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $header;
   text-align: left;
   font-size: 32px;
   text-transform: uppercase;
 }
 
 h4 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $header;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 span {
-  font-family: 'Barlow', sans-serif;
+  font-family: $text;
 }
 
 .display-text {
@@ -36,15 +36,15 @@ span {
 }
 
 a {
-  font-family: 'Barlow', sans-serif;
+  font-family: $text;
 }
 
 input[type="text"] {
-  font-family: 'Barlow', sans-serif;
+  font-family: $text;
 }
 
 input[type="submit"] {
-  font-family: 'Barlow', sans-serif;
+  font-family: $header;
   padding: 13px 40px;
   text-transform: uppercase;
   font-size: 10px;
