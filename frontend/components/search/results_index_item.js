@@ -61,14 +61,18 @@ class ResultsIndexItem extends React.Component {
             </div>
           </div>
           <div className='category-contact-wrapper'>
-
             <div className='category-contact'>
-              <input
-                type='button'
-                className='results-index-item-category'
-                value={business.categories[0]['title']}
-                onClick={(e) => this.sendToCategorySearchPage(e, business.categories[0]['title'])}
-              />
+              <div className='results-index-categories-wrapper'>
+                {business.categories.map(category => (
+                  <input
+                    type='button'
+                    className='results-index-item-category'
+                    value={category['title']}
+                    onClick={(e) => this.sendToCategorySearchPage(e, category['title'])}
+                  />
+                ))}
+              </div>
+
               <input type='submit' className='contact-button' value='Contact'/>
             </div>
           </div>

@@ -94,15 +94,13 @@
   width: fit-content;
   margin: 0 5px;
   border: 2px solid $light-blue;
-  transition: transform .2s ease;
 }
 
 .business-category:hover {
   border: 2px solid transparent;
   color: white;
-  background-color: $blue;
+  background-color: $green;
   cursor: pointer;
-  transform: scale(1.05);
 }
 
 .business-category:active {

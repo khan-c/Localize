@@ -5,8 +5,10 @@
 
 .results-wrapper {
   width: 60%;
+  min-width: 750px;
   height: calc(100vh - 125px);
   overflow: scroll;
+  background-color: $light-gray;
 }
 
 .results-index {
@@ -20,14 +22,18 @@
 .results-index-item {
   display: flex;
   width: 90%;
-  margin: 0 20px 20px 20px;
-  border: 1px solid $gray;
+  margin: 10px 20px 0 20px;
   box-sizing: border-box;
-  // box-shadow: 0 2px 1px rgba(25,25,25,0.2);
+  background-color: white;
+  transition: box-shadow .3s ease;
+}
+
+.results-index-item:hover {
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 .results-index-item-text {
-  width: 100%;
+  width: calc(100% - 240px);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -35,7 +41,7 @@
 
 .results-index-thumbnail {
   width: 240px;
-  height: 202px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -83,7 +89,10 @@
 .map {
   height: calc(100vh - 125px);
   width: 40%;
+  min-width: 350px;
+  // min-width: calc(100% - 750px);
   position: absolute;
+  box-shadow: -2px 1px 6px rgba(0,0,0,0.2);
 }
 
 .map-wrapper {
@@ -114,15 +123,21 @@
   background-color: $lightest-purple;
   color: $purple;
   transition: transform .2s ease;
+  margin-right: 4px;
+  letter-spacing: 1px;
 }
 
 .results-index-item-category:hover {
   background-color: $green;
   color: white;
-  transform: scale(1.1);
   cursor: pointer;
 }
 
 .results-index-item-category:active {
   transform: scale(1);
+}
+
+.results-index-categories-wrapper {
+  display: flex;
+  width: 60%;
 }

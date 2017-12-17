@@ -106,7 +106,7 @@ input[type="submit"] {
 
 input[type="button"] {
   font-family: "Fjalla One", sans-serif;
-  padding: 11px 13px;
+  padding: 8px 8px;
   text-transform: uppercase;
   font-size: 10px; }
 
@@ -242,8 +242,10 @@ input[type="button"] {
 
 .results-wrapper {
   width: 60%;
+  min-width: 750px;
   height: calc(100vh - 125px);
-  overflow: scroll; }
+  overflow: scroll;
+  background-color: #F9F9F9; }
 
 .results-index {
   display: flex;
@@ -255,19 +257,23 @@ input[type="button"] {
 .results-index-item {
   display: flex;
   width: 90%;
-  margin: 0 20px 20px 20px;
-  border: 1px solid #F0EFEF;
-  box-sizing: border-box; }
+  margin: 10px 20px 0 20px;
+  box-sizing: border-box;
+  background-color: white;
+  transition: box-shadow .3s ease; }
+
+.results-index-item:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); }
 
 .results-index-item-text {
-  width: 100%;
+  width: calc(100% - 240px);
   padding: 20px;
   display: flex;
   flex-direction: column; }
 
 .results-index-thumbnail {
   width: 240px;
-  height: 202px;
+  height: 200px;
   object-fit: cover; }
 
 .first-info-wrapper {
@@ -306,7 +312,9 @@ input[type="button"] {
 .map {
   height: calc(100vh - 125px);
   width: 40%;
-  position: absolute; }
+  min-width: 350px;
+  position: absolute;
+  box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.2); }
 
 .map-wrapper {
   height: 100%;
@@ -331,16 +339,21 @@ input[type="button"] {
 .results-index-item-category {
   background-color: #D3D1DE;
   color: #211B59;
-  transition: transform .2s ease; }
+  transition: transform .2s ease;
+  margin-right: 4px;
+  letter-spacing: 1px; }
 
 .results-index-item-category:hover {
   background-color: #96FE91;
   color: white;
-  transform: scale(1.1);
   cursor: pointer; }
 
 .results-index-item-category:active {
   transform: scale(1); }
+
+.results-index-categories-wrapper {
+  display: flex;
+  width: 60%; }
 
 .homepage {
   height: 3000px; }
@@ -868,15 +881,13 @@ input[type="button"] {
   background-color: white;
   width: fit-content;
   margin: 0 5px;
-  border: 2px solid #BEF2F7;
-  transition: transform .2s ease; }
+  border: 2px solid #BEF2F7; }
 
 .business-category:hover {
   border: 2px solid transparent;
   color: white;
-  background-color: #AFECF4;
-  cursor: pointer;
-  transform: scale(1.05); }
+  background-color: #96FE91;
+  cursor: pointer; }
 
 .business-category:active {
   border: 2px solid transparent;
