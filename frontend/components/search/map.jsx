@@ -104,7 +104,10 @@ class Map extends React.Component {
         lat: 37.773972,
         lng: -122.431291
       }, // San Francisco coords
-      zoom: 14
+      zoom: 14,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_LEFT
+      }
     };
 
     if (this.props.region){
