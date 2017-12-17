@@ -20,13 +20,13 @@ class BusinessPhotosCarousel extends React.Component {
   render () {
     const { business, singleBusinessLoading } = this.props;
     const settings = {
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       centerMode: true,
-      adaptiveHeight: true,
+      // adaptiveHeight: true,
       arrows: true,
       className: 'slides',
     };
@@ -39,7 +39,7 @@ class BusinessPhotosCarousel extends React.Component {
           <Slider {...settings} ref={c => this.slider = c} className='business-photos-slider'>
             {business.photos.map((photoUrl, i) => (
               <div key={i} className='business-photos-wrapper'>
-                <img src={photoUrl} />
+                <img className='business-photo' src={photoUrl} />
               </div>
             ))}
           </Slider>

@@ -707,6 +707,13 @@ input[type="submit"] {
 .next {
   right: 20px; }
 
+.address-wrapper {
+  display: flex;
+  flex-direction: column; }
+
+.contact-info-wrapper {
+  margin-bottom: 5px; }
+
 .business-show {
   width: 90%;
   height: 1000px;
@@ -724,7 +731,9 @@ input[type="submit"] {
   background-color: blue; }
 
 .business-section-wrapper {
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid; }
 
 .business-name {
   margin-bottom: 4%;
@@ -771,7 +780,7 @@ input[type="submit"] {
 
 .business-photos-wrapper {
   margin-right: 10px;
-  height: fit-content; }
+  object-fit: contain; }
 
 .business-categories {
   width: 100%;
@@ -802,5 +811,37 @@ input[type="submit"] {
 
 .business-category:first-child {
   margin-left: 0; }
+
+.business-photo {
+  object-fit: contain; }
+
+.business-section {
+  border-bottom: 1px solid; }
+
+.contact-info-section {
+  width: 100%;
+  padding: 40px 0; }
+
+.contact-info-wrapper {
+  display: flex;
+  position: relative; }
+
+.contact-header {
+  margin-bottom: 15px; }
+
+.contact-section-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; }
+
+.yelp-icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -3px; }
+
+.website-url {
+  position: absolute;
+  left: 30px; }
 
 /*# sourceMappingURL=style.css.map*/

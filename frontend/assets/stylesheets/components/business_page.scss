@@ -19,6 +19,8 @@
 
 .business-section-wrapper {
   width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid;
 }
 
 .business-name {
@@ -77,7 +79,7 @@
 
 .business-photos-wrapper {
   margin-right: 10px;
-  height: fit-content;
+  object-fit: contain;
 }
 
 .business-categories {
@@ -113,4 +115,44 @@
 
 .business-category:first-child {
   margin-left: 0;
+}
+
+.business-photo {
+  object-fit: contain;
+}
+
+.business-section {
+  border-bottom: 1px solid;
+}
+
+.contact-info-section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.contact-header {
+  margin-bottom: 15px;
+}
+
+.contact-section-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.yelp-icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -3px;
+}
+
+.website-url {
+  position: absolute;
+  left: 30px;
 }
