@@ -281,12 +281,7 @@
 .landing-autocomplete-index-item:hover {
   background-color: $red;
   color: white;
-}
-
-.landing-autocomplete-index-item:active {
-  background-color: $red;
-  color: white;
-  // transform: scale(.98);
+  cursor: pointer;
 }
 
 .landing-autocomplete-index-item h4 {

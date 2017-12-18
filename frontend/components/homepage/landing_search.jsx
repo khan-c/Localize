@@ -71,7 +71,7 @@ class LandingSearch extends React.Component {
     setTimeout( () => {
       this.props.clearAutocomplete();
       this.setState({query: ''});
-    }, 100);
+    }, 400);
   }
 
   handleKey(e, field) {

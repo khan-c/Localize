@@ -253,7 +253,6 @@ input[type="button"] {
 .results-index {
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
   min-width: 500px;
   align-items: center; }
 
@@ -587,11 +586,8 @@ input[type="button"] {
 
 .landing-autocomplete-index-item:hover {
   background-color: #FF4958;
-  color: white; }
-
-.landing-autocomplete-index-item:active {
-  background-color: #FF4958;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 .landing-autocomplete-index-item h4 {
   transition: transform .2s ease; }
