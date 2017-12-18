@@ -38,8 +38,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 routes(app, passport);
 
-app.use('/api', [BusinessRoutes, TestimonialRoutes]);
-
 app.listen(PORT, err => {
   if (err) {
     console.log(err);
@@ -48,6 +46,8 @@ app.listen(PORT, err => {
     console.log('Running on port 8000...');
   }
 });
+
+app.use('/api', [BusinessRoutes, TestimonialRoutes]);
 
 // route and controller to get business by ID
 app.get('/business', (req, res) => {

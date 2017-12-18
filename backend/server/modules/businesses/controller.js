@@ -1,6 +1,7 @@
 import Business from './model';
 import axios from 'axios';
 import CircularJSON from 'circular-json';
+import { mongoConfig } from '../../config/keys';
 
 export const createBusiness = async (req, res) => {
   const {
@@ -42,9 +43,12 @@ export const createBusiness = async (req, res) => {
   });
 
   try {
-    return res.status(201).json({ business: await newBusiness.save() });
+    const business = await axios.post(
+      `https://api.mlab.com/api/1/databases/localize/collections/businesses?apiKey=${mongoConfig.apikey}`,
+      { newBusiness });
+    return res.status(201).json({ business });
   } catch(e) {
-    return res.status(e.status)
+    return res.status(422)
       .json({ error: true, message: 'Error with Business' });
   }
 };
@@ -53,7 +57,7 @@ export const getAllBusinesses = async (req, res) => {
   try {
     return res.status(200).json({ businesses: await Business.find() });
   } catch (e) {
-    return res.status(e.status)
+    return res.status(404)
       .json({ error: true, message: 'Error with Business' });
   }
 };
@@ -65,7 +69,7 @@ export const getBusiness = async (req, res) => {
       { business: "test" }
     );
   } catch (e) {
-    return res.status(e.status)
+    return res.status(404)
       .json({ error: true, message: 'Error with Business' });
   }
 }
