@@ -63,29 +63,29 @@ input[type="submit"] {
   clear: both; }
 
 h1 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-size: 72px;
   text-transform: uppercase; }
 
 h2 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-size: 56px;
   text-transform: uppercase; }
 
 h3 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   text-align: left;
   font-size: 32px;
   text-transform: uppercase; }
 
 h4 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px; }
 
 span {
-  font-family: 'Barlow', sans-serif; }
+  font-family: "Barlow", sans-serif; }
 
 .display-text {
   line-height: 30px;
@@ -93,14 +93,20 @@ span {
   font-size: 16px; }
 
 a {
-  font-family: 'Barlow', sans-serif; }
+  font-family: "Barlow", sans-serif; }
 
 input[type="text"] {
-  font-family: 'Barlow', sans-serif; }
+  font-family: "Barlow", sans-serif; }
 
 input[type="submit"] {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   padding: 13px 40px;
+  text-transform: uppercase;
+  font-size: 10px; }
+
+input[type="button"] {
+  font-family: "Fjalla One", sans-serif;
+  padding: 8px 8px;
   text-transform: uppercase;
   font-size: 10px; }
 
@@ -121,7 +127,7 @@ input[type="submit"] {
 .search-bar-wrapper {
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 1000px;
   margin: auto;
@@ -139,6 +145,9 @@ input[type="submit"] {
   z-index: 1000;
   transition: box-shadow 0.3s ease-in;
   overflow: visible; }
+
+.sticky-padding {
+  padding-top: 65px; }
 
 .search-input-wrapper {
   display: flex;
@@ -231,61 +240,129 @@ input[type="submit"] {
   margin-right: 20px; }
 
 .search-page-wrapper {
-  display: flex; }
+  display: flex;
+  min-width: 1000px; }
 
 .results-wrapper {
-  width: 60%; }
+  width: 60%;
+  min-width: 750px;
+  height: calc(100vh - 125px);
+  overflow: scroll;
+  background-color: #F9F9F9; }
 
 .results-index {
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
   min-width: 500px;
   align-items: center; }
 
 .results-index-item {
   display: flex;
   width: 90%;
-  margin: 20px 20px 0 20px;
-  border: 1px solid #F0EFEF;
-  box-sizing: border-box; }
+  margin: 10px 20px 0 20px;
+  box-sizing: border-box;
+  background-color: white;
+  transition: box-shadow .3s ease; }
+
+.results-index-item:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); }
 
 .results-index-item-text {
-  width: 100%; }
+  width: calc(100% - 240px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column; }
 
 .results-index-thumbnail {
   width: 240px;
-  height: 202px;
-  display: auto;
+  height: 200px;
   object-fit: cover; }
+
+.results-index-thumbnail:hover {
+  cursor: pointer; }
+
+.first-info-wrapper {
+  padding-top: 10px; }
+
+.result-index-item-text-wrapper {
+  flex: 3;
+  display: flex;
+  flex-direction: column; }
+  .result-index-item-text-wrapper span {
+    letter-spacing: 1px; }
+
+.category-contact-wrapper {
+  align-items: flex-end;
+  flex: 1; }
 
 .category-contact {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
-  .category-contact div {
-    position: relative;
-    left: 30px; }
-  .category-contact .contact-button {
-    background: #7A769B;
-    position: relative;
-    right: 30px; }
+  align-items: flex-end;
+  vertical-align: bottom; }
+
+.contact-button {
+  background-color: #211B59;
+  color: white;
+  float: right;
+  transition: transform .2s ease; }
+
+.contact-button:hover {
+  transform: scale(1.1);
+  background-color: #FF4958; }
+
+.contact-button:active {
+  transform: scale(1); }
 
 .map {
-  height: 100%;
+  height: calc(100vh - 125px);
   width: 40%;
-  position: absolute; }
+  min-width: 350px;
+  position: absolute;
+  box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.2); }
 
 .map-wrapper {
-  height: 500px;
-  width: 400px; }
+  height: 100%;
+  width: 30%; }
 
-.homepage {
-  height: 3000px; }
+.result-idx-item-business-name {
+  font-family: "Fjalla One", sans-serif;
+  text-align: left;
+  font-size: 26px;
+  text-transform: uppercase; }
+
+.result-idx-item-business-name:hover {
+  color: #96FE91;
+  cursor: pointer; }
+
+.results-index-item-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  padding-top: 2px; }
+
+.results-index-item-category {
+  background-color: #D3D1DE;
+  color: #211B59;
+  transition: transform .2s ease;
+  margin-right: 4px;
+  letter-spacing: 1px; }
+
+.results-index-item-category:hover {
+  background-color: #96FE91;
+  color: white;
+  cursor: pointer; }
+
+.results-index-item-category:active {
+  transform: scale(1); }
+
+.results-index-categories-wrapper {
+  display: flex;
+  width: 60%; }
 
 .landing-page {
   background-color: #E9FBFC;
-  padding: 160px 100px;
+  padding: 100px 100px;
   box-sizing: border-box;
   z-index: 400;
   width: 100%; }
@@ -320,7 +397,7 @@ input[type="submit"] {
 .landing-search-button {
   background-color: #211B59;
   color: white;
-  z-index: 2000;
+  z-index: 100;
   transition: transform .2s ease; }
 
 .landing-search-button:hover {
@@ -506,11 +583,8 @@ input[type="submit"] {
 
 .landing-autocomplete-index-item:hover {
   background-color: #FF4958;
-  color: white; }
-
-.landing-autocomplete-index-item:active {
-  background-color: #FF4958;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 .landing-autocomplete-index-item h4 {
   transition: transform .2s ease; }
@@ -555,16 +629,14 @@ input[type="submit"] {
   transform: scale(1.2); }
 
 .icon-links-wrapper:active .category-icon {
-  fill: #F0EFEF;
+  fill: #FFDBDE;
   transform: scale(0.95); }
 
 .icon-links-wrapper:hover .icon-link {
-  color: #FF4958;
-  border-bottom: 3px solid black; }
+  color: #FF4958; }
 
 .icon-links-wrapper:active .icon-link {
-  color: #FF4958;
-  border-bottom: 3px solid transparent; }
+  color: #FF4958; }
 
 .icon-links-wrapper:hover {
   cursor: pointer; }
@@ -730,13 +802,11 @@ input[type="submit"] {
 
 .business-show {
   width: 90%;
-  height: 1000px;
   margin: 5% auto;
   display: flex;
   justify-content: space-between; }
 
 .business-about-section {
-  height: 400px;
   width: 65%; }
 
 .contact-section {
@@ -806,15 +876,13 @@ input[type="submit"] {
   background-color: white;
   width: fit-content;
   margin: 0 5px;
-  border: 2px solid #BEF2F7;
-  transition: transform .2s ease; }
+  border: 2px solid #BEF2F7; }
 
 .business-category:hover {
-  border: 2px solid transparent;
+  border: 2px solid #96FE91;
   color: white;
-  background-color: #AFECF4;
-  cursor: pointer;
-  transform: scale(1.05); }
+  background-color: #96FE91;
+  cursor: pointer; }
 
 .business-category:active {
   border: 2px solid transparent;
@@ -857,5 +925,153 @@ input[type="submit"] {
 .website-url {
   position: absolute;
   left: 30px; }
+
+.website-url:hover {
+  color: #FF4958; }
+
+.loading-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #D3D1DE;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.loader {
+  transform: scale(0.7);
+  position: relative;
+  width: 75px;
+  height: 100px; }
+  .loader__bar {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 50%;
+    background: #211B59;
+    transform-origin: center bottom;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2); }
+    .loader__bar:nth-child(1) {
+      left: 0px;
+      transform: scale(1, 0.2);
+      animation: barUp1 2s infinite; }
+    .loader__bar:nth-child(2) {
+      left: 15px;
+      transform: scale(1, 0.4);
+      animation: barUp2 2s infinite; }
+    .loader__bar:nth-child(3) {
+      left: 30px;
+      transform: scale(1, 0.6);
+      animation: barUp3 2s infinite; }
+    .loader__bar:nth-child(4) {
+      left: 45px;
+      transform: scale(1, 0.8);
+      animation: barUp4 2s infinite; }
+    .loader__bar:nth-child(5) {
+      left: 60px;
+      transform: scale(1, 1);
+      animation: barUp5 2s infinite; }
+  .loader__ball {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #FF4958;
+    border-radius: 50%;
+    animation: ball 2s infinite; }
+
+@keyframes ball {
+  0% {
+    transform: translate(0, 0); }
+  5% {
+    transform: translate(8px, -14px); }
+  10% {
+    transform: translate(15px, -10px); }
+  17% {
+    transform: translate(23px, -24px); }
+  20% {
+    transform: translate(30px, -20px); }
+  27% {
+    transform: translate(38px, -34px); }
+  30% {
+    transform: translate(45px, -30px); }
+  37% {
+    transform: translate(53px, -44px); }
+  40% {
+    transform: translate(60px, -40px); }
+  50% {
+    transform: translate(60px, 0); }
+  57% {
+    transform: translate(53px, -14px); }
+  60% {
+    transform: translate(45px, -10px); }
+  67% {
+    transform: translate(37px, -24px); }
+  70% {
+    transform: translate(30px, -20px); }
+  77% {
+    transform: translate(22px, -34px); }
+  80% {
+    transform: translate(15px, -30px); }
+  87% {
+    transform: translate(7px, -44px); }
+  90% {
+    transform: translate(0, -40px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2); }
+  40% {
+    transform: scale(1, 0.2); }
+  50% {
+    transform: scale(1, 1); }
+  90% {
+    transform: scale(1, 1); }
+  100% {
+    transform: scale(1, 0.2); } }
+
+@keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4); }
+  40% {
+    transform: scale(1, 0.4); }
+  50% {
+    transform: scale(1, 0.8); }
+  90% {
+    transform: scale(1, 0.8); }
+  100% {
+    transform: scale(1, 0.4); } }
+
+@keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6); }
+  100% {
+    transform: scale(1, 0.6); } }
+
+@keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8); }
+  40% {
+    transform: scale(1, 0.8); }
+  50% {
+    transform: scale(1, 0.4); }
+  90% {
+    transform: scale(1, 0.4); }
+  100% {
+    transform: scale(1, 0.8); } }
+
+@keyframes barUp5 {
+  0% {
+    transform: scale(1, 1); }
+  40% {
+    transform: scale(1, 1); }
+  50% {
+    transform: scale(1, 0.2); }
+  90% {
+    transform: scale(1, 0.2); }
+  100% {
+    transform: scale(1, 1); } }
 
 /*# sourceMappingURL=style.css.map*/

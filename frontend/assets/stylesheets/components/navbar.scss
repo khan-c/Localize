@@ -18,7 +18,7 @@
 .search-bar-wrapper {
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 1000px;
   margin: auto;
@@ -38,6 +38,10 @@
   z-index: 1000;
   transition: box-shadow 0.3s ease-in;
   overflow: visible;
+}
+
+.sticky-padding {
+  padding-top: 65px;
 }
 
 .search-input-wrapper {

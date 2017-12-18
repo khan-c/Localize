@@ -3,7 +3,7 @@ import ReactSVG from 'react-svg';
 import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
 import { stateToUrl } from '../../util/parsing_functions';
 import { withRouter } from 'react-router-dom';
-import merge from 'lodash/merge'; 
+import merge from 'lodash/merge';
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -47,8 +47,11 @@ class LandingSearch extends React.Component {
     });
   }
 
-  
+
   handleSubmit(event) {
+    if (!(this.state.location)){ 
+      this.state.location = "San Francisco";
+    } 
     const url = `/search?${stateToUrl(this.state)}`;
     if (event) {event.preventDefault();}
     if (this.state.text.length > 3) {
@@ -71,7 +74,7 @@ class LandingSearch extends React.Component {
     setTimeout( () => {
       this.props.clearAutocomplete();
       this.setState({query: ''});
-    }, 100);
+    }, 400);
   }
 
   handleKey(e, field) {
@@ -86,7 +89,7 @@ class LandingSearch extends React.Component {
 
   render() {
     return(
-      <div className='landing-search-wrapper'>
+      <div className='landing-search-wrapper' id='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
           <div className='landing-inputs-wrapper'>
             <div className='landing-search-input-wrapper relative' id='search-input'>
