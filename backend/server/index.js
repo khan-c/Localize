@@ -96,10 +96,10 @@ app.get('/search', (req, res) => {
 // route and controller for autocomplete
 app.get('/autocomplete', (req, res) => {
   let autoUrl = "https://api.yelp.com/v3/autocomplete?";
-  console.log("autoURL", autoUrl);
+  // console.log("autoURL", autoUrl);
   const token = credentials() || creds();
   const queryArrAuto = Object.keys(req.query);
-  console.log("req.query", queryArrAuto);
+  // console.log("req.query", queryArrAuto);
   queryArrAuto.forEach( q => {
     if (!(req.query[q] === "")) {
       autoUrl = autoUrl + `${q}` + "=" + `${req.query[q]}`;
@@ -108,14 +108,14 @@ app.get('/autocomplete', (req, res) => {
       autoUrl = autoUrl + "&";
     }
   });
-  console.log("autoUrl", autoUrl);
+  // console.log("autoUrl", autoUrl);
   axios.get(`${autoUrl}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
     }
   }).then( data =>{
     // need to flatten ciruclarJSON file
-    console.log("dataaaa", data);
+    // console.log("dataaaa", data);
     let Json = CircularJSON.stringify(data);
     res.status(200).send(Json);
   }, error => {
