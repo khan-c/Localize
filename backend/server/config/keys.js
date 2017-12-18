@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const username = process.env.M_USER || config.mongoConfig.username;
-const apikey = process.env.M_API || config.mongoConfig.apikey;
+const apikey = process.env.MAPI || config.mongoConfig.apikey;
 const password = process.env.MPW || config.mongoConfig.password;
 
 export const googleConfig = {
