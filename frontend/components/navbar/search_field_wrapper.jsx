@@ -4,7 +4,7 @@ import SearchBarInput from './search_bar_input';
 class SearchFieldWrapper extends React.Component {
   render () {
     return (
-      <div>
+      <div id='search-field-wrapper'>
         <SearchBarInput/>
       </div>
     );
