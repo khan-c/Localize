@@ -5,16 +5,6 @@ import MdClose from 'react-icons/lib/md/close';
 class BusinessDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      about: '',
-      mon: { min: 8, max: 18 },
-      tue: { min: 8, max: 18 },
-      wed: { min: 8, max: 18 },
-      thu: { min: 8, max: 18 },
-      fri: { min: 8, max: 18 },
-      sat: { min: 0, max: 0 },
-      sun: { min: 0, max: 0 },
-    };
 
     this.noAvail = this.noAvail.bind(this);
     this.handleAboutChange = this.handleAboutChange.bind(this);

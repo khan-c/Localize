@@ -38,7 +38,13 @@ class BusinessFormButtons extends React.Component {
     const contact = {
       phone
     };
-    const availability = [mon, tue, wed, thu, fri, sat, sun];
+    const availability = [mon, tue, wed, thu, fri, sat, sun].map((day,idx) => {
+      const d = {};
+      d['start'] = day.min;
+      d['end'] = day.max;
+      d['day'] = idx;
+      return d;
+    });
     const categories = value;
     const parseCity = city.split(" ").join("%20");
     this.props.fetchLatLng(parseCity)

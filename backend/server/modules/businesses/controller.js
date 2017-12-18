@@ -21,7 +21,7 @@ export const createBusiness = async (req, res) => {
     orders,
     associated_users,
     testimonials
-  } = req.body;
+  } = req.body.formBusiness;
 
   const newBusiness = new Business({
     name,
@@ -46,10 +46,11 @@ export const createBusiness = async (req, res) => {
     const business = await axios.post(
       `https://api.mlab.com/api/1/databases/localize/collections/businesses?apiKey=${mongoConfig.apikey}`,
       { newBusiness });
-    return res.status(201).json({ business });
+
+    return res.status(201).json({ business: business.data.newBusiness });
   } catch(e) {
     return res.status(422)
-      .json({ error: true, message: 'Error with Business' });
+      .json({ error: true, message: CircularJSON.stringify(e) });
   }
 };
 
