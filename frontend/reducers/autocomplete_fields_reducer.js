@@ -17,7 +17,7 @@ const autocompleteFieldsReducer = (state = defaultState, action ) => {
       const oldState = merge({}, state);
       return merge ({}, oldState, {
         term: action.query.text,
-        location: action.query.location.replace('%20', ' ')
+        location: action.query.location
       });
     case RECEIVE_NO_AUTOCOMPLETE_VALUES:
       return {

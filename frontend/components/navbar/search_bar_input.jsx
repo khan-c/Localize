@@ -19,12 +19,12 @@ class SearchBarInput extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (
-      nextProps.autocompleteValues.term &&
+      // nextProps.autocompleteValues.term  &&
       this.props.autocompleteValues.term !== nextProps.autocompleteValues.term
     ) {
       this.setState({
         text: nextProps.autocompleteValues.term,
-        location: nextProps.autocompleteValues.location,
+        location: nextProps.autocompleteValues.location.replace('%20', ' '),
       });
     }
   }

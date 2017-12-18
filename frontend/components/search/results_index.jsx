@@ -33,14 +33,14 @@ class ResultsIndex extends React.Component {
 
   render() {
     const results = this.props.businesses;
-    const { autocompleteFields } = this.props;
+    const { autocompleteFields, clearAutocompleteFields } = this.props;
     if (!results) {
       return <LoadingIcon />;
     }
     return(
       <ul className="results-index">
         {results.map( (business, i) =>
-          <ResultsIndexItem key={i} business={business} autocompleteFields={autocompleteFields}/>
+          <ResultsIndexItem key={i} business={business} autocompleteFields={autocompleteFields} clearAutocompleteFields={clearAutocompleteFields}/>
         )}
       </ul>
     );

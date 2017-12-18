@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   getAutoComplete: query => dispatch(getAutoComplete(query)),
   clearSearchResults: () => dispatch(clearSearchResults()),
   autocompleteFields: query => dispatch(autocompleteFields(query)),
-  clearAutocompleteFields: query => dispatch(clearAutocompleteFields(query))
+  clearAutocompleteFields: () => dispatch(clearAutocompleteFields())
 });
 
 export default withRouter(connect(
