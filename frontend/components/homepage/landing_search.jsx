@@ -2,6 +2,8 @@ import React from 'react';
 import ReactSVG from 'react-svg';
 import LandingAutocompleteIndexContainer from './landing_autocomplete_index_container';
 import { stateToUrl } from '../../util/parsing_functions';
+import { withRouter } from 'react-router-dom';
+import merge from 'lodash/merge'; 
 
 class LandingSearch extends React.Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class LandingSearch extends React.Component {
       locationQueryIsActive: false
     };
     this.clearResults = this.clearResults.bind(this);
-    this.changeFocusFrom = this.changeFocusFrom.bind(this);
+    this.handleKey = this.handleKey.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -45,10 +47,16 @@ class LandingSearch extends React.Component {
     });
   }
 
+  
   handleSubmit(event) {
+    if (!(this.state.location)){ 
+      this.state.location = "San Francisco";
+    } 
     const url = `/search?${stateToUrl(this.state)}`;
-    event.preventDefault();
-    this.props.history.push(url);
+    if (event) {event.preventDefault();}
+    if (this.state.text.length > 3) {
+      this.props.history.push(url);
+    }
   }
 
   makeInactive(field) {
@@ -69,10 +77,13 @@ class LandingSearch extends React.Component {
     }, 100);
   }
 
-  changeFocusFrom(e, field) {
+  handleKey(e, field) {
     if (e.keyCode === 9 && field === 'text') {
       e.preventDefault();
       document.getElementById('search-location').focus();
+    } else if (e.keyCode === 13 && this.state.text) {
+      document.getElementById('search-button').focus();
+      this.handleSubmit();
     }
   }
 
@@ -80,38 +91,40 @@ class LandingSearch extends React.Component {
     return(
       <div className='landing-search-wrapper'>
         <div className='landing-search-wrapper-div'>
-          <div className='landing-search-input-wrapper relative'>
-            <ReactSVG
-              path='../../assets/images/magnifier.svg'
-              className='landing-mag-icon'
-            />
-            <input
-              type='text'
-              className='landing-input'
-              id='search-term'
-              placeholder='search'
-              value={this.state.text}
-              onChange={this.update('text')}
-              onKeyDown={e => this.changeFocusFrom(e, 'text')}
-              onBlur={this.clearResults}
-            />
-            <LandingAutocompleteIndexContainer />
-          </div>
-          <div className='landing-search-input-wrapper'>
-            <ReactSVG
-              path='../../assets/images/pin.svg'
-              className='landing-pin-icon'
-            />
-            <input
-              type='text'
-              className='landing-input'
-              id='search-location'
-              placeholder='location'
-              value={this.state.location}
-              onChange={this.update('location')}
-              onKeyDown={e => this.changeFocusFrom(e, 'location')}
-              onBlur={() => this.makeInactive('location')}
-            />
+          <div className='landing-inputs-wrapper'>
+            <div className='landing-search-input-wrapper relative' id='search-input'>
+              <ReactSVG
+                path='../../assets/images/magnifier.svg'
+                className='landing-mag-icon'
+              />
+              <input
+                type='text'
+                className='landing-input'
+                id='search-term'
+                placeholder='search'
+                value={this.state.text}
+                onChange={this.update('text')}
+                onKeyDown={e => this.handleKey(e, 'text')}
+                onBlur={this.clearResults}
+              />
+              <LandingAutocompleteIndexContainer />
+            </div>
+            <div className='landing-search-input-wrapper'>
+              <ReactSVG
+                path='../../assets/images/pin.svg'
+                className='landing-pin-icon'
+              />
+              <input
+                type='text'
+                className='landing-input'
+                id='search-location'
+                placeholder='location'
+                value={this.state.location}
+                onChange={this.update('location')}
+                onKeyDown={e => this.handleKey(e, 'location')}
+                onBlur={() => this.makeInactive('location')}
+              />
+            </div>
           </div>
           <input
             type='submit'
@@ -126,4 +139,4 @@ class LandingSearch extends React.Component {
   }
 }
 
-export default LandingSearch;
+export default withRouter(LandingSearch);

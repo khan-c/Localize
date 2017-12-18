@@ -5,18 +5,15 @@
 
 .landing-page {
   background-color: $lightest-blue;
-  padding: 100px;
+  padding: 160px 100px;
   box-sizing: border-box;
-  height: 770px;
-  position: relative;
   z-index: 400;
   width: 100%;
 }
 
 .landing-page-content {
   background-color: white;
-  border: 12px solid;
-  width: 1000px;
+  border: 20px solid;
   margin: auto;
   padding: 60px;
   box-sizing: border-box;
@@ -70,6 +67,10 @@
   background-color: $red;
   color: white;
   transform: scale(1);
+}
+
+.landing-inputs-wrapper {
+  display: flex;
 }
 
 .landing-search-input-wrapper {
@@ -169,12 +170,61 @@
   transform: rotate(.04turn);
 }
 
+@media only screen and (max-width: 845px)  {
+  .landing-b2B {
+    transform: scale(.4) rotate(.03turn);
+    right: -180px;
+  }
+  .landing-page-content {
+    width: 645px;
+  }
+}
+
+@media only screen and (max-width: 1000px)  {
+  .landing-search-wrapper-div {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+  }
+  .landing-inputs-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .landing-input {
+    width: auto;
+  }
+  #search-input {
+    flex: 1
+  }
+
+  #search-button {
+    width: fit-content;
+  }
+  #search-term {
+    width: 260px;
+  }
+  #search-location {
+    width: 100
+  }
+}
+
 @media only screen and (max-width: 1500px)  {
   .landing-b2B {
     transform: scale(.4) rotate(.03turn);
     right: -180px;
   }
+  .landing-page-content {
+
+  }
 }
+
+@media only screen and (min-width: 1200px)  {
+  .landing-page-content {
+    width: 1000px;
+  }
+}
+
+
 
 .landing-open-line-2 {
   position: absolute;

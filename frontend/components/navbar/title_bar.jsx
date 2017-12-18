@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionLinksContainer from './title_session_links_container';
 import UserLinksContainer from './title_user_links_container';
+import { withRouter, Link } from 'react-router-dom';
 
 class TitleBar extends React.Component {
   constructor(props) {
@@ -12,11 +13,22 @@ class TitleBar extends React.Component {
   }
 
   render() {
-    const Component = this.props.currentUser ? UserLinksContainer : SessionLinksContainer;
+    let color;
+    const Component = this.props.currentUser ?
+                          UserLinksContainer :
+                          SessionLinksContainer;
 
+    if (this.props.location.pathname === '/') {
+      color = '#E9FBFC';
+    } else {
+      color = 'white';
+    }
+    const style = {
+      backgroundColor: color,
+    };
     return (
-      <div className="titlebar">
-        <h3>Localize</h3>
+      <div className="titlebar" style={style}>
+        <Link to='/'><h3 id='page-title'>Localize</h3></Link>
         {/* <Switch> */}
         <Component />
         {/* <ProtectedRoute path="/" component={UserLinks} /> */}
@@ -26,4 +38,4 @@ class TitleBar extends React.Component {
   }
 }
 
-export default TitleBar;
+export default withRouter(TitleBar);

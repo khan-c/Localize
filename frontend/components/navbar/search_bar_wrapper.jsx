@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchFieldWrapper from './search_field_wrapper';
 import Categories from './search_bar_categories';
+import { withRouter } from 'react-router-dom';
 
 class SearchBarWrapper extends React.Component {
   componentDidMount() {
@@ -10,14 +11,23 @@ class SearchBarWrapper extends React.Component {
         searchWrapper.classList.add('sticky');
       } else {
         searchWrapper.classList.remove('sticky');
+        if (this.props.location.pathname === '/') {
+          searchWrapper.setAttribute('style', 'backgroundColor: #E9FBFC');
+        }
       }
     });
   }
 
   render () {
+    let style;
+    if (this.props.location.pathname !== '/') {
+      style = {
+        backgroundColor: 'white',
+      };
+    }
     return (
-      <div id='search-bar-wrapper'>
-        <div className='search-bar-wrapper' >
+      <div id='search-bar-wrapper' style={style}>
+        <div className='search-bar-wrapper'>
           <SearchFieldWrapper />
           <Categories />
         </div>
@@ -26,4 +36,4 @@ class SearchBarWrapper extends React.Component {
   }
 }
 
-export default SearchBarWrapper;
+export default withRouter(SearchBarWrapper);
