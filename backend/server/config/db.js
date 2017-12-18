@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
-import { mongoConfig } from '.keys';
+import { mongoConfig } from './keys';
+import { mongoConfig as mongoConfig2 } from '../api/auth';
 
-const URI = `mongodb://${mongoConfig.username}:${mongoConfig.password}@ds059207.mlab.com:59207/localize`;
+const username = mongoConfig.username || mongoConfig2.username;
+const password = mongoConfig.password || mongoConfig2.password;
+
+const URI = `mongodb://${username}:${password}@ds059207.mlab.com:59207/localize`;
 
 export default () => {
   mongoose.Promise = global.Promise;
