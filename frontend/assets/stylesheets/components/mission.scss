@@ -41,18 +41,16 @@
 }
 
 .icon-links-wrapper:active .category-icon {
-  fill: $gray;
+  fill: $lightest-red;
   transform: scale(.95);
 }
 
 .icon-links-wrapper:hover .icon-link {
   color: $red;
-  border-bottom: 3px solid black;
 }
 
 .icon-links-wrapper:active .icon-link {
   color: $red;
-  border-bottom: 3px solid transparent;
 }
 
 .icon-links-wrapper:hover {

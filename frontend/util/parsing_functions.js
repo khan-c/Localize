@@ -16,12 +16,20 @@ export const iconToUrl = (localState) => {
 
 
 export const urlToQuery = searchString => {
-  let rawSearchString = searchString.slice(1); 
-  let key_value_pairs = rawSearchString.split("&"); 
-  let query = {}; 
+  let rawSearchString = searchString.slice(1);
+  let key_value_pairs = rawSearchString.split("&");
+  let query = {};
   key_value_pairs.forEach( kv => {
-    let tempArr = kv.split("="); 
-    query[tempArr[0]] = tempArr[1]; 
+    let tempArr = kv.split("=");
+    query[tempArr[0]] = tempArr[1];
   });
-  return query; 
+  return query;
+};
+
+export const locationFromPath = path => {
+  return path.split('location=')[1];
+};
+
+export const termFromPath = path => {
+  return path.split('term=')[1].split('&')[0].replace('%20', ' ');
 };

@@ -1,14 +1,13 @@
 import React from 'react';
-import LandingAutocompleteIndexItem from './landing_autocomplete_index_item';
+import NavbarAutocompleteIndexItem from './navbar_autocomplete_index_item';
 
-class LandingAutocompleteIndex extends React.Component {
+class NavbarAutocompleteIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(term) {
-    console.log('handle click');
     const query = {
       text: term,
     };
@@ -21,10 +20,10 @@ class LandingAutocompleteIndex extends React.Component {
       return (<div></div>);
     } else {
       return (
-        <div className='landing-autocomplete-index'>
+        <div className='navbar-autocomplete-index'>
           {
             results.terms.map(term => (
-              <LandingAutocompleteIndexItem
+              <NavbarAutocompleteIndexItem
                 key={term}
                 term={term}
                 handleClick={this.handleClick}
@@ -37,4 +36,4 @@ class LandingAutocompleteIndex extends React.Component {
   }
 }
 
-export default LandingAutocompleteIndex;
+export default NavbarAutocompleteIndex;
