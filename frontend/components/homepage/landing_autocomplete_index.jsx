@@ -8,6 +8,7 @@ class LandingAutocompleteIndex extends React.Component {
   }
 
   handleClick(term) {
+    console.log('handle click');
     const query = {
       text: term,
     };
