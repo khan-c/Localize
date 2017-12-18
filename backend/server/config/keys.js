@@ -1,3 +1,7 @@
+let config;
+if (process.env.NODE_ENV !== 'production') {
+  config = require('../api/auth');
+}
 
 export const googleConfig = {
   clientID: process.env.G_ID,
