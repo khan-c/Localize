@@ -1,38 +1,36 @@
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import ResultsIndex from './results_index';
+import {
+  getSearch,
+  getAutoComplete,
+  clearSearchResults
+} from '../../actions/search_actions';
+import SearchPage from './search_page';
+import { autocompleteFields, clearAutocompleteFields } from '../../actions/autocomplete_fields_actions';
 
-
-import ResultsIndex from './results_index'; 
-import { 
-  getSearch, 
-  getAutoComplete, 
-  clearSearchResults 
-} from '../../actions/search_actions'; 
-//testing
-import SearchPage from './search_page'; 
-
-
-const mapStateToProps = ( {entities} ) => { 
+const mapStateToProps = ( {entities} ) => {
   return (
     {
     businesses: entities.search.businesses,
     query: entities.search.query,
-    region: entities.search.region 
+    region: entities.search.region
     }
-  ); 
+  );
 };
 
 const mapDispatchToProps = dispatch => ({
-  getSearch: query => dispatch(getSearch(query)), 
-  getAutoComplete: query => dispatch(getAutoComplete(query)), 
-  clearSearchResults: () => dispatch(clearSearchResults())
+  getSearch: query => dispatch(getSearch(query)),
+  getAutoComplete: query => dispatch(getAutoComplete(query)),
+  clearSearchResults: () => dispatch(clearSearchResults()),
+  autocompleteFields: query => dispatch(autocompleteFields(query)),
+  clearAutocompleteFields: () => dispatch(clearAutocompleteFields())
 });
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ResultsIndex)); 
+)(ResultsIndex));
 
-// forwarding this to SearchPage to test passing down props 
-// should be turned back to ResultsIndex when done 
-
+// forwarding this to SearchPage to test passing down props
+// should be turned back to ResultsIndex when done

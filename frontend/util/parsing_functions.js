@@ -29,3 +29,7 @@ export const urlToQuery = searchString => {
 export const locationFromPath = path => {
   return path.split('location=')[1];
 };
+
+export const termFromPath = path => {
+  return path.split('term=')[1].split('&')[0].replace('%20', ' ');
+};

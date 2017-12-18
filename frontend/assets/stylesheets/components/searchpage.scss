@@ -27,18 +27,18 @@
   transition: box-shadow .3s ease;
 }
 .map-hover {
-  // box-shadow: 0 0 12px rgba(0,0,0,0.1);  
-  box-shadow: 0 0 12px $purple; 
-  // border: 1px solid $purple; 
+  // box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px $purple;
+  // border: 1px solid $purple;
 }
 
 .results-index-item:hover {
   // box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  box-shadow: 0 0 12px $purple; 
+  box-shadow: 0 0 12px $lightest-purple;
 
   &.map-hover{
-    box-shadow: none; 
-  }  
+    box-shadow: none;
+  }
 }
 
 
