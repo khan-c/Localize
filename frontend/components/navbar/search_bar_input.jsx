@@ -97,7 +97,6 @@ class SearchBarInput extends React.Component {
           placeholder='search'
           className='search-bar-input'
           value={this.state.text}
-          // onChange={this.update('query')}
           onChange={this.update('text')}
           onKeyDown={e => this.handleKey(e, 'text')}
           onBlur={this.clearResults}
