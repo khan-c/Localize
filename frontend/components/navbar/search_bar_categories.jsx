@@ -38,7 +38,6 @@ class Categories extends React.Component {
       speed: 500,
       slidesToShow: 5,
       slidesToScroll: 3,
-      centerMode: true,
       adaptiveHeight: true,
       arrows: false,
       variableWidth: true,
@@ -53,12 +52,12 @@ class Categories extends React.Component {
           <div className='category-carousel' key={4}><a onClick={(e) => this.handleClick(e, 'Cleaning')}>Cleaning</a></div>
           <div className='category-carousel' key={5}><a onClick={(e) => this.handleClick(e, 'Supplies')}>Supplies</a></div>
           <div className='category-carousel' key={6}><a onClick={(e) => this.handleClick(e, 'Florist')}>Florist</a></div>
-          <div className='category-carousel' key={7}><a onClick={(e) => this.handleClick(e, 'Installataion')}>Installation</a></div>
+          <div className='category-carousel' key={7}><a onClick={(e) => this.handleClick(e, 'Laundry')}>Laundry</a></div>
           <div className='category-carousel' key={8}><a onClick={(e) => this.handleClick(e, 'Furniture')}>Furniture</a></div>
           <div className='category-carousel' key={9}><a onClick={(e) => this.handleClick(e, 'Construction')}>Construction</a></div>
           <div className='category-carousel' key={10}><a onClick={(e) => this.handleClick(e, 'Maintenance')}>Maintenance</a></div>
           <div className='category-carousel' key={12}><a onClick={(e) => this.handleClick(e, 'Printing')}>Printing</a></div>
-          <div className='category-carousel' key={13}><a onClick={(e) => this.handleClick(e, 'Accounting')}>Accounting</a></div>
+          <div className='category-carousel' key={13}><a onClick={(e) => this.handleClick(e, 'Bakery')}>Bakery</a></div>
         </Slider>
         <Icon className='search-arrow' onClick={this.next}/>
       </div>
