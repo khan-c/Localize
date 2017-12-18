@@ -12,8 +12,14 @@ import routes from './config/routes';
 import passportConfig from './config/passport';
 import flash from 'connect-flash';
 import axios from 'axios';
-import { credentials, clientStuff } from './api/key';
+import { credentials } from './config/keys';
 import CircularJSON from 'circular-json';
+
+let creds;
+if (process.env !== 'production') {
+  creds = require('./api/key');
+}
+
 
 dbConfig();
 
@@ -46,7 +52,7 @@ app.listen(PORT, err => {
 // route and controller to get business by ID
 app.get('/business', (req, res) => {
   // import credentials from our config file
-  const token = credentials();
+  const token = credentials() || creds();
   axios.get(`https://api.yelp.com/v3/businesses/${req.query.Id}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
@@ -63,7 +69,7 @@ app.get('/business', (req, res) => {
 // route and controller for search
 app.get('/search', (req, res) => {
   let url = "https://api.yelp.com/v3/businesses/search?";
-  const token = credentials();
+  const token = credentials() || creds();
   const queryArr = Object.keys(req.query);
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
@@ -91,7 +97,7 @@ app.get('/search', (req, res) => {
 app.get('/autocomplete', (req, res) => {
   let autoUrl = "https://api.yelp.com/v3/autocomplete?";
   console.log("autoURL", autoUrl);
-  const token = credentials();
+  const token = credentials() || creds();
   const queryArrAuto = Object.keys(req.query);
   console.log("req.query", queryArrAuto);
   queryArrAuto.forEach( q => {
