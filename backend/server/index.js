@@ -12,7 +12,7 @@ import routes from './config/routes';
 import passportConfig from './config/passport';
 import flash from 'connect-flash';
 import axios from 'axios';
-import { credentials, clientStuff } from './api/key';
+import { credentials } from './config/keys';
 import CircularJSON from 'circular-json';
 
 dbConfig();
@@ -73,7 +73,7 @@ app.get('/search', (req, res) => {
       url = url + "&";
     }
   });
-  
+
   axios.get(`${url}`, {
     headers: {
       Authorization: "Bearer " + token.access_token

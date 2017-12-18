@@ -5,26 +5,15 @@ import FormServices from './form_services';
 class BusinessFormBasic extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      phone: '',
-      address1: '',
-      address2: '',
-      city: '',
-      state: '',
-      zip: ''
-    };
   }
 
   handleChange(type) {
     if (type === 'state') {
       return (input) => {
-        this.setState({ [type]: input });
+        this.props.updateForm({ [type]: input });
       };
     }
-    return (e) => {
-      this.setState({ [type]: e.target.value });
-    };
+    return (e) => this.props.updateForm({ [type]: e.target.value });
   }
 
   render() {
@@ -81,9 +70,11 @@ class BusinessFormBasic extends React.Component {
       { value: "WV", label: "WV" },
       { value: "WY", label: "WY" }
     ];
-      const stateOptions = states.map(state => (
-        <option key={ state } value={ state }>{ state }</option>
-      ));
+
+    const stateOptions = states.map(state => (
+      <option key={ state } value={ state }>{ state }</option>
+    ));
+
     return (
       <div>
         <form className="business-form">
@@ -91,20 +82,20 @@ class BusinessFormBasic extends React.Component {
             onChange={ this.handleChange('name') }
             type="text"
             placeholder="Company Name"
-            value={ this.state.name }
+            value={ this.props.name }
             autoFocus
             />
           <input
             onChange={ this.handleChange('address1') }
             type="text"
             placeholder="Street Address 1"
-            value={ this.state.address1 }
+            value={ this.props.address1 }
             />
           <input
             onChange={ this.handleChange('address2') }
             type="text"
             placeholder="Street Address 2 (optional)"
-            value={ this.state.address2 }
+            value={ this.props.address2 }
             />
           <div className="form-address">
             <input
@@ -112,13 +103,13 @@ class BusinessFormBasic extends React.Component {
               onChange={ this.handleChange('city') }
               type="text"
               placeholder="City"
-              value={ this.state.city }
+              value={ this.props.city }
               />
             <Select
               name="select-state"
               noResultsText="no state found"
               placeholder="STATE"
-              value={ this.state.state }
+              value={ this.props.state }
               autosize={ false }
               clearable={ false }
               onChange={ this.handleChange("state") }
@@ -130,18 +121,18 @@ class BusinessFormBasic extends React.Component {
               onChange={ this.handleChange('zip') }
               type="text"
               placeholder="Zip"
-              value={ this.state.zip }
+              value={ this.props.zip }
               />
           </div>
           <input
             onChange={ this.handleChange('phone') }
             type="text"
             placeholder="Phone"
-            value={ this.state.phone }
+            value={ this.props.phone }
             />
         </form>
         <h3 className="business-form-title">Services / Products</h3>
-        <FormServices />
+        <FormServices {...this.props} />
       </div>
     );
   }

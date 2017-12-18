@@ -1,5 +1,5 @@
 import React from 'react';
-import BusinessFormContainer from '../business/form_container';
+import BusinessFormContainer from '../business_form/form_container';
 import { Route } from 'react-router-dom';
 import LandingSection from './landing_section';
 import MissionSection from './mission_section';

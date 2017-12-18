@@ -17,20 +17,29 @@ class BusinessDetails extends React.Component {
     };
 
     this.noAvail = this.noAvail.bind(this);
+    this.handleAboutChange = this.handleAboutChange.bind(this);
+  }
+
+  handleAboutChange(e) {
+    this.props.updateForm({ about: e.target.value });
+  }
+
+  handleAvailChange(day, value) {
+    this.props.updateForm({ [day]: value });
   }
 
   noAvail(day) {
     return (e) => {
       e.preventDefault();
       const value = { min: 0, max: 0 };
-      this.setState({ [day]: value });
+      this.handleAvailChange(day, value);
     };
   }
 
   generateAvailability() {
     return ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].map(day => {
-      const start = this.parseHour(this.state[day].min);
-      const end = this.parseHour(this.state[day].max);
+      const start = this.parseHour(this.props[day].min);
+      const end = this.parseHour(this.props[day].max);
       let hours = `${ start } - ${ end }`;
       if (start === end) {
         hours = 'closed';
@@ -45,8 +54,8 @@ class BusinessDetails extends React.Component {
               maxValue={ 24 }
               minValue={ 0 }
               step= { 0.5 }
-              value={ this.state[day] }
-              onChange={ value => this.setState({ [day]: value })}/>
+              value={ this.props[day] }
+              onChange={ value => this.handleAvailChange(day, value) }/>
             <MdClose
               onClick={ this.noAvail(day) }
               className="closed"/>
@@ -83,9 +92,11 @@ class BusinessDetails extends React.Component {
     return (
       <div className="business-form-details">
         <textarea
+          onChange={ this.handleAboutChange }
           autoFocus
           className="details-textarea"
-          placeholder="Tell us more about your business!"></textarea>
+          placeholder="Tell us more about your business!"
+          value={ this.props.about}></textarea>
         <h3 className="business-form-title">Business Hours</h3>
         <div className="availability">
           { days }

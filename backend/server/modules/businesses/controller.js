@@ -1,4 +1,6 @@
 import Business from './model';
+import axios from 'axios';
+import CircularJSON from 'circular-json';
 
 export const createBusiness = async (req, res) => {
   const {
@@ -60,7 +62,7 @@ export const getBusiness = async (req, res) => {
   const businessId = req.params.businessId;
   try {
     return res.status(200).json(
-      { business: await Business.findById(businessId) }
+      { business: "test" }
     );
   } catch (e) {
     return res.status(e.status)

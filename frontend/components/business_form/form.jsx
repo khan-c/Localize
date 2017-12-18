@@ -10,14 +10,49 @@ import MdClose from 'react-icons/lib/md/close';
 class BusinessForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: '',
+      phone: '',
+      address1: '',
+      address2: '',
+      city: '',
+      state: '',
+      zip: '',
+      about: '',
+      mon: { min: 8, max: 18 },
+      tue: { min: 8, max: 18 },
+      wed: { min: 8, max: 18 },
+      thu: { min: 8, max: 18 },
+      fri: { min: 8, max: 18 },
+      sat: { min: 0, max: 0 },
+      sun: { min: 0, max: 0 },
+      value: []
+    };
+
 
     this.bizModalClose = this.bizModalClose.bind(this);
+    this.updateForm = this.updateForm.bind(this);
+    this.handleEsc = this.handleEsc.bind(this);
   }
 
-  // componentDidMount() {
-  //   const app = document.querySelector('.homepage');
-  //   app.className += ' scroll-lock';
-  // }
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleEsc);
+  }
+
+  handleEsc(e) {
+    if (e.keyCode === 27) {
+      this.props.history.push("/");
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleEsc);
+  }
+
+  updateForm(value) {
+    const key = Object.keys(value)[0];
+    this.setState({ [key]: value[key] });
+  }
 
   bizModalClose(e) {
     if (e.target.className === 'business-modal') {
@@ -70,9 +105,15 @@ class BusinessForm extends React.Component {
             <div className="business-form-forms">
               <Switch>
                 <Route path="/associatebusiness/basic_info"
-                  component={BusinessFormBasic} />
+                  render={ props => <BusinessFormBasic
+                    updateForm={ this.updateForm }
+                    {...this.state}
+                    {...props} /> } />
                 <Route path="/associatebusiness/add_details"
-                  component={BusinessDetails} />
+                  render={ props => <BusinessDetails
+                    updateForm={ this.updateForm }
+                    {...this.state}
+                    {...props} /> } />
                 <Route path="/associatebusiness/photos"
                   component={BusinessFormPhotos} />
               </Switch>
@@ -88,7 +129,10 @@ class BusinessForm extends React.Component {
               </div>
             </div>
           </div>
-          <BusinessFormButtons />
+          <BusinessFormButtons
+            createBusiness={ this.props.createBusiness }
+            fetchLatLng={ this.props.fetchLatLng }
+            businessDetails={ this.state }/>
         </div>
       </div>
     );

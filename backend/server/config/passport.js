@@ -1,5 +1,5 @@
 import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
-import { googleConfig } from '../api/auth.js';
+import { googleConfig } from './keys';
 import User from '../modules/users/model';
 
 const findUserById = async (id, done) => {

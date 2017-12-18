@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { mongoConfig } from '../api/auth';
+import { mongoConfig } from '.keys';
 
 const URI = `mongodb://${mongoConfig.username}:${mongoConfig.password}@ds059207.mlab.com:59207/localize`;
 

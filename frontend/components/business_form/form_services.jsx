@@ -5,16 +5,13 @@ import { fetchAutoComplete } from '../../util/yelp_api';
 class FormServices extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: []
-    };
 
     this.onChange = this.onChange.bind(this);
     this.getServices = this.getServices.bind(this);
   }
 
   onChange(value) {
-    this.setState({ value: value });
+    this.props.updateForm({ value: value });
   }
 
   getServices(input) {
@@ -44,7 +41,7 @@ class FormServices extends React.Component {
       <div className="services-selector">
         <Services
           multi
-          value={ this.state.value }
+          value={ this.props.value }
           onChange={ this.onChange }
           loadOptions={ this.getServices }
           backspaceRemoves

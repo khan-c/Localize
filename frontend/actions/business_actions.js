@@ -26,6 +26,14 @@ export const receiveNoBusiness = () => ({
 
 export const showBusiness = businessId => dispatch => {
   dispatch(startLoadingSingleBusiness());
+  if (businessId.slice(-8) === 'localize') {
+    return BusinessAPIUtil.fetchBusiness(businessId)
+      .then( results => {
+        console.log(results);
+        dispatch(receiveBusiness(results)); },
+        errors => console.log(errors)
+    );
+  }
   return getBusiness(businessId).then( results => {
     dispatch(receiveBusiness(results));
   });
