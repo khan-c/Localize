@@ -7,7 +7,6 @@ const GeneralInfo = props => {
   const { business } = props;
   return (
     <div className='business-section-wrapper'>
-      {console.log(business)}
       <h1 className='business-name'>{business.name}</h1>
       <span className='display-text'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -1,9 +1,13 @@
 import mongoose from 'mongoose';
 import { mongoConfig } from './keys';
-import { mongoConfig as mongoConfig2 } from '../api/auth';
 
-const username = mongoConfig.username || mongoConfig2.username;
-const password = mongoConfig.password || mongoConfig2.password;
+let config;
+if (process.env.NODE_ENV !== 'production') {
+  config = require('../api/auth');
+}
+
+const username = mongoConfig.username || config.mongoConfig.username;
+const password = mongoConfig.password || config.mongoConfig.password;
 
 const URI = `mongodb://${username}:${password}@ds059207.mlab.com:59207/localize`;
 

@@ -7,7 +7,6 @@ const BusinessAboutSection = props => {
   if (props.singleBusinessLoading) {
     return (<div></div>);
   } else {
-    console.log(props.business);
     return (
       <div className='business-about-section'>
         <GeneralInfo business={props.business}/>

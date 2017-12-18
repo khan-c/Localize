@@ -1,9 +1,8 @@
 
-
 export const googleConfig = {
   clientID: process.env.G_ID,
   clientSecret: process.env.G_SECRET,
-  callbackURL: 'http://localhost:8000/auth/google/callback'
+  callbackURL: '/auth/google/callback'
 };
 
 export const mongoConfig = {

@@ -15,6 +15,12 @@ import axios from 'axios';
 import { credentials } from './config/keys';
 import CircularJSON from 'circular-json';
 
+let creds;
+if (process.env.NODE_ENV !== 'production') {
+  creds = require('./api/key');
+}
+
+
 dbConfig();
 
 passportConfig(passport);
@@ -46,7 +52,7 @@ app.listen(PORT, err => {
 // route and controller to get business by ID
 app.get('/business', (req, res) => {
   // import credentials from our config file
-  const token = credentials();
+  const token = credentials() || creds();
   axios.get(`https://api.yelp.com/v3/businesses/${req.query.Id}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
@@ -63,7 +69,7 @@ app.get('/business', (req, res) => {
 // route and controller for search
 app.get('/search', (req, res) => {
   let url = "https://api.yelp.com/v3/businesses/search?";
-  const token = credentials();
+  const token = credentials() || creds();
   const queryArr = Object.keys(req.query);
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
@@ -91,10 +97,10 @@ app.get('/search', (req, res) => {
 // route and controller for autocomplete
 app.get('/autocomplete', (req, res) => {
   let autoUrl = "https://api.yelp.com/v3/autocomplete?";
-  console.log("autoURL", autoUrl);
-  const token = credentials();
+  // console.log("autoURL", autoUrl);
+  const token = credentials() || creds();
   const queryArrAuto = Object.keys(req.query);
-  console.log("req.query", queryArrAuto);
+  // console.log("req.query", queryArrAuto);
   queryArrAuto.forEach( q => {
     if (!(req.query[q] === "")) {
       autoUrl = autoUrl + `${q}` + "=" + `${req.query[q]}`;
@@ -103,14 +109,14 @@ app.get('/autocomplete', (req, res) => {
       autoUrl = autoUrl + "&";
     }
   });
-  console.log("autoUrl", autoUrl);
+  // console.log("autoUrl", autoUrl);
   axios.get(`${autoUrl}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
     }
   }).then( data =>{
     // need to flatten ciruclarJSON file
-    console.log("dataaaa", data);
+    // console.log("dataaaa", data);
     let Json = CircularJSON.stringify(data);
     res.status(200).send(Json);
   }, error => {
