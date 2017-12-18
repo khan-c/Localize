@@ -3,7 +3,7 @@ import { googleConfig } from './keys';
 import User from '../modules/users/model';
 
 let config;
-if (process.env !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   config = require('../api/auth');
 }
 

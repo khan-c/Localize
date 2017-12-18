@@ -16,7 +16,7 @@ import { credentials } from './config/keys';
 import CircularJSON from 'circular-json';
 
 let creds;
-if (process.env !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   creds = require('./api/key');
 }
 

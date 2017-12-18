@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { mongoConfig } from './keys';
 
 let config;
-if (process.env !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   config = require('../api/auth');
 }
 
