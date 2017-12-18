@@ -4,12 +4,12 @@ const MissionStatementLeft = () => (
   <div className='mission-statement'>
     <div className='mission-left-img'>
       <div className='mission-left-text-wrapper'>
-        <h1 className='mission-left-title'>Statement 1</h1>
+        <h1 className='mission-left-title'>Quality is better locally</h1>
         <span className='mission-left-text display-text'>
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Proin in elit erat. Vestibulum
-          et enim bibendum, molestie ex non, ullamcorper sapien.
-          Curabitur eu metus mi.
+        Larger companies have found a way to meet the needs of their 
+        business while supporting the local community and keeping businesses going. Our 
+        partners have begun regularly scheduling deliveries of flowers, bread, laundry, and 
+        cleaning services from their local communities. 
         </span>
       </div>
     </div>

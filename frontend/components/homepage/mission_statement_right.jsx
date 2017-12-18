@@ -4,12 +4,11 @@ const MissionStatementRight = () => (
   <div className='mission-statement statement-right'>
     <div className='mission-right-img'>
       <div className='mission-right-text-wrapper'>
-        <h1 className='mission-right-title'>Statement 2</h1>
+        <h1 className='mission-right-title'>Commission Local Artist and Makers</h1>
         <span className='mission-right-text display-text'>
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Proin in elit erat. Vestibulum
-          et enim bibendum, molestie ex non, ullamcorper sapien.
-          Curabitur eu metus mi.
+          In recent weeks, we have seen a large increase in commissioned pieces from companies 
+          looking to fill their offices with paintings, murals, sculptures, and large center-pieces from 
+          local artists. 
         </span>
       </div>
     </div>
