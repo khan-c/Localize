@@ -3,9 +3,9 @@ if (process.env.NODE_ENV !== 'production') {
   config = require('../api/auth');
 }
 
-const username = process.env.M_USER || config.mongoConfig.username;
-const apikey = process.env.M_API || config.mongoConfig.apikey;
-const password = process.env.MPW || config.mongoConfig.password;
+const username = process.env.M_USER;
+const apikey = process.env.M_API;
+const password = process.env.MPW;
 
 export const googleConfig = {
   clientID: process.env.G_ID,
