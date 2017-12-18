@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getBusiness = businessId => {
   return (
-    axios.get('http://localhost:8000/business', {
+    axios.get('https://localhost:8000/business', {
       params: {
         Id: businessId
       }
@@ -19,7 +19,7 @@ export const getBusiness = businessId => {
 
 export const search = query => {
   return (
-    axios.get('http://localhost:8000/search', {
+    axios.get('https://localhost:8000/search', {
       params: {
         term: query.term,
         latitude: query.latitude,
@@ -32,7 +32,7 @@ export const search = query => {
 
 export const fetchAutoComplete = query => {
   return (
-    axios.get('http://localhost:8000/autocomplete', {
+    axios.get('https://localhost:8000/autocomplete', {
       params: {
         text: query.text,
         latitude: query.latitude,
