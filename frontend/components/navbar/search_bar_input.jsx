@@ -24,6 +24,7 @@ class SearchBarInput extends React.Component {
     ) {
       this.setState({
         text: nextProps.autocompleteValues.term,
+        location: nextProps.autocompleteValues.location,
       });
     }
   }

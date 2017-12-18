@@ -25,6 +25,7 @@ class ResultsIndexItem extends React.Component {
     };
     const url = `/search?${stateToUrl(query)}`;
     this.props.history.push(url);
+    this.props.autocompleteFields(query);
   }
 
   render(){
