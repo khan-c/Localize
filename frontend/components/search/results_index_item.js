@@ -8,6 +8,15 @@ class ResultsIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.sendToBusinessPage = this.sendToBusinessPage.bind(this);
+    this.clearMapHover = this.clearMapHover.bind(this); 
+  }
+  
+  clearMapHover() {
+    let elementToRemove = document.getElementsByClassName("map-hover"); 
+    //removes it if it exists (we only want one)
+    if (elementToRemove.length > 0 ){
+      elementToRemove[0].classList.remove("map-hover"); 
+    }
   }
 
   sendToBusinessPage(event, businessId) {
@@ -33,17 +42,21 @@ class ResultsIndexItem extends React.Component {
       return null;
     }
     return(
-      <li className='results-index-item'>
+      <li className='results-index-item' id={business.id}>
         <img
           className='results-index-thumbnail'
           src={business.image_url}
           onClick={(e) => this.sendToBusinessPage(e, business.id)}
+          onMouseOver={this.clearMapHover}
         />
         <div className='results-index-item-text'>
-          <div className='result-index-item-text-wrapper'>
+          <div className='result-index-item-text-wrapper'  
+            onMouseOver={this.clearMapHover}
+          >
             <a
               onClick={(e) => this.sendToBusinessPage(e, business.id)}
               className='result-idx-item-business-name'
+              onMouseOver={this.clearMapHover}              
             >
               {business.name}
             </a>
@@ -51,6 +64,7 @@ class ResultsIndexItem extends React.Component {
               <ReactSVG
                 path='../../assets/images/pin.svg'
                 className='results-index-item-icon'
+                onMouseOver={this.clearMapHover}                
               />
               <span className='business-address display'>
                 {`${business.location.display_address[0]}, ${business.location.display_address[1]}`}
@@ -60,6 +74,7 @@ class ResultsIndexItem extends React.Component {
               <ReactSVG
                 path='../../assets/images/telephone.svg'
                 className='results-index-item-icon'
+                onMouseOver={this.clearMapHover}                
               />
               <span className='display'>{business.display_phone}</span>
             </div>
@@ -67,11 +82,12 @@ class ResultsIndexItem extends React.Component {
           <div className='category-contact-wrapper'>
             <div className='category-contact'>
               <div className='results-index-categories-wrapper'>
-                {business.categories.map(category => (
+                {business.categories.map((category,idx) => (
                   <input
                     type='button'
                     className='results-index-item-category'
                     value={category['title']}
+                    key={category['title']+idx}
                     onClick={(e) => this.sendToCategorySearchPage(e, category['title'])}
                   />
                 ))}
