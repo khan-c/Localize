@@ -5,27 +5,29 @@ import TestimonialSection from './testimonial_section';
 
 class HomePage extends React.Component {
   componentDidMount() {
-
+    const homepage = document.getElementById('homepage');
     const searchFieldWrapper = document.getElementById('search-field-wrapper');
-    window.addEventListener('scroll', this.addStickyPadding, true);
     searchFieldWrapper.setAttribute('style', 'display: none');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset >= 65) {
+        homepage.classList.add('sticky-padding');
+      } else {
+        homepage.classList.remove('sticky-padding');
+      }
+    });
     window.addEventListener('scroll', this.hideSearchFromNavbar, true);
   }
 
   componentWillUnmount() {
     const searchFieldWrapper = document.getElementById('search-field-wrapper');
-    window.removeEventListener('scroll', this.hideSearchFromNavbar, true);
     searchFieldWrapper.setAttribute('style', 'display: inline');
+    window.removeEventListener('scroll', this.hideSearchFromNavbar, true);
   }
 
-  addStickyPadding() {
-    const homepage = document.getElementById('homepage');
-    if (window.pageYOffset >= 65) {
-      homepage.classList.add('sticky-padding');
-    } else {
-      homepage.classList.remove('sticky-padding');
-    }
-  }
+  // addStickyPadding() {
+  //
+  //
+  // }
 
   hideSearchFromNavbar() {
     const searchFieldWrapper = document.getElementById('search-field-wrapper');

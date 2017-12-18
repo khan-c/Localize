@@ -1,5 +1,5 @@
-import React from 'react'; 
-import MarkerManager from '../../util/marker_manager'; 
+import React from 'react';
+import MarkerManager from '../../util/marker_manager';
 
 class Map extends React.Component {
   componentWillReceiveProps(newProps){
@@ -15,12 +15,12 @@ class Map extends React.Component {
     };
 
     if (this.props.region){
-      mapOptions.center["lat"] = this.props.region.center.latitude; 
-      mapOptions.center["lng"] = this.props.region.center.longitude; 
+      mapOptions.center["lat"] = this.props.region.center.latitude;
+      mapOptions.center["lng"] = this.props.region.center.longitude;
     }
 
-    const map = this.refs.map; 
-    this.map = new google.maps.Map(map, mapOptions);    
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     if (newProps.businesses) {
       this.MarkerManager.updateMarkers(newProps.businesses);
@@ -34,7 +34,6 @@ class Map extends React.Component {
   render() {
     return (
       <div className="map" ref="map">
-        Map
       </div>
     );
   }

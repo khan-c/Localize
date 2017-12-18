@@ -1,9 +1,7 @@
 import React from 'react';
-import NavbarAutocompleteIndexContainer from './navbar_autocomplete_index_container';
 import { stateToUrl } from '../../util/parsing_functions';
 import { withRouter } from 'react-router-dom';
-import merge from 'lodash/merge'; 
-
+import merge from 'lodash/merge';
 
 class SearchBarInput extends React.Component {
   constructor (props) {
@@ -19,13 +17,17 @@ class SearchBarInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.autocompleteValues.term &&
+      this.props.autocompleteValues.term !== nextProps.autocompleteValues.term
+    ) {
+      this.setState({
+        text: nextProps.autocompleteValues.term,
+      });
+    }
+  }
 
-  /// original is above 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value,
@@ -44,9 +46,9 @@ class SearchBarInput extends React.Component {
   }
 
   handleSubmit(event) {
-    if (!(this.state.location)){ 
+    if (!(this.state.location)){
       this.state.location = "San Francisco";
-    } 
+    }
     const url = `/search?${stateToUrl(this.state)}`;
     if (event) {event.preventDefault();}
     if (this.state.text.length > 3) {
@@ -69,7 +71,7 @@ class SearchBarInput extends React.Component {
     setTimeout( () => {
       this.props.clearAutocomplete();
       this.setState({query: ''});
-    }, 100);
+    }, 400);
   }
 
   handleKey(e, field) {
@@ -82,7 +84,7 @@ class SearchBarInput extends React.Component {
     }
   }
 
-  //original is below 
+  //original is below
   render () {
     return (
       <div className='search-input-wrapper'>
@@ -99,7 +101,7 @@ class SearchBarInput extends React.Component {
           onKeyDown={e => this.handleKey(e, 'text')}
           onBlur={this.clearResults}
         />
-        <NavbarAutocompleteIndexContainer />
+
 
         <img
           src='../../assets/images/pin.svg'
@@ -107,7 +109,7 @@ class SearchBarInput extends React.Component {
         />
         <input type='text'
           placeholder='location'
-          className='search-bar-input'
+          className='search-bar-location'
           id='navbar-search-location'
           value={this.state.location}
           onChange={this.update('location')}
@@ -115,7 +117,7 @@ class SearchBarInput extends React.Component {
           onBlur={() => this.makeInactive('location')}
         />
       </div>
-     
+
     );
   }
 }
