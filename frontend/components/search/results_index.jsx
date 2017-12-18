@@ -10,8 +10,8 @@ class ResultsIndex extends React.Component {
       return <LoadingIcon />;
     }
     return(
-      <ul className="results-index">
-        {results.map( business => <ResultsIndexItem key={business.id} business={business}/> )}
+      <ul className="results-index" id="results-indexid">
+        {results.map( business => <ResultsIndexItem id={business.id} key={business.id} business={business}/> )}
       </ul>
     );
   }
