@@ -146,6 +146,9 @@ input[type="button"] {
   transition: box-shadow 0.3s ease-in;
   overflow: visible; }
 
+.sticky-padding {
+  padding-top: 65px; }
+
 .search-input-wrapper {
   display: flex;
   align-items: center;
@@ -806,13 +809,11 @@ input[type="button"] {
 
 .business-show {
   width: 90%;
-  height: 1000px;
   margin: 5% auto;
   display: flex;
   justify-content: space-between; }
 
 .business-about-section {
-  height: 400px;
   width: 65%; }
 
 .contact-section {
@@ -944,6 +945,7 @@ input[type="button"] {
   justify-content: center; }
 
 .loader {
+  transform: scale(0.7);
   position: relative;
   width: 75px;
   height: 100px; }
