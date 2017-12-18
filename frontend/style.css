@@ -265,8 +265,13 @@ input[type="button"] {
   background-color: white;
   transition: box-shadow .3s ease; }
 
+.map-hover {
+  box-shadow: 0 0 12px #211B59; }
+
 .results-index-item:hover {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 0 12px #211B59; }
+  .results-index-item:hover.map-hover {
+    box-shadow: none; }
 
 .results-index-item-text {
   width: calc(100% - 240px);
