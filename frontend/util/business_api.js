@@ -2,7 +2,6 @@ import axios from 'axios';
 import { mongoConfig } from '../../backend/server/config/keys';
 
 export const createBusiness = formBusiness => {
-  console.log("business_api createBusiness");
   // return axios.post('http://localhost:8000/api/businesses', { formBusiness });
   return axios.post(
     'https://api.mlab.com/api/1/databases/localize/collections/businesses?apiKey=${mongoConfig.apikey}',

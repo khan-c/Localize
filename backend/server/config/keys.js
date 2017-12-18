@@ -13,7 +13,6 @@ export const mongoConfig = {
 };
 
 export const credentials = () => ({
-  // "cliend_id": "vg-56b4TGcGeVwXth2eC7A",
   "access_token": process.env.Y_TOKEN,
   "expires_in": 634419460,
   "token_type": process.env.Y_TTYPE

@@ -29,7 +29,6 @@ export const showBusiness = businessId => dispatch => {
   if (businessId.slice(-8) === 'localize') {
     return BusinessAPIUtil.fetchBusiness(businessId)
       .then( results => {
-        console.log(results);
         dispatch(receiveBusiness(results)); },
         errors => console.log(errors)
     );

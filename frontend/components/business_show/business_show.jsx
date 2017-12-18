@@ -4,7 +4,6 @@ import ContactSection from './contact_section';
 
 class BusinessShow extends React.Component {
   componentWillMount() {
-    console.log(this.props.businessId);
     this.props.showBusiness(this.props.businessId);
   }
 
