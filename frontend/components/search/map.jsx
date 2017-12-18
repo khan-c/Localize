@@ -27,8 +27,28 @@ class Map extends React.Component {
     }
   }
 
+  //Finds y value of given object
+  findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
+  }
+
   handleMarkerClick(business) {
-    this.props.history.push(`businesses/${business.id}`);
+    // this is to remove the map-hover effect from the previously chosen element 
+    let elementToRemove = document.getElementsByClassName("map-hover"); 
+    //removes it if it exists (we only want one)
+    if (elementToRemove.length > 0 ){
+      elementToRemove[0].classList.remove("map-hover"); 
+    }
+    let businessElement = document.getElementById(business.id); 
+    businessElement.className += " map-hover"; 
+    businessElement.setAttribute("scroll-behavior", "smooth"); 
+    businessElement.scrollIntoView({block: 'center',  behavior: 'smooth'});
   }
 
   render() {
