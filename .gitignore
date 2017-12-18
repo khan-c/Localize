@@ -2,11 +2,5 @@ node_modules/
 bundle.js
 bundle.js.map
 api/
-<<<<<<< HEAD
 frontend/style.css
 frontend/style.css.map
-=======
-frontend/style.css 
-frontend/style.css.map
-
->>>>>>> origin/master
