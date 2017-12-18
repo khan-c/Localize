@@ -1,5 +1,6 @@
 import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
-import { googleConfig } from '../api/auth.js';
+import { googleConfig } from './keys';
+import { googleConfig as googleConfig2 } from '../api/auth';
 import User from '../modules/users/model';
 
 const findUserById = async (id, done) => {
@@ -12,7 +13,7 @@ export default (passport) => {
   passport.deserializeUser((id, done) => findUserById(id, done));
 
   passport.use(new GoogleStrategy({
-    clientID: googleConfig.clientID,
+    clientID: googleConfig.clientID || googleConfig2.clientID,
     clientSecret: googleConfig.clientSecret,
     callbackURL: googleConfig.callbackURL
   },
