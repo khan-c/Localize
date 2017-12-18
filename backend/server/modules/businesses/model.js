@@ -33,11 +33,11 @@ const BusinessesSchema = new Schema({
       type: String,
       required: true
     },
-    zip: {
+    state: {
       type: String,
       required: true
     },
-    state: {
+    zip: {
       type: String,
       required: true
     }
@@ -52,6 +52,9 @@ const BusinessesSchema = new Schema({
   },
   is_claimed: {
     type: Boolean,
+  },
+  about: {
+    type: String
   },
   photos: [String],
   categories: [String],
@@ -95,6 +98,15 @@ const BusinessesSchema = new Schema({
         ref: 'User'
       },
       username: String
+    }
+  ],
+  testimonials: [
+    {
+      testimonial_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Testimonial'
+      },
+      testimonial: String
     }
   ]
 });

@@ -1,4 +1,6 @@
 import Business from './model';
+import axios from 'axios';
+import CircularJSON from 'circular-json';
 
 export const createBusiness = async (req, res) => {
   const {
@@ -16,7 +18,8 @@ export const createBusiness = async (req, res) => {
     lead_time,
     reviews,
     orders,
-    associated_users
+    associated_users,
+    testimonials
   } = req.body;
 
   const newBusiness = new Business({
@@ -34,11 +37,12 @@ export const createBusiness = async (req, res) => {
     lead_time,
     reviews,
     orders,
-    associated_users
+    associated_users,
+    testimonials
   });
 
   try {
-    return res.status(201).json({ busines: await newBusiness.save() });
+    return res.status(201).json({ business: await newBusiness.save() });
   } catch(e) {
     return res.status(e.status)
       .json({ error: true, message: 'Error with Business' });
@@ -58,7 +62,7 @@ export const getBusiness = async (req, res) => {
   const businessId = req.params.businessId;
   try {
     return res.status(200).json(
-      { business: await Business.findById(businessId) }
+      { business: "test" }
     );
   } catch (e) {
     return res.status(e.status)
@@ -83,3 +87,7 @@ export const updateBusiness = async (req, res) => {
     })
   })
 }
+
+// export const getTestimonials = async (req, res) => {
+//   const
+// }

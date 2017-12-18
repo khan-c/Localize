@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 const PORT = process.env.PORT || 8000;
 import dbConfig from './config/db';
-import { BusinessRoutes } from './modules';
+import { BusinessRoutes, TestimonialRoutes } from './modules';
 import passport from 'passport';
 import session from 'express-session';
 import routes from './config/routes';
@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 routes(app, passport);
 
-app.use('/api', [BusinessRoutes]);
+app.use('/api', [BusinessRoutes, TestimonialRoutes]);
 
 app.listen(PORT, err => {
   if (err) {
@@ -79,6 +79,7 @@ app.get('/search', (req, res) => {
       url = url + "&";
     }
   });
+
   axios.get(`${url}`, {
     headers: {
       Authorization: "Bearer " + token.access_token

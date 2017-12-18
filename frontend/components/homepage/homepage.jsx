@@ -1,7 +1,10 @@
 import React from 'react';
+import BusinessFormContainer from '../business_form/form_container';
+import { Route } from 'react-router-dom';
 import LandingSection from './landing_section';
 import MissionSection from './mission_section';
 import TestimonialSection from './testimonial_section';
+
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -45,6 +48,7 @@ class HomePage extends React.Component {
         <LandingSection />
         <MissionSection />
         <TestimonialSection />
+        <Route path="/associatebusiness" component={BusinessFormContainer} />
       </div>
     );
   }

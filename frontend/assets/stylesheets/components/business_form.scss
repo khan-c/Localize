@@ -1,0 +1,332 @@
+.business-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(#211B59, 0.35);
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-page {
+  position: relative;
+  height: 80%;
+  width: 50%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 11px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 70px;
+  padding-bottom: 50px;
+
+  box-sizing: border-box;
+}
+
+.form-close {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  color: $dark-gray;
+}
+
+.business-form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.business-form-links {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 6px solid $gray;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+.business-form-links a {
+  position: relative;
+  bottom: -6px;
+  padding: 10px;
+}
+
+.selected {
+  border-bottom: 6px solid $red;
+}
+
+.business-form-body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.business-form-forms {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.business-form-faq {
+  flex: 1;
+  // margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.faq {
+  padding: 10px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $dark-gray;
+  text-align: center;
+  border-top: 1px solid $dark-gray;
+}
+
+.faq:last-of-type {
+  border-bottom: 1px solid $dark-gray;
+}
+
+.faq span {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.business-form-title {
+  margin: 20px 0px;
+}
+
+.business-form, {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.business-form input {
+  padding: 5px 3px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  border-bottom: 1px solid;
+}
+
+.business-form input::placeholder {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.Select {
+  align-items: center;
+  font-family: $text;
+  font-size: 12px;
+  width: 80%;
+  margin-right: 10px;
+}
+
+.Select-input input {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form-address {
+  display: flex;
+  width: 100%;
+}
+
+.city {
+  width: 150%;
+}
+
+.zip {
+  width: 90%;
+}
+
+.services-selector {
+  margin-right: 15px;
+}
+
+.services-selector .Select {
+  width: 100%;
+}
+
+.biz-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.right-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.biz-form-cancel {
+  font-size: 12px;
+  margin-left: 30px;
+  padding: 5px 0px;
+  border-bottom: 1px solid transparent;
+}
+
+.biz-form-cancel:focus,
+.biz-form-cancel:hover {
+  border-bottom: 1px solid;
+}
+
+.biz-form-button {
+  background: $light-blue;
+  color: $dark-gray;
+  border-radius: 1px;
+  padding: 13px 40px;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: transform .2s ease;
+  margin-left: 15px;
+}
+
+.submit,
+.upload {
+  background: $purple;
+  color: white;
+}
+
+.continue,
+.submit {
+  width: 120px;
+  text-align: center;
+  padding: 13px 0px;
+}
+
+.biz-form-button:focus,
+.biz-form-button:hover {
+  cursor: pointer;
+  background: $blue;
+  transform: scale(1.05);
+}
+
+.submit:hover,
+.submit:focus,
+.upload:hover,
+.upload:focus {
+  background: $red;
+}
+
+.biz-form-button:active {
+  transform: scale(1);
+  background: $lightest-blue;
+}
+
+.submit:active,
+.upload:active {
+  transform: scale(1);
+  background: $light-red;
+}
+
+.back {
+  margin: 0;
+}
+
+.business-form-details {
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.details-textarea {
+  font-family: $text;
+  font-size: 14px;
+  height: 70px;
+  width: 100%;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.day {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hours {
+  padding-bottom: 3px;
+}
+
+.avail-range {
+  display: flex;
+  // padding-left: 8px;
+}
+
+.closed {
+  margin-left: 8px;
+}
+
+.closed:hover {
+  cursor: pointer;
+}
+
+.business-form-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.business-form-photos-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.photo-uploader {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.photo-uploader + label {
+  font-size: 12px;
+  font-family: $text;
+  color: $light-purple;
+  background: $lightest-green;
+  display: inline-block;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  padding: 50px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.photo-uploader:focus + label,
+.photo-uploader + label:hover {
+  background: $light-green;
+  cursor: pointer;
+}
+
+.photo-uploader:active + label {
+  background: $lightest-green;
+}
+
+.upload {
+  margin: 10px 0px;
+}
