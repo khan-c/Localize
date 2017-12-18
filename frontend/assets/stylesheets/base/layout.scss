@@ -49,3 +49,10 @@ input[type="submit"] {
   text-transform: uppercase;
   font-size: 10px;
 }
+
+input[type="button"] {
+  font-family: $header;
+  padding: 8px 8px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
