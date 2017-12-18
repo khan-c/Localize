@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const username = process.env.M_USER;
-const apikey = process.env.M_API;
+const apikey = process.env.MAPI;
 const password = process.env.MPW;
 
 export const googleConfig = {
