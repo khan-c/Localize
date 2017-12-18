@@ -3,4 +3,5 @@ bundle.js
 bundle.js.map
 api/
 frontend/style.css 
+frontend/style.css.map
 

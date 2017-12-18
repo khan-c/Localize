@@ -59,8 +59,8 @@ app.get('/business', (req, res) => {
     }
   }).then( data =>{
     // need to flatten ciruclarJSON file
-    let normalJson = CircularJSON.stringify(data);
-    res.status(200).send(normalJson);
+    let normalJson1 = CircularJSON.stringify(data);
+    res.status(200).send(normalJson1);
   }, error => {
     res.status(500).json({error});
   });

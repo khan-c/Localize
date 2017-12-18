@@ -18,7 +18,7 @@
 .search-bar-wrapper {
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 1000px;
   margin: auto;
@@ -36,8 +36,12 @@
 #search-bar-wrapper {
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease-in;
+  transition: box-shadow 0.3s ease-in;
   overflow: visible;
+}
+
+.sticky-padding {
+  padding-top: 65px;
 }
 
 .search-input-wrapper {
@@ -56,7 +60,12 @@
 .search-bar-input {
   border-bottom: 2px solid;
   padding: 2px 0;
-  letter-spacing: 2px;
+  width: 200px;
+}
+
+.search-bar-location {
+  border-bottom: 2px solid;
+  padding: 2px 0;
 }
 
 .mag-icon {
@@ -142,10 +151,38 @@
 }
 
 #page-title:active {
-  color: white;
+  color: $lightest-red;
   transform: scale(1);
 }
 
 .category-carousel {
   margin-right: 20px;
+}
+
+.search-field-wrapper {
+  position: relative;
+}
+
+.navbar-autocomplete-index {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.navbar-autocomplete-index-item {
+  background-color: white;
+  padding: 10px;
+}
+
+.navbar-autocomplete-index-item:hover {
+  background-color: $red;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-autocomplete-index-item:active {
+  background-color: $lightest-red;
+  color: $red;
 }
