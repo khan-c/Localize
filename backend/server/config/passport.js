@@ -19,7 +19,7 @@ export default (passport) => {
   passport.use(new GoogleStrategy({
     clientID: googleConfig.clientID || config.googleConfig.clientID,
     clientSecret: googleConfig.clientSecret || config.googleConfig.clientSecret,
-    callbackURL: 'https://localhost:8000/auth/google/callback'
+    callbackURL: '/auth/google/callback'
   },
   async (token, refreshToken, profile, done) => {
 
