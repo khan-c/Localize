@@ -1,5 +1,5 @@
 import { search, fetchAutoComplete } from '../util/yelp_api';
-import { fetchLatLng } from '../util/location_util'; 
+import { fetchLatLng } from '../util/location_util';
 
 export const SEARCH_ALL = 'SEARCH_ALL';
 export const RECEIVE_NO_SEARCH_RESULTS = 'RECEIVE_NO_SEARCH_RESULTS';
@@ -36,7 +36,7 @@ export const autoComplete = results => {
 export const getSearch = query => dispatch => {
   return (
     search(query).then( results => {
-      dispatch(searchAll(results)); 
+      dispatch(searchAll(results));
     })
   );
 };
