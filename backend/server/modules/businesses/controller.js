@@ -50,7 +50,7 @@ export const createBusiness = async (req, res) => {
     return res.status(201).json({ business: business.data.newBusiness });
   } catch(e) {
     return res.status(422)
-      .json({ error: true, message: CircularJSON.stringify(e) });
+      .json({ error: true, message: e.message });
   }
 };
 
