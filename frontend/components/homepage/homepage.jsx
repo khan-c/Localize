@@ -24,11 +24,6 @@ class HomePage extends React.Component {
     window.removeEventListener('scroll', this.hideSearchFromNavbar, true);
   }
 
-  // addStickyPadding() {
-  //
-  //
-  // }
-
   hideSearchFromNavbar() {
     const searchFieldWrapper = document.getElementById('search-field-wrapper');
     const landing = document.getElementById('landing-search-wrapper');
