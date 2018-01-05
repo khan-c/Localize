@@ -1235,78 +1235,59 @@ input[type="button"] {
 
 .mission-statement {
   width: 100%;
-  height: 75vh;
-  position: relative; }
-
-.mission-left-img {
-  background: url("https://i.pinimg.com/564x/6e/6d/93/6e6d93836a0fe3c306197b82a6cb5294.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 40vw;
-  height: 100%;
-  position: relative; }
-
-.mission-right-img {
-  background: url("https://i.pinimg.com/564x/36/2f/2a/362f2adcbe33a96f18a64130feae481b.jpg");
-  background-size: cover;
-  background-position: top;
-  width: 40vw;
-  height: 100%;
   position: relative;
-  float: right; }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 200px auto; }
 
-.mission-left-text-wrapper {
-  width: 30%;
-  height: 60%;
-  position: absolute;
-  top: 20%;
-  right: 0;
-  background-color: white;
-  padding-top: 40px;
-  box-sizing: border-box; }
+.icons-link-wrapper:hover .mission-left-art-cropper {
+  border-radius: 50%; }
 
-.mission-right-text-wrapper {
-  width: 30%;
-  height: 60%;
+.mission-left-art-cropper {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%; }
+
+.mission-left-art-background {
+  height: 400px;
   position: absolute;
-  top: 20%;
-  left: 0;
-  background-color: white;
-  padding-top: 40px;
-  box-sizing: border-box; }
+  left: -600px; }
+
+.mission-art-slide-animation {
+  left: -1250px;
+  animation: slide 6s linear;
+  animation-timing-function: ease-in-out; }
+
+@keyframes slide {
+  0% {
+    left: -600px; }
+  10% {
+    left: -600px; }
+  100% {
+    left: -1250px; } }
+
+.mission-left-art-truck {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  height: 100px; }
+
+.mission-text-wrapper {
+  width: 40%; }
 
 .mission-left-title {
-  z-index: 200;
-  top: 140px;
-  width: 800px;
-  margin-left: 40px;
   margin-bottom: 20px;
   padding-bottom: 6px;
-  border-bottom: 10px solid; }
+  border-bottom: 10px solid #96FE91; }
 
 .mission-right-title {
-  z-index: 200;
-  top: 140px;
-  width: 800px;
-  margin-left: -640px;
-  margin-bottom: 20px;
-  padding-bottom: 6px;
-  border-bottom: 10px solid; }
-
-.mission-left-text {
-  position: absolute;
-  z-index: 200;
-  width: 750px;
-  margin-left: 40px; }
-
-.mission-right-text {
-  position: absolute;
-  z-index: 200;
-  width: 640px;
-  margin-left: -580px; }
-
-.statement-right {
-  margin: 200px 0; }
+  padding-bottom: 10px;
+  border-bottom: 10px solid #FF4958;
+  margin-bottom: 10px; }
 
 @media only screen and (min-width: 1080px) {
   .icons {

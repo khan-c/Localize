@@ -19,7 +19,6 @@ class SearchBarInput extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (
-      // nextProps.autocompleteValues.term  &&
       this.props.autocompleteValues.term !== nextProps.autocompleteValues.term
     ) {
       this.setState({
@@ -80,12 +79,10 @@ class SearchBarInput extends React.Component {
       e.preventDefault();
       document.getElementById('navbar-search-location').focus();
     } else if (e.keyCode === 13 && this.state.text) {
-      // document.getElementById('search-button-navbar').focus();
       this.handleSubmit();
     }
   }
 
-  //original is below
   render () {
     return (
       <div className='search-input-wrapper'>
