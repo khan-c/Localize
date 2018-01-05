@@ -86,7 +86,7 @@ app.get('/search', (req, res) => {
   });
 });
 
-
+// Adding this here for testing
 // route and controller for autocomplete
 app.get('/autocomplete', (req, res) => {
   let autoUrl = "https://api.yelp.com/v3/autocomplete?";
