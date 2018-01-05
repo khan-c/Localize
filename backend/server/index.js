@@ -20,7 +20,6 @@ if (process.env.NODE_ENV !== 'production') {
   creds = require('./api/key');
 }
 
-
 dbConfig();
 
 passportConfig(passport);
@@ -52,7 +51,7 @@ app.use('/api', [BusinessRoutes, TestimonialRoutes]);
 // route and controller to get business by ID
 app.get('/business', (req, res) => {
   // import credentials from our config file
-  const token = credentials() || creds();
+  const token = creds() || credentials();
   axios.get(`https://api.yelp.com/v3/businesses/${req.query.Id}`, {
     headers: {
       Authorization: "Bearer " + token.access_token
@@ -69,7 +68,7 @@ app.get('/business', (req, res) => {
 // route and controller for search
 app.get('/search', (req, res) => {
   let url = "https://api.yelp.com/v3/businesses/search?";
-  const token = credentials() || creds();
+  const token = creds() || credentials();
   const queryArr = Object.keys(req.query);
   queryArr.forEach( q => {
     if (!(req.query[q] === "")) {
@@ -98,7 +97,7 @@ app.get('/search', (req, res) => {
 app.get('/autocomplete', (req, res) => {
   let autoUrl = "https://api.yelp.com/v3/autocomplete?";
   // console.log("autoURL", autoUrl);
-  const token = credentials() || creds();
+  const token = creds() || credentials();
   const queryArrAuto = Object.keys(req.query);
   // console.log("req.query", queryArrAuto);
   queryArrAuto.forEach( q => {
