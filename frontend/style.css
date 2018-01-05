@@ -711,7 +711,7 @@ input[type="button"] {
 @keyframes slide {
   0% {
     left: -600px; }
-  20% {
+  10% {
     left: -600px; }
   100% {
     left: -1250px; } }
