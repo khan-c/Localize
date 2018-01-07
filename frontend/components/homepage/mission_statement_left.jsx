@@ -42,10 +42,10 @@ class MissionStatementLeft extends React.Component {
 
   render() {
     return (
-      <div className='mission-statement'>
+      <div className='mission-statement statement-left'>
         <div className='mission-text-wrapper'>
-          <h2 className='mission-left-title'>Quality is better locally</h2>
-          <span className='mission-left-text display-text'>
+          <h2 className='mission-left-title mission-title'>Quality is better locally</h2>
+          <span className='mission-text display-text'>
             Larger companies have found a way to meet the needs of their
             business while supporting the local community and keeping businesses going. Our
             partners have begun regularly scheduling deliveries of flowers, bread, laundry, and

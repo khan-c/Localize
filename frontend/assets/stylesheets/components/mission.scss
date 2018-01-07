@@ -118,11 +118,11 @@
 
 @keyframes infiniteslide {
   0% {
-    right: -200px;
+    left: -200px;
   }
 
   100% {
-    right: 500px;
+    left: 500px;
   }
 }
 
@@ -162,16 +162,17 @@
   width: 40%;
 }
 
-.mission-left-title {
+.mission-title {
   margin-bottom: 20px;
-  padding-bottom: 6px;
+  padding-bottom: 10px;
+}
+
+.mission-left-title {
   border-bottom: 10px solid $green;
 }
 
 .mission-right-title {
-  padding-bottom: 10px;
   border-bottom: 10px solid $red;
-  margin-bottom: 10px;
 }
 
 @media only screen and (min-width:1080px)  {
@@ -189,5 +190,24 @@
   }
   .icons {
     width: 100%;
+  }
+  .statement-right {
+    flex-direction: column;
+  }
+  .statement-left {
+    flex-direction: column-reverse;
+  }
+  .mission-text-wrapper {
+    width: 60%;
+    margin-top: 50px;
+  }
+  .mission-title {
+    text-align: center;
+  }
+  .mission-statement {
+    margin: 150px auto;
+  }
+  .mission-text {
+    text-align: center;
   }
 }

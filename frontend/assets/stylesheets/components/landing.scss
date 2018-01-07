@@ -209,16 +209,10 @@
     right: -180px;
   }
   .landing-page-content {
-
+    width: 80%;
+    min-width: 630px;
   }
 }
-
-@media only screen and (min-width: 1200px)  {
-  .landing-page-content {
-    width: 1000px;
-  }
-}
-
 
 
 .landing-open-line-2 {

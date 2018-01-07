@@ -897,7 +897,7 @@ html {
   transition: transform .2s ease; }
 
 .contact-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: #FF4958; }
 
 .contact-button:active {
@@ -1122,11 +1122,10 @@ html {
 @media only screen and (max-width: 1500px) {
   .landing-b2B {
     transform: scale(0.4) rotate(0.03turn);
-    right: -180px; } }
-
-@media only screen and (min-width: 1200px) {
+    right: -180px; }
   .landing-page-content {
-    width: 1000px; } }
+    width: 80%;
+    min-width: 630px; } }
 
 .landing-open-line-2 {
   position: absolute;
@@ -1283,9 +1282,9 @@ html {
 
 @keyframes infiniteslide {
   0% {
-    right: -200px; }
+    left: -200px; }
   100% {
-    right: 500px; } }
+    left: 500px; } }
 
 @keyframes slide {
   0% {
@@ -1311,15 +1310,15 @@ html {
 .mission-text-wrapper {
   width: 40%; }
 
-.mission-left-title {
+.mission-title {
   margin-bottom: 20px;
-  padding-bottom: 6px;
+  padding-bottom: 10px; }
+
+.mission-left-title {
   border-bottom: 10px solid #96FE91; }
 
 .mission-right-title {
-  padding-bottom: 10px;
-  border-bottom: 10px solid #FF4958;
-  margin-bottom: 10px; }
+  border-bottom: 10px solid #FF4958; }
 
 @media only screen and (min-width: 1080px) {
   .icons {
@@ -1331,7 +1330,20 @@ html {
   .category-icon-index {
     width: 645px; }
   .icons {
-    width: 100%; } }
+    width: 100%; }
+  .statement-right {
+    flex-direction: column; }
+  .statement-left {
+    flex-direction: column-reverse; }
+  .mission-text-wrapper {
+    width: 60%;
+    margin-top: 50px; }
+  .mission-title {
+    text-align: center; }
+  .mission-statement {
+    margin: 150px auto; }
+  .mission-text {
+    text-align: center; } }
 
 .testimonial-slider {
   margin: 0;
@@ -1507,7 +1519,7 @@ html {
 
 .business-show-contact-form {
   width: 100%;
-  background-color: #F9F9F9; }
+  background-color: #E9FBFC; }
 
 #business-show-contact-form.sticky {
   position: sticky;

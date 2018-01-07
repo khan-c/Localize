@@ -19,11 +19,11 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    const { business } = this.props;
+    const { business, singleBusinessLoading } = this.props;
     return (
       <div className='business-show' id='business-show'>
         <BusinessAboutSectionContainer />
-        <ContactSection business={business} />
+        <ContactSection business={business} singleBusinessLoading={singleBusinessLoading} />
       </div>
     );
   }
