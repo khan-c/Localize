@@ -1337,7 +1337,9 @@ html {
     flex-direction: column-reverse; }
   .mission-text-wrapper {
     width: 60%;
-    margin-top: 50px; }
+    min-width: 400px;
+    margin-top: 50px;
+    text-align: center; }
   .mission-title {
     text-align: center; }
   .mission-statement {
