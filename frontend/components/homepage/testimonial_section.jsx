@@ -18,6 +18,13 @@ class TestimonialSection extends React.Component {
     this.slider.slickPrev();
   }
 
+  sendToBusinessPage(event, businessId) {
+    event.preventDefault();
+    this.props.clearAutocompleteFields();
+    const url = `/business/${businessId}`;
+    this.props.history.push(url);
+  }
+
   render () {
     const settings = {
       dots: false,
@@ -47,13 +54,13 @@ class TestimonialSection extends React.Component {
     const business2 = {
       name: 'Vital House Cleaning',
       image_url: 'https://s3-media4.fl.yelpcdn.com/bphoto/8S2SwSYGOlbquN9UkNNpUg/o.jpg',
-      url: 'https://www.sfparty.com/',
+      url: 'http://localhost:8000/#/business/vital-house-cleaning-san-francisco',
       testimonial: 'Triton Luxury Apartments just signed a contract with us to provide cleaning services the new building on 18th. This is the largest contract we have ever received! Thanks Localize!'
     };
     const business3 = {
       name: 'El Farolito',
       image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/OPnKCvgBR2-lQ1-yahrpiA/o.jpg",
-      url: 'https://www.yelp.com/biz/el-farolito-san-francisco-2?osq=food+mission',
+      url: 'http://localhost:8000/#/business/el-farolito-san-francisco-2',
       testimonial: 'MailChimp and us worked out a out a deal where we give their employees a discount and we are contracted to cater for them twice a month. We could\'t have done it without Localize!'
     };
     const business4 = {

@@ -24,7 +24,6 @@ class ResultsIndexItem extends React.Component {
     this.props.clearAutocompleteFields();
     const url = `/business/${businessId}`;
     this.props.history.push(url);
-
   }
 
   sendToCategorySearchPage(event, term) {

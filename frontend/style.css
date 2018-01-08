@@ -268,6 +268,9 @@ input[type="button"] {
   background-color: #FFDBDE;
   color: #FF4958; }
 
+html {
+  margin-left: calc(100vw - 100%); }
+
 .homepage {
   height: 3000px; }
 
@@ -894,7 +897,7 @@ input[type="button"] {
   transition: transform .2s ease; }
 
 .contact-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: #FF4958; }
 
 .contact-button:active {
@@ -905,7 +908,7 @@ input[type="button"] {
   width: 40%;
   min-width: 350px;
   position: absolute;
-  box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.2); }
+  box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.2); }
 
 .map-wrapper {
   height: 100%;
@@ -1119,11 +1122,10 @@ input[type="button"] {
 @media only screen and (max-width: 1500px) {
   .landing-b2B {
     transform: scale(0.4) rotate(0.03turn);
-    right: -180px; } }
-
-@media only screen and (min-width: 1200px) {
+    right: -180px; }
   .landing-page-content {
-    width: 1000px; } }
+    width: 80%;
+    min-width: 630px; } }
 
 .landing-open-line-2 {
   position: absolute;
@@ -1242,15 +1244,31 @@ input[type="button"] {
   max-width: 1000px;
   margin: 200px auto; }
 
-.icons-link-wrapper:hover .mission-left-art-cropper {
-  border-radius: 50%; }
-
 .mission-left-art-cropper {
   height: 400px;
   width: 400px;
   overflow: hidden;
   position: relative;
-  border-radius: 50%; }
+  border-radius: 50%;
+  backface-visibility: hidden; }
+
+.mission-right-art-cropper {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  backface-visibility: hidden; }
+
+.mission-right-art {
+  position: absolute;
+  right: -85px; }
+
+.mission-right-clouds {
+  position: absolute;
+  top: 50px;
+  animation: infiniteslide 20s infinite;
+  animation-timing-function: linear; }
 
 .mission-left-art-background {
   height: 400px;
@@ -1262,6 +1280,12 @@ input[type="button"] {
   animation: slide 6s linear;
   animation-timing-function: ease-in-out; }
 
+@keyframes infiniteslide {
+  0% {
+    left: -200px; }
+  100% {
+    left: 500px; } }
+
 @keyframes slide {
   0% {
     left: -600px; }
@@ -1270,24 +1294,31 @@ input[type="button"] {
   100% {
     left: -1250px; } }
 
+@keyframes bounce {
+  50% {
+    bottom: 0; }
+  100% {
+    bottom: 1px; } }
+
 .mission-left-art-truck {
   position: absolute;
   bottom: 0;
   left: 20px;
-  height: 100px; }
+  height: 100px;
+  animation: bounce .2s infinite; }
 
 .mission-text-wrapper {
   width: 40%; }
 
-.mission-left-title {
+.mission-title {
   margin-bottom: 20px;
-  padding-bottom: 6px;
+  padding-bottom: 10px; }
+
+.mission-left-title {
   border-bottom: 10px solid #96FE91; }
 
 .mission-right-title {
-  padding-bottom: 10px;
-  border-bottom: 10px solid #FF4958;
-  margin-bottom: 10px; }
+  border-bottom: 10px solid #FF4958; }
 
 @media only screen and (min-width: 1080px) {
   .icons {
@@ -1299,10 +1330,28 @@ input[type="button"] {
   .category-icon-index {
     width: 645px; }
   .icons {
-    width: 100%; } }
+    width: 100%; }
+  .statement-right {
+    flex-direction: column; }
+  .statement-left {
+    flex-direction: column-reverse; }
+  .mission-text-wrapper {
+    width: 60%;
+    min-width: 400px;
+    margin-top: 50px;
+    text-align: center; }
+  .mission-title {
+    text-align: center; }
+  .mission-statement {
+    margin: 150px auto; }
+  .mission-text {
+    text-align: center; } }
 
 .testimonial-slider {
-  margin: 50px auto; }
+  margin: 0;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px; }
 
 .testimonial {
   position: relative;
@@ -1472,7 +1521,7 @@ input[type="button"] {
 
 .business-show-contact-form {
   width: 100%;
-  background-color: #F9F9F9; }
+  background-color: #E9FBFC; }
 
 #business-show-contact-form.sticky {
   position: sticky;

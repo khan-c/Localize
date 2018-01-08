@@ -30,7 +30,7 @@ class HomePage extends React.Component {
   hideSearchFromNavbar() {
     const searchFieldWrapper = document.getElementById('search-field-wrapper');
     const landing = document.getElementById('landing-search-wrapper');
-    if (landing && window.pageYOffset >= landing.offsetParent.offsetTop + landing.offsetTop) {
+    if (landing && window.pageYOffset >= landing.offsetParent.offsetTop + landing.offsetTop + 100) {
       searchFieldWrapper.setAttribute('style', 'display: inline');
     } else {
       searchFieldWrapper.setAttribute('style', 'display: none');

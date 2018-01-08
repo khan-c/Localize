@@ -7,7 +7,8 @@ import { clearAutocompleteFields } from '../../actions/autocomplete_fields_actio
 const mapStateToProps = (state, ownProps) => {
   return {
     businessId: ownProps.match.params.id,
-    business: state.entities.business
+    business: state.entities.business,
+    singleBusinessLoading: state.ui.loading.singleBusinessLoading
   };
 };
 
