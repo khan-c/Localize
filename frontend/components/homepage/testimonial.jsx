@@ -6,14 +6,12 @@ const Testimonial = (props) => {
     backgroundImage: `url(${business.image_url})`
   };
   return (
-    <div>
-      <div className='testimonial' style={style}>
-        <div className='testimonial-text-wrapper'>
-          <h3 className='testimonial-bname'>{business.name}</h3>
-          <span className='display-text'>{business.testimonial}</span>
-        </div>
+    <div className='testimonial'>
+      <img src={business.image_url} className='testimonial-image'/>
+      <div className='testimonial-text-wrapper'>
+        <h4 className='testimonial-bname'>{business.name}</h4>
+        <span className='testimonial-text'>{business.testimonial}</span>
       </div>
-      <div className='blank-div' />
     </div>
   );
 };

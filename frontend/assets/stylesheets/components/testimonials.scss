@@ -1,31 +1,45 @@
 .testimonial-section {
-}
-
-.testimonial-slider {
-  margin: 0;
-  width:100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  background-color: $lightest-blue;
+  padding: 40px 20px;
 }
 
 .testimonial {
-  position: relative;
-  height: 300px;
-  margin: 0 10px;
+  height: 80%;
+  width: 300px;
+  margin: 20px 20px;
   background-size: cover;
+  transition: all .5s ease;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.testimonial:active {
+  transform: scale(1);
+}
+
+.testimonial-image {
+  object-fit: cover;
+  height: 160px;
+  width: 100%;
 }
 
 .testimonial-text-wrapper {
-  position: absolute;
-  top: 70px;
-  margin: 15%;
-  padding: 40px;
   background-color: white;
+  padding: 30px;
+  height: 250px;
+}
+
+.testimonial-text {
+  line-height: 26px;
 }
 
 .testimonial-bname {
   padding-bottom: 10px;
-  border-bottom: 6px solid;
+  border-bottom: 4px solid;
+  margin-bottom: 10px;
 }
 
 .blank-div {
@@ -39,29 +53,11 @@
   width: 800px;
 }
 
-.testimonial-slider-wrapper {
-  position: relative;
-}
-
-.testimonial-arrow {
-  position: absolute;
-  fill: $green;
-  top: 150px;
-  z-index: 200;
-  height: 40px;
-  width: 40px;
-  transition: all .2s ease;
-}
-
-.testimonial-arrow:hover {
-  fill: $green;
-  cursor: pointer;
-  transform: scale(1.3);
-}
-
-.testimonial-arrow:active {
-  fill: $lightest-green;
-  transform: scale(1);
+.testimonials-wrapper {
+  margin: 40px auto;
+  overflow-x: scroll;
+  display: -webkit-box;
+  align-items: center;
 }
 
 .h-flip:hover {

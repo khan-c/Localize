@@ -1,7 +1,6 @@
 import React from 'react';
 import Testimonial from './testimonial';
 import Slider from 'react-slick';
-import Icon from 'react-icons/lib/fa/chevron-right';
 
 class TestimonialSection extends React.Component {
   constructor(props) {
@@ -26,17 +25,6 @@ class TestimonialSection extends React.Component {
   }
 
   render () {
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: true,
-      adaptiveHeight: true,
-      arrows: true,
-      className: 'slides',
-    };
     const business = {
       name: 'Flower Shop',
       image_url: 'https://i.pinimg.com/564x/80/46/b7/8046b7677089f90ccebe9d896fbd22c9.jpg',
@@ -75,26 +63,12 @@ class TestimonialSection extends React.Component {
         <h2 className='testimonials-header'>
           Testimonials
         </h2>
-        <div className='testimonial-slider-wrapper'>
-          <Icon className='testimonial-arrow previous h-flip' onClick={this.previous}/>
-          <Slider {...settings} ref={c => this.slider = c} className='testimonial-slider'>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business1}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business2}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business3}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business4}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business}/>
-            </div>
-          </Slider>
-          <Icon className='testimonial-arrow next' onClick={this.next}/>
+        <div className='testimonials-wrapper'>
+          <Testimonial business={business1}/>
+          <Testimonial business={business2}/>
+          <Testimonial business={business3}/>
+          <Testimonial business={business4}/>
+          <Testimonial business={business}/>
         </div>
       </div>
 
