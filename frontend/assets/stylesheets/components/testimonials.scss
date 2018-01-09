@@ -12,17 +12,13 @@
 }
 
 .testimonial:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   cursor: pointer;
-}
-
-.testimonial:active {
-  transform: scale(1);
 }
 
 .testimonial-image {
   object-fit: cover;
-  height: 160px;
+  height: 200px;
   width: 100%;
 }
 
@@ -50,11 +46,11 @@
   padding-bottom: 20px;
   margin-left: 100px;
   border-bottom: 10px solid;
-  width: 800px;
+  width: 80%;
 }
 
 .testimonials-wrapper {
-  margin: 40px auto;
+  margin: 30px auto 0 auto;
   overflow-x: scroll;
   display: -webkit-box;
   align-items: center;
