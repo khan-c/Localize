@@ -1392,9 +1392,9 @@ html {
 .testimonials-wrapper {
   margin: 30px auto 0 auto;
   overflow-x: scroll;
-  display: -webkit-box;
   align-items: center;
-  padding: 8px 0; }
+  padding: 8px 0;
+  display: flex; }
 
 .h-flip:hover {
   transform: scaleX(-1) scale(1.3); }
