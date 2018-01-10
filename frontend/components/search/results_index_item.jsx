@@ -60,7 +60,7 @@ class ResultsIndexItem extends React.Component {
               className='result-idx-item-business-name'
               onMouseOver={this.clearMapHover}
             >
-              {business.name}
+              {this.props.sequence}.  {business.name}
             </a>
             <div className='contact-info-wrapper first-info-wrapper'>
               <ReactSVG
