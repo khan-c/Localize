@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.testimonial:hover .testimonial-bname {
+  border-bottom: 4px solid $green;
+}
+
 .testimonial-image {
   object-fit: cover;
   height: 200px;

@@ -898,7 +898,7 @@ html {
 
 .contact-button:hover {
   transform: scale(1.05);
-  background-color: #FF4958; }
+  background-color: #96FE91; }
 
 .contact-button:active {
   transform: scale(1); }
@@ -1381,6 +1381,9 @@ html {
 .testimonial:hover {
   transform: scale(1.02);
   cursor: pointer; }
+
+.testimonial:hover .testimonial-bname {
+  border-bottom: 4px solid #96FE91; }
 
 .testimonial-image {
   object-fit: cover;
