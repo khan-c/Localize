@@ -134,7 +134,7 @@
 }
 
 .results-index-item-category {
-  background-color: $lightest-purple;
+  background-color: $lightest-blue;
   color: $purple;
   transition: transform .2s ease;
   margin-right: 4px;
@@ -154,4 +154,24 @@
 .results-index-categories-wrapper {
   display: flex;
   width: 60%;
+}
+
+.results-idx-item-numid {
+  font-family: $header;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: $red;
+  padding-top: 6px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: center;
+  align-items: center;
+}
+
+.results-index-item-id {
+  display: flex;
+  justify-content: space-between;
 }

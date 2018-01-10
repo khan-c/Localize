@@ -931,7 +931,7 @@ html {
   padding-top: 2px; }
 
 .results-index-item-category {
-  background-color: #D3D1DE;
+  background-color: #E9FBFC;
   color: #211B59;
   transition: transform .2s ease;
   margin-right: 4px;
@@ -948,6 +948,24 @@ html {
 .results-index-categories-wrapper {
   display: flex;
   width: 60%; }
+
+.results-idx-item-numid {
+  font-family: "Fjalla One", sans-serif;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: #FF4958;
+  padding-top: 6px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: center;
+  align-items: center; }
+
+.results-index-item-id {
+  display: flex;
+  justify-content: space-between; }
 
 .landing-page {
   background-color: #E9FBFC;
@@ -1242,7 +1260,9 @@ html {
   align-items: center;
   justify-content: space-between;
   max-width: 1000px;
-  margin: 200px auto; }
+  margin: 200px auto;
+  box-sizing: border-box;
+  padding: 0 50px; }
 
 .mission-left-art-cropper {
   height: 400px;
