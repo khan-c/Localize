@@ -1,7 +1,7 @@
 import React from 'react';
 import Testimonial from './testimonial';
 import Slider from 'react-slick';
-import Icon from 'react-icons/lib/fa/chevron-right';
+import { Link } from 'react-router-dom';
 
 class TestimonialSection extends React.Component {
   constructor(props) {
@@ -26,48 +26,37 @@ class TestimonialSection extends React.Component {
   }
 
   render () {
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: true,
-      adaptiveHeight: true,
-      arrows: true,
-      className: 'slides',
-    };
     const business = {
       name: 'Flower Shop',
       image_url: 'https://i.pinimg.com/564x/80/46/b7/8046b7677089f90ccebe9d896fbd22c9.jpg',
-      url: 'https://farmgirlflowers.com/',
+      url: '/business/choux-san-francisco/',
       testimonial: 'We worked with Google and they got us off the ground! Thank you Localize for helping us get noticed. Couldn\'t have done it without you!'
     };
 
     const business1 = {
-      name: 'SF Party',
-      image_url: 'https://s3-media3.fl.yelpcdn.com/bphoto/kqgQOmDbAot5oQBVL8yKFA/o.jpg',
-      url: 'https://farmgirlflowers.com/',
-      testimonial: 'EventBrite messaged us through Localize inquiring about costumes for a party they had. We ended up commissioned to throw the whole event with costumes, decorations, and equipment rentals. We created a new partnership for future parties thanks to Localize.'
+      name: 'Choux',
+      image_url: 'https://s3-media2.fl.yelpcdn.com/bphoto/bs-rDwRRXYAOuuISurFLzA/o.jpg',
+      url: '/business/choux-san-francisco/',
+      testimonial: 'EventBrite messaged us through Localize inquiring about a few orders. We ended up commissioned to provide baked goods one whole event, an amount we would normally do in three weeks!'
     };
 
     const business2 = {
-      name: 'Vital House Cleaning',
-      image_url: 'https://s3-media4.fl.yelpcdn.com/bphoto/8S2SwSYGOlbquN9UkNNpUg/o.jpg',
-      url: 'http://localhost:8000/#/business/vital-house-cleaning-san-francisco',
-      testimonial: 'Triton Luxury Apartments just signed a contract with us to provide cleaning services the new building on 18th. This is the largest contract we have ever received! Thanks Localize!'
+      name: 'Zozi\'s Loft',
+      image_url: 'https://s3-media4.fl.yelpcdn.com/bphoto/ovM_8uop_i0ZpyBJAGCzKQ/o.jpg',
+      url: '/business/zozis-loft-san-francisco/',
+      testimonial: 'Triton Luxury Apartments just signed a contract with us to provide staging furniture the new building on 18th. Since then they\'ve opened up several other complexes and hired us to stage those as well! Thanks Localize!'
     };
     const business3 = {
-      name: 'El Farolito',
-      image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/OPnKCvgBR2-lQ1-yahrpiA/o.jpg",
-      url: 'http://localhost:8000/#/business/el-farolito-san-francisco-2',
-      testimonial: 'MailChimp and us worked out a out a deal where we give their employees a discount and we are contracted to cater for them twice a month. We could\'t have done it without Localize!'
+      name: 'SF Design Build',
+      image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/-AR0hlPzNWyiTeav0zwjng/o.jpg",
+      url: '/business/sf-design-build-san-francisco-3/',
+      testimonial: 'MailChimp had some floor damage and needed someone to come in quick to do the repair. We worked so well together they keep coming back to us for more work! We could\'t have done it without Localize!'
     };
     const business4 = {
-      name: 'Image Printing',
-      image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/JkKPxxUV2ZadkDnMj5v27g/o.jpg",
-      url: 'http://www.imageprinting.us/',
-      testimonial: 'We are now the sole printer facility for a local startup! Businsess has increased dramatically without foot-traffic to our door. We could\'t have done it without Localize!'
+      name: 'Laundry Locker',
+      image_url: "https://s3-media4.fl.yelpcdn.com/bphoto/2eDNDSBmmKAQXaiVaGhUig/o.jpg",
+      url: '/business/laundry-locker-san-francisco-26/',
+      testimonial: 'We are now the sole on site laundry service for a local startup! Businsess has increased dramatically without foot-traffic to our door. We could\'t have done it without Localize!'
     };
 
     return (
@@ -75,26 +64,12 @@ class TestimonialSection extends React.Component {
         <h2 className='testimonials-header'>
           Testimonials
         </h2>
-        <div className='testimonial-slider-wrapper'>
-          <Icon className='testimonial-arrow previous h-flip' onClick={this.previous}/>
-          <Slider {...settings} ref={c => this.slider = c} className='testimonial-slider'>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business1}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business2}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business3}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business4}/>
-            </div>
-            <div className='testimonial-wrapper'>
-              <Testimonial business={business}/>
-            </div>
-          </Slider>
-          <Icon className='testimonial-arrow next' onClick={this.next}/>
+        <div className='testimonials-wrapper'>
+          <Testimonial business={business1}/>
+          <Testimonial business={business2}/>
+          <Testimonial business={business3}/>
+          <Testimonial business={business4}/>
+          <Testimonial business={business}/>
         </div>
       </div>
 
