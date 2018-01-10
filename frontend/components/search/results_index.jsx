@@ -40,7 +40,7 @@ class ResultsIndex extends React.Component {
     return( 
       <ul className="results-index">
         {results.map( (business, i) =>
-          <ResultsIndexItem key={i} business={business} autocompleteFields={autocompleteFields} clearAutocompleteFields={clearAutocompleteFields}/>
+          <ResultsIndexItem key={i} business={business} sequence={i+1} autocompleteFields={autocompleteFields} clearAutocompleteFields={clearAutocompleteFields}/>
         )}
       </ul>
     );
