@@ -53,15 +53,18 @@ class ResultsIndexItem extends React.Component {
         />
         <div className='results-index-item-text'>
           <div className='result-index-item-text-wrapper'
-            onMouseOver={this.clearMapHover}
-          >
-            <a
-              onClick={(e) => this.sendToBusinessPage(e, business.id)}
-              className='result-idx-item-business-name'
-              onMouseOver={this.clearMapHover}
-            >
-              {this.props.sequence}.  {business.name}
-            </a>
+            onMouseOver={this.clearMapHover}>
+            <div className='results-index-item-id'>
+              <a
+                onClick={(e) => this.sendToBusinessPage(e, business.id)}
+                className='result-idx-item-business-name'
+                onMouseOver={this.clearMapHover}>
+                {business.name}
+              </a>
+              <a className='results-idx-item-numid'>
+                {this.props.sequence}
+              </a>
+            </div>
             <div className='contact-info-wrapper first-info-wrapper'>
               <ReactSVG
                 path='../../assets/images/pin.svg'
