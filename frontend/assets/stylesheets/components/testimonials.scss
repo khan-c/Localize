@@ -1,6 +1,6 @@
 .testimonial-section {
   background-color: $lightest-blue;
-  padding: 40px 20px;
+  padding: 75px 20px 45px 20px;
 }
 
 .testimonial {
@@ -54,6 +54,7 @@
   overflow-x: scroll;
   display: -webkit-box;
   align-items: center;
+  padding: 8px 0;
 }
 
 .h-flip:hover {

@@ -1349,7 +1349,7 @@ html {
 
 .testimonial-section {
   background-color: #E9FBFC;
-  padding: 40px 20px; }
+  padding: 75px 20px 45px 20px; }
 
 .testimonial {
   height: 80%;
@@ -1393,7 +1393,8 @@ html {
   margin: 30px auto 0 auto;
   overflow-x: scroll;
   display: -webkit-box;
-  align-items: center; }
+  align-items: center;
+  padding: 8px 0; }
 
 .h-flip:hover {
   transform: scaleX(-1) scale(1.3); }
