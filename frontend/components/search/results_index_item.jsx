@@ -3,6 +3,7 @@ import ReactSVG from 'react-svg';
 import { withRouter } from 'react-router-dom';
 import { link } from 'react-router-dom';
 import { stateToUrl, locationFromPath } from '../../util/parsing_functions';
+import SearchContactModal from './search_contact_modal';
 
 class ResultsIndexItem extends React.Component {
   constructor(props) {
@@ -97,7 +98,7 @@ class ResultsIndexItem extends React.Component {
                   />
                 ))}
               </div>
-
+              <SearchContactModal business={ business }/>
               <input type='submit' className='contact-button' value='Contact'/>
             </div>
           </div>

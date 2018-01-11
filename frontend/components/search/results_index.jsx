@@ -37,11 +37,12 @@ class ResultsIndex extends React.Component {
     if (!results) {
       return <LoadingIcon />;
     }
-    return( 
+    return(
       <ul className="results-index">
-        {results.map( (business, i) =>
+        {/* {results.map( (business, i) =>
           <ResultsIndexItem key={i} business={business} sequence={i+1} autocompleteFields={autocompleteFields} clearAutocompleteFields={clearAutocompleteFields}/>
-        )}
+        )} */}
+        <ResultsIndexItem key={0} business={results[0]} sequence={0+1} autocompleteFields={autocompleteFields} clearAutocompleteFields={clearAutocompleteFields}/>
       </ul>
     );
   }

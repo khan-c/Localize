@@ -9,10 +9,14 @@
   margin: 20px 20px;
   background-size: cover;
   transition: all .5s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0 ,0 ,0 ,.2);
 }
 
 .testimonial:hover {
-  transform: scale(1.02);
+  transform: translate(0, -2px);
+  box-shadow: 0 5px 30px rgba(0 ,0 ,0 ,.2);
   cursor: pointer;
 }
 

@@ -25,6 +25,8 @@
   box-sizing: border-box;
   background-color: white;
   transition: box-shadow .3s ease;
+  border-radius: 4px;
+  overflow: hidden;
 }
 .map-hover {
   // box-shadow: 0 0 12px rgba(0,0,0,0.1);
