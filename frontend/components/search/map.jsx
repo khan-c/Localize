@@ -1,13 +1,52 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
+import LoadingIcon from './loading_icon';
 
 
 class Map extends React.Component {
+  constructor(props){
+    super(props); 
+    this.state = {
+      center: {
+        latitude: 0, 
+        longitude: 0 
+      }, 
+      ready: false,
+      markers: {}
+    }; 
+  }
+
+  // setStateAsync(state) {
+  //   return new Promise((resolve) => {
+  //     this.setState(state, resolve)
+  //   });
+  // }
 
   componentWillReceiveProps(newProps){
-    if (newProps.region.center.latitude) {
-      this.setState({ready: true}); 
-      console.log("inside maps receive props after setstae"); 
+    // debugger && newProps.region.center.latitude != this.props.region.center.latitude
+    console.log("WILL meet PROPS"); 
+    console.log("latitude, newProps", newProps.region.latitude); 
+    console.log("longitude, newProps", newProps.region.longitude); 
+    console.log("this.props.region", this.props); 
+
+    // this.setState({
+    //   center: {
+    //     latitude: 40, 
+    //     longitude: 40 
+    //   },
+    //   hello: "hel"
+    // }); 
+    debugger 
+    if (newProps.region.center.latitude && (newProps.region.center.latitude != this.state.center.latitude)) {
+      console.log("inside maps receive props after setState"); 
+      // await this.setStateAsync({ ready: true})
+      this.state.ready = true; 
+      this.state.center.latitude = newProps.region.center.latitude; 
+      this.state.center.longitude = newProps.region.center.longitude; 
+
+      // this.makeMap(newProps.region.center)
+
+      console.log(this.state); 
       const mapOptions = {
         center: {
           lat: newProps.region.center.latitude,
@@ -20,13 +59,17 @@ class Map extends React.Component {
       };
       const map = this.refs.map;
       this.map = new google.maps.Map(map, mapOptions);
+    }
+    
+    if (newProps.businesses != this.props.businesses) {
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       if (newProps.businesses) {
-        this.MarkerManager.updateMarkers(newProps.businesses);
+        this.MarkerManager.updateMarkers(newProps.businesses, this.state.markers);
+        this.state.markers = this.MarkerManager.markers; 
       }
-    }    
+    }
   }
- 
+  
   //Finds y value of given object
   findPos(obj) {
     var curtop = 0;
@@ -35,6 +78,25 @@ class Map extends React.Component {
             curtop += obj.offsetTop;
         } while (obj = obj.offsetParent);
     return [curtop];
+    }
+  }
+
+  makeMap(center){
+    const mapOptions = {
+      center: {
+        lat: center.latitude,
+        lng: center.longitude 
+      }, 
+      zoom: 13,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_LEFT
+      }
+    };
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+    if (newProps.businesses) {
+      this.MarkerManager.updateMarkers(newProps.businesses);
     }
   }
 
@@ -52,6 +114,9 @@ class Map extends React.Component {
   }
 
   render() {
+    // if (this.state.ready === false ) {
+    //   return <LoadingIcon />;
+    // }
     return (
       <div className="map" ref="map">
       </div>
