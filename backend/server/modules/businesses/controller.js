@@ -2,6 +2,8 @@ import Business from './model';
 import axios from 'axios';
 import CircularJSON from 'circular-json';
 import { mongoConfig } from '../../config/keys';
+import { ObjectID } from 'mongodb';
+
 
 export const createBusiness = async (req, res) => {
   const {
@@ -63,13 +65,25 @@ export const getAllBusinesses = async (req, res) => {
   }
 };
 
+export const getBusinessesByService = async (req, res) => {
+  // can use some other params value?
+  const service = req.params.service
+  try {
+    return res.status(200).json({ businesses: await Business.find({ "services": service }) });
+  } catch (e) {
+    return res.status(404)
+      .json({ error: true, message: 'Error with Business' });
+  }
+};
+
 export const getBusiness = async (req, res) => {
   const businessId = req.params.businessId;
   try {
     return res.status(200).json(
-      { business: "test" }
+      await Business.find({ "_id": businessId })
     );
   } catch (e) {
+    console.log(businessId);
     return res.status(404)
       .json({ error: true, message: 'Error with Business' });
   }
