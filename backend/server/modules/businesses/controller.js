@@ -2,13 +2,15 @@ import Business from './model';
 import axios from 'axios';
 import CircularJSON from 'circular-json';
 import { mongoConfig } from '../../config/keys';
-import { ObjectID } from 'mongodb';
 
 
 export const createBusiness = async (req, res) => {
   const {
     name,
+    registered,
+    about,
     contact,
+    display_phone,
     location,
     image_url,
     url,
@@ -16,18 +18,19 @@ export const createBusiness = async (req, res) => {
     is_claimed,
     photos,
     categories,
-    services,
     availability,
     lead_time,
     reviews,
     orders,
-    associated_users,
-    testimonials
+    associated_users
   } = req.body.formBusiness;
 
   const newBusiness = new Business({
     name,
+    registered,
+    about,
     contact,
+    display_phone,
     location,
     image_url,
     url,
@@ -35,21 +38,19 @@ export const createBusiness = async (req, res) => {
     is_claimed,
     photos,
     categories,
-    services,
     availability,
     lead_time,
     reviews,
     orders,
-    associated_users,
-    testimonials
+    associated_users
   });
 
-  try {
-    const business = await axios.post(
-      `https://api.mlab.com/api/1/databases/localize/collections/businesses?apiKey=${mongoConfig.apikey}`,
-      { newBusiness });
+  console.log(newBusiness);
 
-    return res.status(201).json({ business: business.data.newBusiness });
+  try {
+    const business = await newBusiness.save();
+
+    return res.status(201).json( business );
   } catch(e) {
     return res.status(422)
       .json({ error: true, message: e.message });
@@ -77,10 +78,15 @@ export const getBusinessesByService = async (req, res) => {
 };
 
 export const getBusiness = async (req, res) => {
-  const businessId = req.params.businessId;
+  let businessId = req.params.businessId.split('-').map( el => (
+    el.charAt(0).toUpperCase() + el.slice(1)
+  ));
+
+  businessId = businessId.join(' ');
+
   try {
     return res.status(200).json(
-      await Business.find({ "_id": businessId })
+      await Business.find({ "name": businessId })
     );
   } catch (e) {
     console.log(businessId);

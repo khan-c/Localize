@@ -11,14 +11,20 @@ const BusinessesSchema = new Schema({
   url: {
     type: String
   },
+  registered: {
+    type: Boolean
+  },
+  display_phone: {
+    type: String,
+    required: true
+  },
   contact: {
     phone: {
       type: String,
       required: true
     },
     email: {
-      type: String,
-      required: true
+      type: String
     }
   },
   location: {
@@ -40,13 +46,19 @@ const BusinessesSchema = new Schema({
     zip: {
       type: String,
       required: true
-    }
+    },
+    display_address: [
+      {
+        type: String,
+        required: true
+      }
+    ]
   },
   coordinates: {
-    longitude: {
+    latitude: {
       type: Number
     },
-    latitude: {
+    longitude: {
       type: Number
     }
   },
@@ -57,13 +69,21 @@ const BusinessesSchema = new Schema({
     type: String
   },
   photos: [String],
-  categories: [String],
-  services: [String],
   availability: [
     {
       start: Number,
       end: Number,
       day: Number
+    }
+  ],
+  categories: [
+    {
+      alias: {
+        type: String
+      },
+      title: {
+        type: String
+      }
     }
   ],
   lead_time: {
@@ -98,15 +118,6 @@ const BusinessesSchema = new Schema({
         ref: 'User'
       },
       username: String
-    }
-  ],
-  testimonials: [
-    {
-      testimonial_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'Testimonial'
-      },
-      testimonial: String
     }
   ]
 });

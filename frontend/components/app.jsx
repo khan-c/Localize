@@ -18,6 +18,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/business/:id" component={BusinessShowContainer}/>
+          <Route path="/regbusiness/:id" component={BusinessShowContainer}/>
           <Route path="/search" component={SearchPageContainer}/>
           <Route path="/" component={HomePage}/>
         </Switch>
