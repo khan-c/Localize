@@ -21,22 +21,41 @@ class MarkerManager {
     businesses
       .filter(business => !this.markers[business.id])
       .forEach((newbusiness, idx) => this.createMarkerFrombusiness(newbusiness, idx+1, this.handleClick)); 
-
   }
 
   createMarkerFrombusiness(business, label) {
-    var image = /frontend/assets/images/pin.png; 
+    var icon1 = {
+      url: 'https://s3-us-west-1.amazonaws.com/app-localize/pin.png',
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(0, 0),
+      scaledSize: new google.maps.Size(23, 30)
+    }; 
+    var icon2 = {
+      url: 'https://s3-us-west-1.amazonaws.com/app-localize/pin-location-purple.png',
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(0, 0),
+      scaledSize: new google.maps.Size(23, 30)
+    }; 
+
     const position = new google.maps.LatLng(business.coordinates.latitude, business.coordinates.longitude);
     const marker = new google.maps.Marker({
       position,
+      id: business.id, 
       map: this.map,
       businessId: business.id, 
-      icon: image, 
+      icon: icon1, 
       label: {text: label.toString(), color: 'white'}
     });
 
     marker.addListener('click', () => this.handleClick(business));
     this.markers[marker.businessId] = marker;
+
+    google.maps.event.addListener(marker, 'mouseover', function() {
+      marker.setIcon(icon2);
+    });
+    google.maps.event.addListener(marker, 'mouseout', function() {
+      marker.setIcon(icon1);
+    });
   }
 
   removeMarker(marker) {

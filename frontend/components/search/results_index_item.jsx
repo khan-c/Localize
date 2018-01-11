@@ -19,6 +19,10 @@ class ResultsIndexItem extends React.Component {
     }
   }
 
+  makeMapMarkerHover(){
+    
+  }
+
   sendToBusinessPage(event, businessId) {
     event.preventDefault();
     this.props.clearAutocompleteFields();
