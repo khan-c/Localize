@@ -8,7 +8,8 @@
   z-index: 3000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
+  overflow: scroll;
 }
 
 .business-modal:hover {
@@ -21,6 +22,8 @@
   width: 50%;
   min-width: 700px;
   min-height: 700px;
+  top: 10%;
+  bottom: 10%;
   background: white;
   border-radius: 6px;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
