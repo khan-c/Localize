@@ -15,7 +15,11 @@ class BusinessShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.showBusiness(this.props.businessId);
+    if (this.props.match.path.includes("reg")) {
+      this.props.showRegBusiness(this.props.businessId);
+    } else {
+      this.props.showBusiness(this.props.businessId);
+    }
   }
 
   render() {

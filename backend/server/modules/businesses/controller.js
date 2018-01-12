@@ -3,10 +3,14 @@ import axios from 'axios';
 import CircularJSON from 'circular-json';
 import { mongoConfig } from '../../config/keys';
 
+
 export const createBusiness = async (req, res) => {
   const {
     name,
+    registered,
+    about,
     contact,
+    display_phone,
     location,
     image_url,
     url,
@@ -14,18 +18,19 @@ export const createBusiness = async (req, res) => {
     is_claimed,
     photos,
     categories,
-    services,
     availability,
     lead_time,
     reviews,
     orders,
-    associated_users,
-    testimonials
+    associated_users
   } = req.body.formBusiness;
 
   const newBusiness = new Business({
     name,
+    registered,
+    about,
     contact,
+    display_phone,
     location,
     image_url,
     url,
@@ -33,43 +38,68 @@ export const createBusiness = async (req, res) => {
     is_claimed,
     photos,
     categories,
-    services,
     availability,
     lead_time,
     reviews,
     orders,
-    associated_users,
-    testimonials
+    associated_users
   });
 
-  try {
-    const business = await axios.post(
-      `https://api.mlab.com/api/1/databases/localize/collections/businesses?apiKey=${mongoConfig.apikey}`,
-      { newBusiness });
+  console.log(newBusiness);
 
-    return res.status(201).json({ business: business.data.newBusiness });
+  try {
+    const business = await newBusiness.save();
+
+    return res.status(201).json( business );
   } catch(e) {
     return res.status(422)
       .json({ error: true, message: e.message });
   }
 };
 
-export const getAllBusinesses = async (req, res) => {
-  try {
-    return res.status(200).json({ businesses: await Business.find() });
-  } catch (e) {
-    return res.status(404)
+export const getBusinesses = async (req, res) => {
+  const category = req.query.category;
+  if (category) {
+    try {
+      return res.status(200).json({ businesses: await Business.find({ "category" : category }) })
+    } catch (e) {
+      return res.status(404)
+        .json({ error: true, message: 'Cannot find businesses with that category'})
+    }
+  } else {
+    try {
+      return res.status(200).json({ businesses: await Business.find() });
+    } catch (e) {
+      return res.status(404)
       .json({ error: true, message: 'Error with Business' });
+    }
   }
 };
 
+// export const getBusinessesByService = async (req, res) => {
+//   // can use some other params value?
+//   const service = req.params.service
+//   try {
+//     return res.status(200).json({ businesses: await Business.find({ "services": service }) });
+//   } catch (e) {
+//     return res.status(404)
+//       .json({ error: true, message: 'Error with Business' });
+//   }
+// };
+
 export const getBusiness = async (req, res) => {
-  const businessId = req.params.businessId;
+  let businessId = req.params.businessId.split('-').map( el => (
+    el.charAt(0).toUpperCase() + el.slice(1)
+  ));
+
+  businessId = businessId.join(' ');
+
   try {
     return res.status(200).json(
-      { business: "test" }
+      await Business.find({ "name": businessId })
     );
   } catch (e) {
+    console.log(businessId);
     return res.status(404)
       .json({ error: true, message: 'Error with Business' });
   }

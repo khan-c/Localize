@@ -5,7 +5,7 @@ import isLoggedIn from '../../config/logged_in';
 const routes = new Router();
 
 routes.post('/businesses', isLoggedIn, BusinessController.createBusiness);
-routes.get('/businesses', BusinessController.getAllBusinesses);
+routes.get('/businesses', BusinessController.getBusinesses);
 routes.get('/businesses/:businessId', BusinessController.getBusiness);
 routes.patch('/businesses/:businessId', isLoggedIn, BusinessController.updateBusiness);
 

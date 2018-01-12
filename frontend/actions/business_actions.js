@@ -26,16 +26,18 @@ export const receiveNoBusiness = () => ({
 
 export const showBusiness = businessId => dispatch => {
   dispatch(startLoadingSingleBusiness());
-  if (businessId.slice(-8) === 'localize') {
-    return BusinessAPIUtil.fetchBusiness(businessId)
-      .then( results => {
-        dispatch(receiveBusiness(results)); },
-        errors => console.log(errors)
-    );
-  }
   return getBusiness(businessId).then( results => {
     dispatch(receiveBusiness(results));
   });
+};
+
+export const showRegBusiness = businessId => dispatch => {
+  dispatch(startLoadingSingleBusiness());
+  return BusinessAPIUtil.fetchBusiness(businessId)
+    .then( results => {
+      dispatch(receiveABusiness(results.data[0])); },
+      errors => console.log(errors)
+  );
 };
 
 export const createBusiness = formBusiness => dispatch => (

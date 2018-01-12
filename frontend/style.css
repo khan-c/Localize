@@ -142,7 +142,7 @@ input[type="button"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1000px;
+  width: 100%;
   margin: auto;
   padding: 10px;
   box-sizing: border-box; }
@@ -566,21 +566,32 @@ html {
   z-index: 3000;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  overflow: scroll; }
+
+.business-modal:hover {
+  cursor: -webkit-grab; }
 
 .business-page {
   position: relative;
   height: 80%;
   width: 50%;
+  min-width: 700px;
+  min-height: 700px;
+  top: 10%;
+  bottom: 10%;
   background: white;
-  border-radius: 4px;
-  box-shadow: 0 0 11px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 70px;
   padding-bottom: 50px;
+  overflow: hidden;
   box-sizing: border-box; }
+
+.business-page:hover {
+  cursor: default; }
 
 .form-close {
   position: absolute;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BusinessShow from './business_show';
-import { showBusiness, clearBusiness } from '../../actions/business_actions';
+import { showBusiness, showRegBusiness, clearBusiness } from '../../actions/business_actions';
 import { clearAutocompleteFields } from '../../actions/autocomplete_fields_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToprops = dispatch => ({
   showBusiness: businessId => dispatch(showBusiness(businessId)),
+  showRegBusiness: businessId => dispatch(showRegBusiness(businessId)),
   clearBusiness: () => dispatch(clearBusiness()),
   clearAutocompleteFields: () => dispatch(clearAutocompleteFields())
 });
