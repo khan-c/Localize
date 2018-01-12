@@ -48,8 +48,8 @@ class MissionStatementLeft extends React.Component {
           <span className='mission-text display-text'>
             Larger companies have found a way to meet the needs of their
             business while supporting the local community and keeping businesses going. Our
-            partners have begun regularly scheduling deliveries of flowers, bread, laundry, and
-            cleaning services from their local communities.
+            partners regularly schedule deliveries of flowers, bread, laundry, and
+            cleaning services from their local community.
           </span>
         </div>
         <div className='mission-left-art-cropper' id='mission-left-art'>

@@ -38,5 +38,5 @@ New businesses are moving in and growing. Neighborhoods are changing. Managing t
 | Group | Email |
 |-------|-------|
 |**[Kyle Chen](https://github.com/khan-c)** | kylehchen@gmail.com |
-|**Truong Nguyen(https://github.com/TmNguyen12)** | tmnguyen12@gmail.com|
+|**[Truong Nguyen](https://github.com/TmNguyen12)** | tmnguyen12@gmail.com|
 |**[Angel Velasco](https://github.com/avelasco920)** | avelasco920@gmail.com|
