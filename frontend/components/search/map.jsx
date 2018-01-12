@@ -10,7 +10,6 @@ class Map extends React.Component {
         latitude: 0, 
         longitude: 0 
       }, 
-      ready: false,
       markers: {}
     }; 
   }
@@ -18,7 +17,6 @@ class Map extends React.Component {
   componentWillReceiveProps(newProps){
 
     if (newProps.region.center.latitude && (newProps.region.center.latitude != this.state.center.latitude)) {
-      this.state.ready = true; 
       this.state.center.latitude = newProps.region.center.latitude; 
       this.state.center.longitude = newProps.region.center.longitude; 
 

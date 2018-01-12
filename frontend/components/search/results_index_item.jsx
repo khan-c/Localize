@@ -20,7 +20,7 @@ class ResultsIndexItem extends React.Component {
   }
 
   makeMapMarkerHover(){
-    
+    let markerelement = document.getElementById(business.id); 
   }
 
   sendToBusinessPage(event, businessId) {
