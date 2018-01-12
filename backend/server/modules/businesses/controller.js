@@ -57,25 +57,35 @@ export const createBusiness = async (req, res) => {
   }
 };
 
-export const getAllBusinesses = async (req, res) => {
-  try {
-    return res.status(200).json({ businesses: await Business.find() });
-  } catch (e) {
-    return res.status(404)
+export const getBusinesses = async (req, res) => {
+  const category = req.query.category;
+  if (category) {
+    try {
+      return res.status(200).json({ businesses: await Business.find({ "category" : category }) })
+    } catch (e) {
+      return res.status(404)
+        .json({ error: true, message: 'Cannot find businesses with that category'})
+    }
+  } else {
+    try {
+      return res.status(200).json({ businesses: await Business.find() });
+    } catch (e) {
+      return res.status(404)
       .json({ error: true, message: 'Error with Business' });
+    }
   }
 };
 
-export const getBusinessesByService = async (req, res) => {
-  // can use some other params value?
-  const service = req.params.service
-  try {
-    return res.status(200).json({ businesses: await Business.find({ "services": service }) });
-  } catch (e) {
-    return res.status(404)
-      .json({ error: true, message: 'Error with Business' });
-  }
-};
+// export const getBusinessesByService = async (req, res) => {
+//   // can use some other params value?
+//   const service = req.params.service
+//   try {
+//     return res.status(200).json({ businesses: await Business.find({ "services": service }) });
+//   } catch (e) {
+//     return res.status(404)
+//       .json({ error: true, message: 'Error with Business' });
+//   }
+// };
 
 export const getBusiness = async (req, res) => {
   let businessId = req.params.businessId.split('-').map( el => (

@@ -34,16 +34,24 @@ class BusinessForm extends React.Component {
     this.updateForm = this.updateForm.bind(this);
     this.handleEsc = this.handleEsc.bind(this);
     this.stopScroll = this.stopScroll.bind(this);
+    this.allowScroll = this.allowScroll.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleEsc);
-    this.fixed = document.querySelector('.business-modal');
-    // this.fixed.addEventListener('mousewheel', this.stopScroll, false);
+    this.stopScroll();
   }
 
-  stopScroll(e) {
-    e.preventDefault();
+  stopScroll() {
+    const body = document.body;
+    body.style = 'overflow: hidden';
+    body.scroll = 'no';
+  }
+
+  allowScroll() {
+    const body = document.body;
+    body.style = 'overflow: visible';
+    body.scroll = 'yes';
   }
 
   handleEsc(e) {
@@ -54,7 +62,7 @@ class BusinessForm extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleEsc);
-    // this.fixed.removeEventListener('mousewheel', this.stopScroll);
+    this.allowScroll();
   }
 
   updateForm(value) {
