@@ -112,6 +112,11 @@ class BusinessFormButtons extends React.Component {
     }
     //  else if (path === '/associatebusiness/photos') {
     // }
+    // <span
+    //   className="biz-form-button"
+    //   onClick={ this.handleSubmit }>
+    //   Save and exit
+    // </span>
 
     return (
       <div className="biz-form-buttons">
@@ -119,11 +124,6 @@ class BusinessFormButtons extends React.Component {
           { backButton }
         </div>
         <div className="right-buttons">
-          <span
-            className="biz-form-button"
-            onClick={ this.handleSubmit }>
-            Save and exit
-          </span>
           { next }
         </div>
       </div>
