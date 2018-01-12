@@ -8,8 +8,12 @@ import SearchContactModal from './search_contact_modal';
 class ResultsIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalDisplay: 'hidden'
+    };
     this.sendToBusinessPage = this.sendToBusinessPage.bind(this);
     this.clearMapHover = this.clearMapHover.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   clearMapHover() {
@@ -39,7 +43,35 @@ class ResultsIndexItem extends React.Component {
     this.props.autocompleteFields(query);
   }
 
+  showModal(business) {
+    this.setState({
+      modalDisplay: 'show'
+    });
+  }
+
+  closeModal() {
+    console.log('closeModal function');
+    this.setState({
+      modalDisplay: 'hidden'
+    });
+  }
+
+  renderModal(business) {
+    if ( this.state.modalDisplay === 'show' ) {
+      return(
+        <SearchContactModal business={ business } closeModal={this.closeModal}/>
+      );
+    } else if (this.state.modalDisplay === 'hidden' ) {
+      return (
+        null
+      );
+    }
+  }
+
   render(){
+    const style = {
+      display: 'none'
+    };
     const { business } = this.props;
     if (!business){
       return null;
@@ -98,9 +130,13 @@ class ResultsIndexItem extends React.Component {
                   />
                 ))}
               </div>
-              <SearchContactModal business={ business }/>
-              <input type='submit' className='contact-button' value='Contact'/>
+              <input type='submit'
+                className='contact-button'
+                value='Contact'
+                onClick={() => this.showModal(business)}
+              />
             </div>
+            {this.renderModal(business)}
           </div>
         </div>
       </li>

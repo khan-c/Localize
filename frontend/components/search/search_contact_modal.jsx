@@ -21,14 +21,14 @@ class SearchContactModal extends React.Component {
   }
 
   render () {
-    const { business } = this.props;
+    const { business, closeModal } = this.props;
     const businessUrl = `/business/${business.id}`;
     if (!business){
       return null;
     }
     return (
       <div>
-        <div className='light-box' />
+        <div className='light-box' onClick={this.props.closeModal} />
         <div className='contact-modal'>
           <h3>Connect with <strong className='red'><Link to={businessUrl} className='b-link'>{business.name}</Link></strong></h3>
           <div className='modal-content'>

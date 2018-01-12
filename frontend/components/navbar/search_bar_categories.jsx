@@ -47,17 +47,16 @@ class Categories extends React.Component {
         <Icon className='search-arrow h-flip' onClick={this.previous}/>
         <Slider {...settings} ref={c => this.slider = c} className='search-categories-ul'>
           <div className='category-carousel' key={1}><a onClick={(e) => this.handleClick(e, 'Catering')}>Catering</a></div>
-          <div className='category-carousel' key={2}><a onClick={(e) => this.handleClick(e, 'Delivery')}>Delivery</a></div>
-          <div className='category-carousel' key={3}><a onClick={(e) => this.handleClick(e, 'Design')}>Design</a></div>
-          <div className='category-carousel' key={4}><a onClick={(e) => this.handleClick(e, 'Cleaning')}>Cleaning</a></div>
-          <div className='category-carousel' key={5}><a onClick={(e) => this.handleClick(e, 'Supplies')}>Supplies</a></div>
-          <div className='category-carousel' key={6}><a onClick={(e) => this.handleClick(e, 'Florist')}>Florist</a></div>
-          <div className='category-carousel' key={7}><a onClick={(e) => this.handleClick(e, 'Laundry')}>Laundry</a></div>
-          <div className='category-carousel' key={8}><a onClick={(e) => this.handleClick(e, 'Furniture')}>Furniture</a></div>
-          <div className='category-carousel' key={9}><a onClick={(e) => this.handleClick(e, 'Construction')}>Construction</a></div>
-          <div className='category-carousel' key={10}><a onClick={(e) => this.handleClick(e, 'Maintenance')}>Maintenance</a></div>
-          <div className='category-carousel' key={12}><a onClick={(e) => this.handleClick(e, 'Printing')}>Printing</a></div>
-          <div className='category-carousel' key={13}><a onClick={(e) => this.handleClick(e, 'Bakery')}>Bakery</a></div>
+          <div className='category-carousel' key={2}><a onClick={(e) => this.handleClick(e, 'Design')}>Design</a></div>
+          <div className='category-carousel' key={3}><a onClick={(e) => this.handleClick(e, 'Cleaning')}>Cleaning</a></div>
+          <div className='category-carousel' key={4}><a onClick={(e) => this.handleClick(e, 'Supplies')}>Supplies</a></div>
+          <div className='category-carousel' key={5}><a onClick={(e) => this.handleClick(e, 'Florist')}>Florist</a></div>
+          <div className='category-carousel' key={6}><a onClick={(e) => this.handleClick(e, 'Laundry')}>Laundry</a></div>
+          <div className='category-carousel' key={7}><a onClick={(e) => this.handleClick(e, 'Furniture')}>Furniture</a></div>
+          <div className='category-carousel' key={8}><a onClick={(e) => this.handleClick(e, 'Construction')}>Construction</a></div>
+          <div className='category-carousel' key={9}><a onClick={(e) => this.handleClick(e, 'Maintenance')}>Maintenance</a></div>
+          <div className='category-carousel' key={10}><a onClick={(e) => this.handleClick(e, 'Printing')}>Printing</a></div>
+          <div className='category-carousel' key={11}><a onClick={(e) => this.handleClick(e, 'Bakery')}>Bakery</a></div>
         </Slider>
         <Icon className='search-arrow' onClick={this.next}/>
       </div>

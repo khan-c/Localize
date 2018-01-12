@@ -1419,7 +1419,8 @@ html {
 .testimonial-bname {
   padding-bottom: 10px;
   border-bottom: 4px solid;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  transition: .3s ease; }
 
 .blank-div {
   height: 200px; }
@@ -1825,6 +1826,7 @@ html {
     transform: scale(1, 1); } }
 
 .light-box {
+  transition: .3s ease;
   width: 100vw;
   height: 100vh;
   background-color: #211B59;
@@ -1833,6 +1835,9 @@ html {
   position: fixed;
   right: 0;
   bottom: 0; }
+
+.light-box:hover {
+  cursor: -webkit-grab; }
 
 .contact-modal {
   width: 800px;
