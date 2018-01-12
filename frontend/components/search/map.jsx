@@ -1,13 +1,25 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
-
+import LoadingIcon from './loading_icon';
 
 class Map extends React.Component {
+  constructor(props){
+    super(props); 
+    this.state = {
+      center: {
+        latitude: 0, 
+        longitude: 0 
+      }, 
+      markers: {}
+    }; 
+  }
 
   componentWillReceiveProps(newProps){
-    if (newProps.region.center.latitude) {
-      this.setState({ready: true}); 
-      console.log("inside maps receive props after setstae"); 
+
+    if (newProps.region.center.latitude && (newProps.region.center.latitude != this.state.center.latitude)) {
+      this.state.center.latitude = newProps.region.center.latitude; 
+      this.state.center.longitude = newProps.region.center.longitude; 
+
       const mapOptions = {
         center: {
           lat: newProps.region.center.latitude,
@@ -20,13 +32,17 @@ class Map extends React.Component {
       };
       const map = this.refs.map;
       this.map = new google.maps.Map(map, mapOptions);
+    }
+    
+    if (newProps.businesses != this.props.businesses) {
       this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       if (newProps.businesses) {
-        this.MarkerManager.updateMarkers(newProps.businesses);
+        this.MarkerManager.updateMarkers(newProps.businesses, this.state.markers);
+        this.state.markers = this.MarkerManager.markers; 
       }
-    }    
+    }
   }
- 
+  
   //Finds y value of given object
   findPos(obj) {
     var curtop = 0;
