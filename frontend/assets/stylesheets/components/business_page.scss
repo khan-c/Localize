@@ -29,11 +29,17 @@
 .contact-form {
   padding: 30px;
   box-sizing: border-box;
+  border-radius: 6px;
+  transition: box-shadow .3s ease;
   h3 {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 2px solid;
   }
+}
+
+.contact-form:hover {
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 .business-section-wrapper {
