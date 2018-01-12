@@ -3,7 +3,7 @@ import ReactSVG from 'react-svg';
 import Icon from 'react-icons/lib/fa/angle-right';
 import Slider from 'react-slick';
 import { withRouter } from 'react-router-dom';
-import { stateToUrl } from '../../util/parsing_functions';
+import { stateToUrl, locationFromPath, termFromPath } from '../../util/parsing_functions';
 
 class Categories extends React.Component {
   constructor(props) {
@@ -15,9 +15,10 @@ class Categories extends React.Component {
 
   handleClick(event, term) {
     event.preventDefault();
+    const path = this.props.location.search;
     const query = {
       text: term,
-      location: 'San Francisco'
+      location: locationFromPath(path)
     };
     const url = `/search?${stateToUrl(query)}`;
     this.props.history.push(url);
