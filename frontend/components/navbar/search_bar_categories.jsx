@@ -14,11 +14,12 @@ class Categories extends React.Component {
   }
 
   handleClick(event, term) {
-    event.preventDefault();
     const path = this.props.location.search;
+    let locationText = locationFromPath(path) ? locationFromPath(path) : "San Francisco"; 
+    event.preventDefault();
     const query = {
       text: term,
-      location: locationFromPath(path)
+      location: locationText
     };
     const url = `/search?${stateToUrl(query)}`;
     this.props.history.push(url);
