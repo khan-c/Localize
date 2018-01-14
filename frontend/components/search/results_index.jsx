@@ -7,7 +7,6 @@ import { stateToUrl, locationFromPath, termFromPath } from '../../util/parsing_f
 class ResultsIndex extends React.Component {
   componentWillMount() {
     const path = this.props.location.search;
-    event.preventDefault();
     const query = {
       text: termFromPath(path),
       location: locationFromPath(path)
@@ -18,7 +17,6 @@ class ResultsIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.location.search !== newProps.location.search) {
       const path = newProps.location.search;
-      event.preventDefault();
       const query = {
         text: termFromPath(path),
         location: locationFromPath(path)

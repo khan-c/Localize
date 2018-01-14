@@ -15,7 +15,7 @@ import axios from 'axios';
 import { credentials } from './config/keys';
 import CircularJSON from 'circular-json';
 
-let creds;
+let creds = () => null;
 if (process.env.NODE_ENV !== 'production') {
   creds = require('./api/key');
 }
