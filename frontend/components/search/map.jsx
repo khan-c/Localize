@@ -15,7 +15,6 @@ class Map extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-
     if (newProps.region.center.latitude && (newProps.region.center.latitude != this.state.center.latitude)) {
       this.state.center.latitude = newProps.region.center.latitude; 
       this.state.center.longitude = newProps.region.center.longitude; 
@@ -25,7 +24,7 @@ class Map extends React.Component {
           lat: newProps.region.center.latitude,
           lng: newProps.region.center.longitude 
         }, 
-        zoom: 13,
+        zoom: 14,
         zoomControlOptions: {
           position: google.maps.ControlPosition.TOP_LEFT
         }
