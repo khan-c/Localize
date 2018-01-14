@@ -6,12 +6,7 @@ import { grabTitles } from '../../util/selectors';
 const GeneralInfo = props => {
   const { business } = props;
 
-  let info = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-  "Proin in elit erat. Vestibulum et enim bibendum, molestie ex non, " +
-  "ullamcorper sapien. Curabitur eu metus mi. Maecenas ac sapien suscipit, " +
-  "aliquam tortor lacinia, pretium mauris. Lorem ipsum dolor sit amet, " +
-  "consectetur adipiscing elit. Proin in elit erat. " +
-  "Vestibulum et enim bibendum, molestie ex non.";
+  let info = "This business is not registered with Localize.";
   if (business.about) {
     info = business.about;
   }
