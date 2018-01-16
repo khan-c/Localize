@@ -1,0 +1,34 @@
+.footer {
+  background-color: $light-gray;
+  padding: 80px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.github-logo {
+  height: 100px;
+  width: 100px;
+  fill: $blue;
+  margin-right: 40px;
+}
+.github-logo:hover {
+  fill: $light-blue;
+  cursor: pointer;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  a {
+    margin-bottom: 6px;
+  }
+  a:hover {
+    color: $green;
+  }
+  h4 {
+    margin-bottom: 10px;
+  }
+}

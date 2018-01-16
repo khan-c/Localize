@@ -133,12 +133,12 @@
 }
 
 .business-section {
-  border-bottom: 2px solid;
   padding: 40px 0;
 }
 
 .contact-info-section {
   width: 100%;
+  border-bottom: 2px solid;
 }
 
 .contact-info-wrapper {
@@ -170,4 +170,45 @@
 
 .website-url:hover {
   color: $red;
+}
+
+.connect-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid $lightest-blue;
+}
+
+.connect-input:focus {
+  border: 1px solid black;
+}
+
+.connect-body {
+  border: 1px solid $lightest-blue;
+  background-color: white;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  font-family: $text;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.connect-body:focus {
+  border: 1px solid black;
+}
+
+.connect-body::placeholder {
+  font-size: 12px;
+}
+
+.connect-button {
+  align-self: right;
+  border: 1px solid $blue;
+  background-color: white;
+}
+
+.connect-button:hover {
+  border: 2px solid $green;
+  background-color: $green;
+  color: white;
 }

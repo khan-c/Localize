@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './navbar/navBar';
-import Footer from './footer/footer';
 import HomePage from './homepage/homepage';
 import BusinessShowContainer from './business_show/business_show_container';
 //testing
