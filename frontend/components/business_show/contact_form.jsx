@@ -3,6 +3,11 @@ import React from 'react';
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      email: '',
+      subject: '',
+      body: '',
+    };
   }
 
   componentDidMount() {
@@ -16,6 +21,12 @@ class ContactForm extends React.Component {
     });
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   render() {
     const { business } = this.props;
     return (
@@ -24,9 +35,24 @@ class ContactForm extends React.Component {
         id='business-show-contact-form'
       >
         <h3>Connect</h3>
-        <span>
-          Direct connect is currently unavailable because this business hasn't registered with us yet.
-        </span>
+        <input type='text'
+          placeholder='Email'
+          onChange={this.update('email')}
+          className='white-input connect-input'
+        />
+        <input type='text'
+          placeholder='Subject'
+          onChange={this.update('subject')}
+          className='white-input connect-input'
+        />
+        <textarea
+          className='connect-body'
+          placeholder='Go ahead, ask away!'
+        />
+        <input type='submit'
+          value="Send"
+          className="connect-button"
+        />
       </div>
     );
   }

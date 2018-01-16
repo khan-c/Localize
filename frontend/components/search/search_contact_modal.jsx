@@ -37,12 +37,12 @@ class SearchContactModal extends React.Component {
               <input type='text'
                 placeholder='Your Email'
                 onChange={this.update('email')}
-                className='white-input contact-modal-input'
+                className='no-fill-input contact-modal-input'
               />
               <input type='text'
                 placeholder='Subject'
                 onChange={this.update('subject')}
-                className='white-input contact-modal-input'
+                className='no-fill-input contact-modal-input'
               />
               <textarea
                 className='contact-body'

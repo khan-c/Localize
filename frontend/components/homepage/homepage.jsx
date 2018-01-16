@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import LandingSection from './landing_section';
 import MissionSection from './mission_section';
 import TestimonialSection from './testimonial_section';
+import Footer from '../footer/footer';
 
 
 class HomePage extends React.Component {
@@ -44,6 +45,7 @@ class HomePage extends React.Component {
         <MissionSection />
         <TestimonialSection />
         <Route path="/associatebusiness" component={BusinessFormContainer} />
+        <Footer />
       </div>
     );
   }

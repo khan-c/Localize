@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessAboutSectionContainer from './business_about_section_container';
 import ContactSection from './contact_section';
+import Footer from '../footer/footer';
 
 class BusinessShow extends React.Component {
   componentDidMount() {
@@ -22,12 +23,25 @@ class BusinessShow extends React.Component {
     }
   }
 
+  renderFooter(loading) {
+    if (loading) {
+      return null;
+    } else {
+      return (
+        <Footer />
+      );
+    }
+  }
+
   render() {
     const { business, singleBusinessLoading } = this.props;
     return (
-      <div className='business-show' id='business-show'>
-        <BusinessAboutSectionContainer />
-        <ContactSection business={business} singleBusinessLoading={singleBusinessLoading} />
+      <div className='business-show-page'>
+        <div className='business-show' id='business-show'>
+          <BusinessAboutSectionContainer />
+          <ContactSection business={business} singleBusinessLoading={singleBusinessLoading} />
+        </div>
+        {this.renderFooter(singleBusinessLoading)}
       </div>
     );
   }

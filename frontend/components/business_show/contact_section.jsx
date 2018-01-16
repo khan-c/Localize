@@ -3,9 +3,9 @@ import ContactForm from './contact_form';
 
 const ContactSection = props => {
   if (props.singleBusinessLoading) {
-    return (<div></div>);
+    return null;
   } else {
-    return (
+    return(
       <div className='contact-section'>
         <ContactForm business={props.business}/>
       </div>
