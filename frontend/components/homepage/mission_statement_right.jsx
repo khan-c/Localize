@@ -5,7 +5,7 @@ const MissionStatementRight = () => (
   <div className='mission-statement statement-right'>
     <div className='mission-right-art-cropper'>
       <ReactSVG
-        path='../../assets/images/landingArt.svg'
+        path='../../assets/images/LandingArt.svg'
         className='mission-right-art'
       />
       <ReactSVG
