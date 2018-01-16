@@ -23,21 +23,27 @@ class BusinessShow extends React.Component {
     }
   }
 
-  render() {
-    const { business, singleBusinessLoading } = this.props;
-    if (singleBusinessLoading) {
+  renderFooter(loading) {
+    if (loading) {
       return null;
     } else {
       return (
-        <div className='business-show-page'>
-          <div className='business-show' id='business-show'>
-            <BusinessAboutSectionContainer />
-            <ContactSection business={business} singleBusinessLoading={singleBusinessLoading} />
-          </div>
-          <Footer />
-        </div>
+        <Footer />
       );
     }
+  }
+
+  render() {
+    const { business, singleBusinessLoading } = this.props;
+    return (
+      <div className='business-show-page'>
+        <div className='business-show' id='business-show'>
+          <BusinessAboutSectionContainer />
+          <ContactSection business={business} singleBusinessLoading={singleBusinessLoading} />
+        </div>
+        {this.renderFooter(singleBusinessLoading)}
+      </div>
+    );
   }
 }
 

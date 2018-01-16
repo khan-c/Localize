@@ -1731,11 +1731,11 @@ html {
 
 .connect-button {
   align-self: right;
-  border: 1px solid #AFECF4;
+  border: 1px solid black;
   background-color: white; }
 
 .connect-button:hover {
-  border: 2px solid #96FE91;
+  border: 1px solid #96FE91;
   background-color: #96FE91;
   color: white; }
 
