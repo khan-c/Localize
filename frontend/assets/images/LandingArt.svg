@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Making a change so the update goes through.. -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="516.969px" height="417.4px" viewBox="0 0 516.969 417.4" enable-background="new 0 0 516.969 417.4" xml:space="preserve">
@@ -107,9 +108,9 @@
 			<path fill="#FF6974" d="M145.662,317.981h-2.187v-34.035c0-1.061-0.856-1.916-1.914-1.916H98.387
 				c-1.059,0-1.915,0.855-1.915,1.916v34.035h-0.168c-1.059,0-1.914,0.855-1.914,1.916v11.137c0,1.061,0.856,1.918,1.914,1.918
 				h49.36c1.057,0,1.914-0.857,1.914-1.918v-11.137C147.578,318.841,146.721,317.981,145.662,317.981z"/>
-			
+
 				<rect x="112.036" y="305.607" transform="matrix(-0.707 0.7072 -0.7072 -0.707 424.0032 439.3816)" fill="#FFDBDE" width="17.899" height="3.829"/>
-			
+
 				<rect x="107.856" y="295.819" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 409.9209 425.6898)" fill="#FFDBDE" width="17.897" height="3.832"/>
 		</g>
 	</g>
