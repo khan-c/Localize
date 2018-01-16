@@ -7,6 +7,7 @@ import { mongoConfig } from '../../config/keys';
 export const createBusiness = async (req, res) => {
   const {
     name,
+    name_lower,
     registered,
     about,
     contact,
@@ -27,6 +28,7 @@ export const createBusiness = async (req, res) => {
 
   const newBusiness = new Business({
     name,
+    name_lower,
     registered,
     about,
     contact,
@@ -88,15 +90,11 @@ export const getBusinesses = async (req, res) => {
 // };
 
 export const getBusiness = async (req, res) => {
-  let businessId = req.params.businessId.split('-').map( el => (
-    el.charAt(0).toUpperCase() + el.slice(1)
-  ));
-
-  businessId = businessId.join(' ');
+  let businessId = req.params.businessId.split('-').join(' ').toLowerCase();
 
   try {
     return res.status(200).json(
-      await Business.find({ "name": businessId })
+      await Business.find({ "name_lower": businessId })
     );
   } catch (e) {
     console.log(businessId);

@@ -28,6 +28,7 @@ class BusinessFormButtons extends React.Component {
       sun,
       value
     } = this.props.businessDetails;
+    const name_lower = name.toLowerCase();
     const display_address = [
       address1,
       `${city}, ${state.value} ${zip}`
@@ -52,8 +53,8 @@ class BusinessFormButtons extends React.Component {
       d['day'] = idx;
       return d;
     });
-    const categories = value.forEach( el => {
-      el.title = el.value;
+    const categories = value.map( el => {
+      return { 'title': el.value };
     });
     const parseCity = city.split(" ").join("%20");
     this.props.fetchLatLng(parseCity)
@@ -61,6 +62,7 @@ class BusinessFormButtons extends React.Component {
         const coordinates = results.data.results[0].geometry.location;
         const business = {
           name,
+          name_lower,
           location,
           registered: true,
           contact,
@@ -72,8 +74,9 @@ class BusinessFormButtons extends React.Component {
           coordinates
         };
         this.props.createBusiness(business);
-        this.props.history.push(`/regbusiness/${name.split(" ").join("-")}`);
-      });
+      }).then(
+        this.props.history.push(`/regbusiness/${name.split(" ").join("-")}`)
+      );
       // .then(this.props.history.push(`/business/${name}-localize`));
   }
 

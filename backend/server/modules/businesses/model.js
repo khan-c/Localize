@@ -5,6 +5,9 @@ const BusinessesSchema = new Schema({
     type: String,
     required: true
   },
+  name_lower: {
+    type: String
+  },
   image_url: {
     type: String
   },
@@ -76,16 +79,7 @@ const BusinessesSchema = new Schema({
       day: Number
     }
   ],
-  categories: [
-    {
-      alias: {
-        type: String
-      },
-      title: {
-        type: String
-      }
-    }
-  ],
+  categories: [],
   lead_time: {
     type: String
   },
