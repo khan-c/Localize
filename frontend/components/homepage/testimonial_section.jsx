@@ -58,6 +58,24 @@ class TestimonialSection extends React.Component {
       url: '/business/laundry-locker-san-francisco-26/',
       testimonial: 'We are now the sole on site laundry service for a local startup! Businsess has increased dramatically without foot-traffic to our door. We could\'t have done it without Localize!'
     };
+    const business5 = {
+      name: 'Social Print Studio',
+      image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/l7bARapSDgdptFQ8OqHgtw/o.jpg",
+      url: '/business/social-print-studio-san-francisco/',
+      testimonial: 'Salesforce was looking for a creative way gift to show employee appreciation. We worked with them to provide custom-printed calendars and wood panels printed with employee-taken photographs! It was all thanks to Localize!'
+    };
+    const business6 = {
+      name: 'Pop & Tar Floral Couture',
+      image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/yopHIKqX6K_mk6ix812Wfg/o.jpg",
+      url: '/business/pop-and-tar-floral-couture-san-francisco/',
+      testimonial: 'Localize is amazing! We worked with Mint.com to become their sole floral provider for the next year! '
+    };
+    const business7 = {
+      name: 'San Francisco Green Clean',
+      image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/TjP8EuY2nJlRnNXegHNRzg/o.jpg",
+      url: '/business/san-francisco-green-clean-san-francisco-2/',
+      testimonial: 'Initially, Zendesk asked us to clean their conference center after a big event. They were so happy with us, we signed a contract to be their primary cleaning company! Localize works! '
+    };
 
     return (
       <div className='testimonial-section'>
@@ -66,9 +84,12 @@ class TestimonialSection extends React.Component {
         </h2>
         <div className='testimonials-wrapper'>
           <Testimonial business={business1}/>
+          <Testimonial business={business5}/>
           <Testimonial business={business2}/>
           <Testimonial business={business3}/>
           <Testimonial business={business4}/>
+          <Testimonial business={business6}/>
+          <Testimonial business={business7}/>
           <Testimonial business={business}/>
         </div>
       </div>
